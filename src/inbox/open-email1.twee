@@ -1,0 +1,74 @@
+:: Open Email 1 [OS Inbox] {"position":"475,375","size":"100,100"}
+<<silently>>
+      <<run $(document).on(':passagedisplay', function() {
+       $(document).unbind(':passagedisplay');
+        window.renderInboxColOne();
+      })>>
+<</silently>>
+
+<div id="inbox-col2">
+   <div id="inbox-search">
+      <span id="search-icon" class="material-symbols-outlined">search</span>
+      <p>Search K-Mail</p>
+  </div>
+    <div id="inbox-email-open">
+    
+    	@@.flip-flop;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
+        
+		[img[https://github.com/caroldinh/fairy-quest/blob/main/images/Bonnieclyde_f.jpg?raw=true]]
+        
+        @@.flip-flop;I’ve been up all night searching for leads and what have you been doing? Sleeping? For 8 whole hours? Ridiculous. Even back when I HAD a physical body, I only ever slept for 3 MAX.@@
+        
+		@@.olsen;I’ve got work to do. Shush.@@
+        
+        @@.flip-flop;It’s always “Flip Flop, I have a job”, “Flip Flop, don’t delete my work documents”, “Flip Flop, I can’t bring my laptop to the Centaurs on Assateague Island so they can enchant on my hard drive blah blah blah”. You’re no fun >:/@@
+        
+        @@.olsen;I was never fun. Also those centaurs were totally scamming you.@@
+        
+	</div>    
+    
+    <!-- TODO: CHANGE TO 10s AFTER DONE TESTING -->
+    <<timed 10s>>
+    	<<silently>>
+        	<<script>>
+            	window.checkpoint = 3;
+            <</script>>
+		<</silently>>
+    	<!--<span onclick="window.displayLine(window.SCREEN2_SCRIPT1, 0);"></span>-->
+        @@#important;[[New message in Inbox: ''URGENT ACTION REQUESTED''|Inbox 2]]@@
+    <</timed>>
+    
+</div>
+
+<style>
+
+#inbox-email-open {
+  background-color: #ffffff;
+  min-height: 100%;
+  height: fit-content;
+  padding: 32px;
+}
+
+#inbox-email-open img {
+	height: 500px;
+}
+
+ #important {
+ 	position: fixed;
+    bottom: 16px;
+    right: 16px;
+ 	padding: 8px;
+    width: fit-content;
+    background-color: #ffff00;
+    color: #000000;
+ }
+ 
+ #important a {
+ 	all: unset !important;
+ }
+ 
+  #newEmail {
+  	display: none;
+ }
+
+</style>

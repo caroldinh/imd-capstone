@@ -1,0 +1,90 @@
+:: \[CONCEPT\] Toggle Phone [Concept OS] {"position":"500,125","size":"100,100"}
+<<run $(document).on(':passagedisplay', function() {
+	$('#confirmation').css('display', 'none');
+    $('#textbox-input').on('input', function() {
+    	console.log($(this).val());
+    	if ($(this).val() == "KDGJ9@!?_D") {
+        	$('#confirmation').css('display', 'block');
+        }
+    });
+})>>
+
+@@#action-header;Action Requested:@@
+@@#tfa-header;Two-Factor Authentication@@
+
+<div id="code-card">
+   Authentication Code
+  <<textbox  "$input" "">>
+  @@.body-small;Resize your window to access the confirmation code on your mobile device.@@
+  @@#confirmation;Correct@@
+</div>
+
+<<set $passcode to "KDGJ9@!?_D">>
+<div id="phone">
+	!!PASSWORD: $passcode
+</div>
+
+<style>
+
+.passage {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#phone {
+	visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00ffff;
+    width: 100%;
+    height: 100%;
+}
+
+#phone h1 {
+	color: black;
+}
+
+#action-header {
+	font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 1em;
+}
+
+#tfa-header {
+	font-size: 32px;
+}
+
+#confirmation {
+	color: green;
+}
+
+#code-card {
+	border-radius: 36px;
+    width: fit-fcontent;
+    height: fit-content;
+    padding: 32px;
+    border: 1px solid white;
+}
+
+#textbox-input {
+	width: 100%;
+}
+
+.body-small {
+	width: 100%;
+    text-align: justify;
+}
+
+@media only screen and (max-width: 600px) {
+
+	#phone {
+     	visibility: visible;
+    }
+    
+}
+
+</style>

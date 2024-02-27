@@ -1,0 +1,33 @@
+:: Desktop 1 [Desktop OS] {"position":"600,500","size":"100,100"}
+!Olsen Placeholder desktop
+
+<<cycle "$iconClicked" once>>
+	<<option "Tax Forms">>
+    <<option "Do Not Open">>
+	<<option "TOPSECRETFILESDONTOPEN">>
+    <<option "Fine you asked for it">>
+    <<option "[[Magic Web|Magic Web 1]]">>
+<</cycle>>
+
+:: Inbox Playground [OS Inbox Fullscreen] {"position":"175,100","size":"100,100"}
+<<silently>>
+  <<run $(document).on(':passagedisplay', function() {
+  	  $(document).unbind(':passagedisplay');
+  	  window.renderInboxTemplate();
+      let inbox = $("#inbox-emails");
+      window.populateExistingMessages(inbox);
+      window.composeEmail("Everyone", "Everyone else", "IMPORTANT", "HI");
+  })>>
+<</silently>>
+
+
+:: StoryScript [script]
+window.checkpoint = 1;
+importScripts("js/script.js");
+importScripts("js/main.js");
+importScripts("js/inbox.js");
+
+:: StoryStylesheet [stylesheet]
+@import url('css/root.css');
+@import url('css/main.css');
+@import url('css/inbox.css');

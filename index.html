@@ -100,59 +100,12 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://BB3B4A8F-A555-4CD3-A7A4-57B2127E7E3F// --><tw-storydata name="Fairy Quest Act I Scene I" startnode="5" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="BB3B4A8F-A555-4CD3-A7A4-57B2127E7E3F" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('css/root.css');
-@import url('css/style.css');
-@import url('css/inbox.css');</style><script role="script" id="twine-user-script" type="text/twine-javascript">window.checkpoint = 1;
-
+	<!-- UUID://BB3B4A8F-A555-4CD3-A7A4-57B2127E7E3F// --><tw-storydata name="Fairy Quest Act I Scene I" startnode="1" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="BB3B4A8F-A555-4CD3-A7A4-57B2127E7E3F" zoom="1" format="SugarCube" format-version="2.30.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('css/root.css');
+@import url('css/main.css');
+@import url('css/inbox.css');</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* twine-user-script #1: "ScriptUtils" */
 window.finishScriptEvent = new Event("script-finished");
 
 window.sleep = ms => new Promise(r => setTimeout(r, ms));
-
-window.SCREEN1_SCRIPT = [
-  	{
-      "character": "Flip-Flop",
-      "line": "Hiiiiiiiii :3c",
-      "popup-class": "",
-      "player-response":"",
-      "sprite-url": "https://raw.githubusercontent.com/caroldinh/fairy-quest/main/placeholders/flipflop-temp.png", 
-    },
-   	{
-      "character": "Flip-Flop",
-      "line": "Oh come on, you’re seriously doing work right now?",
-      "popup-class": "",
-      "player-response":"Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?",
-      "sprite-url": "https://raw.githubusercontent.com/caroldinh/fairy-quest/main/placeholders/flipflop-temp.png", 
-    },
-  ];
-
-window.SCREEN2_SCRIPT1 = 
-  [
-  	{
-      "character": "Flip-Flop",
-      "line": "I bet I can speed up all this dumb work stuff.",
-      "popup-class": "",
-      "player-response":"",
-      "sprite-url": "https://raw.githubusercontent.com/caroldinh/fairy-quest/main/placeholders/flipflop-temp.png", 
-    },
-];
-
-window.SCREEN2_SCRIPT2 = 
-  [
-  	{
-      "character": "Flip-Flop",
-      "line": "There we go! That should keep em busy for a few hours.",
-      "popup-class": "",
-      "player-response":"Oh my god. You’re not gonna leave me alone unless I do what you want, are you?",
-       "sprite-url": "https://raw.githubusercontent.com/caroldinh/fairy-quest/main/placeholders/flipflop-temp.png", 
-    },
-    {
-      "character": "Flip-Flop",
-      "line": "Nope!",
-      "popup-class": "",
-      "player-response":"Ughhh, fine.",
-      "sprite-url": "https://raw.githubusercontent.com/caroldinh/fairy-quest/main/placeholders/flipflop-temp.png", 
-    },
-  ];
 
 window.displayLine = function(script, i) {
   
@@ -170,27 +123,27 @@ window.displayLine = function(script, i) {
       Dialog.append(`<br><textarea id="player-response"></textarea>`);
       $("#ui-dialog-close").css("display", "none");
       $('#ui-dialog-body #player-response').on('input', function() {
-    	if (window.autoFillText($(this), line['player-response'])) {
+        if (window.autoFillText($(this), line['player-response'])) {
           //console.log($("#player-response-button"));
           if ($('#player-response-button').length == 0) {
               Dialog.append(`<br><input type="button" id="player-response-button" value="NEXT">`);
               $('#player-response-button').click(() => {window.displayLine(script, i+1)})
           }
         };
-    	});
+        });
     } else {
       $("#ui-dialog-close").css("display", "unset");
     }
     Dialog.open();
     
     if (line['player-response']) {
-    	$(document).on(':dialogclosed', function (ev) {
-      		window.displayLine(script, i);
-    	});
+        $(document).on(':dialogclosed', function (ev) {
+              window.displayLine(script, i);
+        });
     } else {
       $(document).on(':dialogclosed', function (ev) {
-      		window.displayLine(script, i+1);
-    	});
+              window.displayLine(script, i+1);
+        });
     }
     
     // Display character sprite
@@ -230,234 +183,11 @@ window.autoFillText = function(input, autofill) {
     return false;
   }
 }
-
-window.populateInbox = function(inbox, read) {
-  console.log("Adding email");
-  const PREFIXES = ["", "FW: ", "ACTION REQUIRED: ", "ACTION REQUESTED: ", "IMPORTANT: ", "REMINDER: ", 
-                    "PENDING: ", "URGENT: "];
-  const TOPICS = ["training", "meeting", "ticket", "misc"];
-  
-  let subject_line = "";
-  let email_topic = TOPICS[Math.floor(Math.random() * TOPICS.length)];
-  
-  if (email_topic == "training") {
-    
-    const TRAININGS = ["phishing detection", "diversity & inclusion", "anti-malware", "workplace safety", "cybersecurity"];
-    const TRAINING_TYPES = ["course", "training", "module", "workshop"];
-    const prefix = PREFIXES[Math.floor(Math.random() * PREFIXES.length)];
-    const training = TRAININGS[Math.floor(Math.random() * TRAININGS.length)];
-    const training_type = TRAINING_TYPES[Math.floor(Math.random() * TRAINING_TYPES.length)];
-    const deadline = new Date().addDays(Math.random() * 30).toLocaleDateString();
-    subject_line = `${prefix}Complete your online ${training} ${training_type} by ${deadline}`;
-    
-  } else if (email_topic == "meeting") {
-    
-    const MEETINGS = ["Meeting", "Touch base", "Catch up", "Call", "Chat", "Discussion", "Regroup", "Zoom"];
-    const TOPICS = ["new feature", "Q4 plans", "team transition", "reported issues"];
-    const prefix = PREFIXES[Math.floor(Math.random() * PREFIXES.length)];
-    const topic = TOPICS[Math.floor(Math.random() * TOPICS.length)];
-    const meeting = MEETINGS[Math.floor(Math.random() * MEETINGS.length)];
-    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-    const hours = [9, 10, 11, 12, 1, 2, 3, 4];
-    const minutes = ["00", "15", "30", "45"];
-    const time = `${days[Math.floor(Math.random() * days.length)]} @ ${hours[Math.floor(Math.random() * hours.length)]}:${minutes[Math.floor(Math.random() * minutes.length)]}`;
-    subject_line = `${prefix}${meeting} about ${topic} on ${time}`;
-    
-  } else if (email_topic == "ticket") {
-    
-    const GROUPS = ["DTEI", "DFMQ", "BAT", "MEAS", "IRB", "ASTR"];
-    const TICKET_NUMBER = Math.floor(Math.random() * 9099) + 100;
-    const ID = `[${GROUPS[Math.floor(Math.random() * GROUPS.length)]}-${TICKET_NUMBER}]`;
-    const PROBLEMS = ["Bug", "Reported bug", "Data validation needed", "Update search parameter", "Update needed",
-                      "Incorrect link on", "Incorrect text on", "Incorrect parameters", "Refactor needed",
-                      "Inefficient loading", "Alignment problem", "Hidden text field", "Incorrect data type", "Hotfix"];
-    const TRANSITIONS = ["for", "with", "on"];
-    const SOURCE = ["website", "application", "mobile", "mobile application", "home page", "settings page", 
-                    "landing page", "database", "frontend", "backend"];
-    const problem = PROBLEMS[Math.floor(Math.random() * PROBLEMS.length)];
-    const transition = TRANSITIONS[Math.floor(Math.random() * TRANSITIONS.length)];
-    const source = SOURCE[Math.floor(Math.random() * SOURCE.length)];
-    subject_line = `${ID} ${problem} ${transition} ${source}`;
-    
-  } else {
-    const PERSONAL_MESSAGES = ["Just catching up", "Just want to catch up", "Are you free next week?", 
-                               "Thought you would appreciate this...", "Good news!!", "Thoughts on this?",
-                               "Could use your feedback here", "CONGRATULATIONS!!! You are the lucky winner",
-                               "Important update from payroll", "Action requested from HR"];
-    subject_line = PERSONAL_MESSAGES[Math.floor(Math.random() * PERSONAL_MESSAGES.length)];
-  }
-                   
-  let date = new Date().toLocaleDateString();
-  let email = `<div id="email" class="${read ? "read" : "unread"}">
-      <span class="email-icon material-symbols-outlined">check_box_outline_blank</span>
-      <span class="email-icon material-symbols-outlined">star</span>
-      <p class="subject-line">${subject_line}</p>
-      <p class="date">${date}</p>
-    </div>`;
-  inbox.prepend(email);
-}
-
-window.populateExistingMessages = function(inbox) {
-  for (let i = 0; i < 20; i++) {
-    window.populateInbox(inbox, Math.floor(Math.random() * 12) > 0);
-  }
-}
-
-window.renderInboxColOne = function() {
-  let template = `
-  <div id="inbox-col1">
-	<div id="inbox-header">
-      <span id="mail-icon" class="material-symbols-outlined">mail</span>
- 	  <h1>K-MAIL</h1>
-    </div>
-  <div id="inbox-sidebar">
-  	<div id="inbox-compose"><span id="write-icon" class="material-symbols-outlined">stylus</span>NEW MESSAGE</div>
-    <p><span id="write-icon" class="material-symbols-outlined">inbox</span>Inbox</p>
-    <p><span id="write-icon" class="material-symbols-outlined">send</span>Sent</p>
-    <p><span id="write-icon" class="material-symbols-outlined">drafts</span>Drafts</p>
-    <p><span id="write-icon" class="material-symbols-outlined">star</span>Starred</p>
-    <p><span id="write-icon" class="material-symbols-outlined">warning</span>Spam</p>
-    <p><span id="write-icon" class="material-symbols-outlined">delete</span>Trash</p>
-  </div>
-</div>
-	`
-  $('.passage').prepend(template);
-}
-
-window.renderInboxTemplate = function() {
-  let template = `
-<div id="inbox-col2">
-   <div id="inbox-search">
-      <span id="search-icon" class="material-symbols-outlined">search</span>
-      <p>Search K-Mail</p>
-  </div>
-    <div id="inbox-emails">
-    </div>
-</div>
-	`
-  $('.passage').prepend(template);
-  window.renderInboxColOne();
-}
-
-window.composeEmail = function(to, cc, subject, body) {
-  let emailTemplate=`
-  <div class="inbox-new-email">
-	<div class='inbox-new-email-header'>NEW EMAIL
-    <span id="write-icon" class="material-symbols-outlined">close</span></div>
-    <div class="inbox-new-email-field">To: ${to}</div>
-    <div class="inbox-new-email-field">CC: ${cc}</div>
-    <div class="inbox-new-email-field">Subject: ${subject}</div>
-	<div class="inbox-new-email-body">
-    	${body}
-     </div>
-     <div class="inbox-email-bottom-toolbar">
-     	<div class="inbox-email-send">SEND</div>
-     	<span id="write-icon" class="material-symbols-outlined">attach_file</span>
-        <span id="write-icon" class="material-symbols-outlined">link</span>
-        <span id="write-icon" class="material-symbols-outlined">mood</span>
-        <span id="write-icon" class="material-symbols-outlined">add_photo_alternate</span>
-        <span id="write-icon" class="material-symbols-outlined">signature</span>
-        <span id="write-icon" class="material-symbols-outlined">more_vert</span>
-     </div>
-</div>
-	`;
-  $('.passage').append(emailTemplate);
-}</script><tw-tag name="OS" color="none"></tw-tag><tw-tag name="Concept" color="purple"></tw-tag><tw-tag name="Fullscreen" color="none"></tw-tag><tw-tag name="Desktop" color="none"></tw-tag><tw-tag name="Magic-Web" color="yellow"></tw-tag><tw-tag name="Header" color="purple"></tw-tag><tw-passagedata pid="1" name="Desktop 1" tags="Desktop OS" position="600,500" size="100,100">!Olsen Placeholder desktop
-
-&lt;&lt;cycle &quot;$iconClicked&quot; once&gt;&gt;
-	&lt;&lt;option &quot;Tax Forms&quot;&gt;&gt;
-    &lt;&lt;option &quot;Do Not Open&quot;&gt;&gt;
-	&lt;&lt;option &quot;TOPSECRETFILESDONTOPEN&quot;&gt;&gt;
-    &lt;&lt;option &quot;Fine you asked for it&quot;&gt;&gt;
-    &lt;&lt;option &quot;[[Magic Web|Magic Web 1]]&quot;&gt;&gt;
-&lt;&lt;/cycle&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Inbox 1" tags="OS Inbox" position="475,250" size="100,100">&lt;&lt;silently&gt;&gt;
-  &lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
-  	  $(document).unbind(&#39;:passagedisplay&#39;);
-  	  window.renderInboxTemplate();
-      let inbox = $(&quot;#inbox-emails&quot;);
-      window.populateExistingMessages(inbox);
-  })&gt;&gt;
-  &lt;&lt;repeat 2s&gt;&gt;
-      &lt;&lt;script&gt;&gt;    
- 		  if ($(&#39;.flip-flop-email&#39;).length == 0) {
-          	let inbox = $(&quot;#inbox-emails&quot;);
-          	window.populateInbox(inbox, false);
-          }
-      &lt;&lt;/script&gt;&gt;
-  &lt;&lt;/repeat&gt;&gt;
-  
-  &lt;&lt;timed 5s&gt;&gt;
-      &lt;&lt;script&gt;&gt;
-      	if (window.checkpoint == 1) {
-            window.displayLine(window.SCREEN1_SCRIPT, 0);
-            $(document).on(&#39;script-finished&#39;, () =&gt; {
-            console.log(&quot;script finished&quot;);
-            	let inbox = $(&quot;#inbox-emails&quot;);
-                let email = `&lt;div id=&quot;email&quot; class=&quot;unread flip-flop-email&quot;&gt;
-                  &lt;span class=&quot;email-icon material-symbols-outlined&quot;&gt;check_box_outline_blank&lt;/span&gt;
-                  &lt;span class=&quot;email-icon material-symbols-outlined&quot;&gt;star&lt;/span&gt;
-                  &lt;p class=&quot;subject-line&quot;&gt;:3&lt;/p&gt;
-                  &lt;p class=&quot;date&quot;&gt;NOW!!!&lt;/p&gt;
-        &lt;/div&gt;`;
-                inbox.prepend(email);
-                $(&#39;.flip-flop-email&#39;).on(&quot;click&quot;, () =&gt; {
-                	Engine.play(&quot;Open Email 1&quot;);
-                    window.checkpoint = 2;
-                });
-            });
-        } else if (window.checkpoint == 3) {
-        }
-      &lt;&lt;/script&gt;&gt;
-	&lt;&lt;/timed&gt;&gt;
-&lt;&lt;/silently&gt;&gt;
-
-&lt;style&gt;
-
-.flip-flop-email {
-  font-weight: bolder;
-  color: #ff00ff;
-}
-
-.flip-flop-email :hover {
-	cursor: pointer;
-}
-
-&lt;/style&gt;
-
-@@.symbolic-link;[[Open Email 1]]@@</tw-passagedata><tw-passagedata pid="3" name="Inbox 2" tags="OS Inbox" position="475,500" size="100,100">&lt;&lt;silently&gt;&gt;
-  &lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
-  	  $(document).unbind(&#39;:passagedisplay&#39;);
-  	  window.renderInboxTemplate();
-      let inbox = $(&quot;#inbox-emails&quot;);
-      window.populateExistingMessages(inbox);
-      window.displayLine(window.SCREEN2_SCRIPT1, 0);
-      window.checkpoint = 3;
-  })&gt;&gt;
-  &lt;&lt;script&gt;&gt;
-    $(document).on(&quot;script-finished&quot;, () =&gt; {
-    	console.log(window.checkpoint);
-    	if (window.checkpoint == 3) {
-            $(&quot;#important&quot;).css(&quot;display&quot;, &quot;none&quot;);
-            window.composeEmail(&quot;EVERYONE AT WORK&quot;, &quot;AND THEIR BOSSES&quot;, &quot;IMPORTANT: Critical Software Update&quot;, 
-            &quot;&lt;img src=&#39;https://raw.githubusercontent.com/caroldinh/fairy-quest/main/placeholders/computer-viruses.png&#39;&gt;&lt;/img&gt;&quot;);
-            window.displayLine(window.SCREEN2_SCRIPT2, 0);
-            window.checkpoint = 4;
-        } else {
-        	Engine.play(&quot;Desktop 1&quot;);
-        }
-    });
-	&lt;&lt;/script&gt;&gt;
-&lt;&lt;/silently&gt;&gt;
-
-@@.symbolic-link;[[Desktop 1]]@@</tw-passagedata><tw-passagedata pid="4" name="Inbox Playground" tags="OS Inbox Fullscreen" position="175,100" size="100,100">&lt;&lt;silently&gt;&gt;
-  &lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
-  	  $(document).unbind(&#39;:passagedisplay&#39;);
-  	  window.renderInboxTemplate();
-      let inbox = $(&quot;#inbox-emails&quot;);
-      window.populateExistingMessages(inbox);
-      window.composeEmail(&quot;Everyone&quot;, &quot;Everyone else&quot;, &quot;IMPORTANT&quot;, &quot;HI&quot;);
-  })&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Login" tags="OS" position="175,225" size="100,100">&lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
+/* twine-user-script #2: "StoryScript" */
+window.checkpoint = 1;
+importScripts("js/script.js");
+importScripts("js/main.js");
+importScripts("js/inbox.js");</script><tw-tag name="Magic-Web" color="yellow"></tw-tag><tw-tag name="Header" color="purple"></tw-tag><tw-tag name="OS" color="none"></tw-tag><tw-tag name="Concept" color="purple"></tw-tag><tw-tag name="Fullscreen" color="none"></tw-tag><tw-tag name="Desktop" color="none"></tw-tag><tw-passagedata pid="1" name="Login" tags="OS" position="175,225" size="100,100">&lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
 	$(&#39;#next&#39;).css(&#39;display&#39;, &#39;none&#39;);
 	$(&#39;#textbox-password&#39;).prop(&#39;type&#39;, &#39;password&#39;);
     $(&#39;#textbox-password&#39;).on(&#39;input&#39;, function() {
@@ -521,33 +251,102 @@ h1 {
 }
 &lt;/style&gt;
 
-@@.symbolic-link;[[Inbox 1]]@@</tw-passagedata><tw-passagedata pid="6" name="Magic Web 1" tags="Magic-Web" position="675,350" size="100,100">!Scroll Search
+@@.symbolic-link;[[Inbox 1]]@@</tw-passagedata><tw-passagedata pid="2" name="Desktop 1" tags="Desktop OS" position="600,500" size="100,100">!Olsen Placeholder desktop
 
-&lt;div id=&quot;scroll-search&quot;&gt;
-      &lt;span id=&quot;search-icon&quot; class=&quot;material-symbols-outlined&quot;&gt;search&lt;/span&gt;
-      &lt;p&gt;Search the Web&lt;/p&gt;
-  &lt;/div&gt;
+&lt;&lt;cycle &quot;$iconClicked&quot; once&gt;&gt;
+	&lt;&lt;option &quot;Tax Forms&quot;&gt;&gt;
+    &lt;&lt;option &quot;Do Not Open&quot;&gt;&gt;
+	&lt;&lt;option &quot;TOPSECRETFILESDONTOPEN&quot;&gt;&gt;
+    &lt;&lt;option &quot;Fine you asked for it&quot;&gt;&gt;
+    &lt;&lt;option &quot;[[Magic Web|Magic Web 1]]&quot;&gt;&gt;
+&lt;&lt;/cycle&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Inbox Playground" tags="OS Inbox Fullscreen" position="175,100" size="100,100">&lt;&lt;silently&gt;&gt;
+  &lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
+  	  $(document).unbind(&#39;:passagedisplay&#39;);
+  	  window.renderInboxTemplate();
+      let inbox = $(&quot;#inbox-emails&quot;);
+      window.populateExistingMessages(inbox);
+      window.composeEmail(&quot;Everyone&quot;, &quot;Everyone else&quot;, &quot;IMPORTANT&quot;, &quot;HI&quot;);
+  })&gt;&gt;
+&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Inbox 1" tags="OS Inbox" position="475,250" size="100,100">&lt;&lt;silently&gt;&gt;
+  &lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
+  	  $(document).unbind(&#39;:passagedisplay&#39;);
+  	  window.renderInboxTemplate();
+      let inbox = $(&quot;#inbox-emails&quot;);
+      window.populateExistingMessages(inbox);
+  })&gt;&gt;
+  &lt;&lt;repeat 2s&gt;&gt;
+      &lt;&lt;script&gt;&gt;    
+ 		  if ($(&#39;.flip-flop-email&#39;).length == 0) {
+          	let inbox = $(&quot;#inbox-emails&quot;);
+          	window.populateInbox(inbox, false);
+          }
+      &lt;&lt;/script&gt;&gt;
+  &lt;&lt;/repeat&gt;&gt;
   
-  &lt;div id=&quot;buttons-container&quot;&gt;
-  		&lt;button type=&quot;button&quot;&gt;Enter&lt;/button&gt;
-        &lt;button type=&quot;button&quot;&gt;I&#39;m feeling lucky&lt;/button&gt;
-  &lt;/div&gt;
-  
-  &lt;style&gt;
-  
-  #scroll-search {
-	display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-	height: fit-content;
-    border: 1px solid white;
-    border-radius: 64px;
-    width: 60%;
-  	margin-bottom: 16px;
+  &lt;&lt;timed 5s&gt;&gt;
+      &lt;&lt;script&gt;&gt;
+      	if (window.checkpoint == 1) {
+            window.displayLine(window.SCREEN1_SCRIPT, 0);
+            $(document).on(&#39;script-finished&#39;, () =&gt; {
+            console.log(&quot;script finished&quot;);
+            	let inbox = $(&quot;#inbox-emails&quot;);
+                let email = `&lt;div id=&quot;email&quot; class=&quot;unread flip-flop-email&quot;&gt;
+                  &lt;span class=&quot;email-icon material-symbols-outlined&quot;&gt;check_box_outline_blank&lt;/span&gt;
+                  &lt;span class=&quot;email-icon material-symbols-outlined&quot;&gt;star&lt;/span&gt;
+                  &lt;p class=&quot;subject-line&quot;&gt;:3&lt;/p&gt;
+                  &lt;p class=&quot;date&quot;&gt;NOW!!!&lt;/p&gt;
+        &lt;/div&gt;`;
+                inbox.prepend(email);
+                $(&#39;.flip-flop-email&#39;).on(&quot;click&quot;, () =&gt; {
+                	Engine.play(&quot;Open Email 1&quot;);
+                    window.checkpoint = 2;
+                });
+            });
+        } else if (window.checkpoint == 3) {
+        }
+      &lt;&lt;/script&gt;&gt;
+	&lt;&lt;/timed&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+
+&lt;style&gt;
+
+.flip-flop-email {
+  font-weight: bolder;
+  color: #ff00ff;
 }
 
-  &lt;/style&gt;</tw-passagedata><tw-passagedata pid="7" name="Open Email 1" tags="OS Inbox" position="475,375" size="100,100">&lt;&lt;silently&gt;&gt;
+.flip-flop-email :hover {
+	cursor: pointer;
+}
+
+&lt;/style&gt;
+
+@@.symbolic-link;[[Open Email 1]]@@</tw-passagedata><tw-passagedata pid="5" name="Inbox 2" tags="OS Inbox" position="475,500" size="100,100">&lt;&lt;silently&gt;&gt;
+  &lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
+  	  $(document).unbind(&#39;:passagedisplay&#39;);
+  	  window.renderInboxTemplate();
+      let inbox = $(&quot;#inbox-emails&quot;);
+      window.populateExistingMessages(inbox);
+      window.displayLine(window.SCREEN2_SCRIPT1, 0);
+      window.checkpoint = 3;
+  })&gt;&gt;
+  &lt;&lt;script&gt;&gt;
+    $(document).on(&quot;script-finished&quot;, () =&gt; {
+    	console.log(window.checkpoint);
+    	if (window.checkpoint == 3) {
+            $(&quot;#important&quot;).css(&quot;display&quot;, &quot;none&quot;);
+            window.composeEmail(&quot;EVERYONE AT WORK&quot;, &quot;AND THEIR BOSSES&quot;, &quot;IMPORTANT: Critical Software Update&quot;, 
+            &quot;&lt;img src=&#39;https://raw.githubusercontent.com/caroldinh/fairy-quest/main/placeholders/computer-viruses.png&#39;&gt;&lt;/img&gt;&quot;);
+            window.displayLine(window.SCREEN2_SCRIPT2, 0);
+            window.checkpoint = 4;
+        } else {
+        	Engine.play(&quot;Desktop 1&quot;);
+        }
+    });
+	&lt;&lt;/script&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+
+@@.symbolic-link;[[Desktop 1]]@@</tw-passagedata><tw-passagedata pid="6" name="Open Email 1" tags="OS Inbox" position="475,375" size="100,100">&lt;&lt;silently&gt;&gt;
       &lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
        $(document).unbind(&#39;:passagedisplay&#39;);
         window.renderInboxColOne();
@@ -590,7 +389,6 @@ h1 {
 
 &lt;style&gt;
 
-
 #inbox-email-open {
   background-color: #ffffff;
   min-height: 100%;
@@ -620,7 +418,33 @@ h1 {
   	display: none;
  }
 
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="8" name="Untitled Passage" tags="Header" position="175,350" size="100,100">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot; type=&quot;text/css&quot;&gt;</tw-passagedata><tw-passagedata pid="9" name="[CONCEPT] Toggle Phone" tags="Concept OS" position="500,125" size="100,100">&lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="7" name="Magic Web 1" tags="Magic-Web" position="675,350" size="100,100">!Scroll Search
+
+&lt;div id=&quot;scroll-search&quot;&gt;
+      &lt;span id=&quot;search-icon&quot; class=&quot;material-symbols-outlined&quot;&gt;search&lt;/span&gt;
+      &lt;p&gt;Search the Web&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;div id=&quot;buttons-container&quot;&gt;
+  		&lt;button type=&quot;button&quot;&gt;Enter&lt;/button&gt;
+        &lt;button type=&quot;button&quot;&gt;I&#39;m feeling lucky&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;style&gt;
+  
+  #scroll-search {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+	height: fit-content;
+    border: 1px solid white;
+    border-radius: 64px;
+    width: 60%;
+  	margin-bottom: 16px;
+}
+
+  &lt;/style&gt;</tw-passagedata><tw-passagedata pid="8" name="[CONCEPT] Toggle Phone" tags="Concept OS" position="500,125" size="100,100">&lt;&lt;run $(document).on(&#39;:passagedisplay&#39;, function() {
 	$(&#39;#confirmation&#39;).css(&#39;display&#39;, &#39;none&#39;);
     $(&#39;#textbox-input&#39;).on(&#39;input&#39;, function() {
     	console.log($(this).val());
