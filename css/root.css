@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Space+Mono:wght@400;700&family=Schoolbell&family=UnifrakturMaguntia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+:root {
+  --os-background: #182626;
+  --os-accent: rgb(76, 134, 134);
+  --os-accent-40pc: rgba(76, 134, 134, 0.4);
+  --gray: #798281;
+  --body-font: 'Poppins', sans-serif;
+  --flip-flop-theme: rgb(255, 0, 255);
+  --olsen-theme: rgb(104, 191, 11);
+  --olsen-font: 'Space Mono', monospace;
+  --new-email-dimensions: 500px;
+  --flip-flop-dialog-color: #ffdcf1;
+  --dark-text-color: #211e21;
+  --flip-flop-purple: #a97de4;
+  --flip-flop-font: 'Schoolbell', sans-serif;
+  --scroll-font: 'UnifrakturMaguntia', serif;
+  --scroll-background: #221c10;
+}
