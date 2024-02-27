@@ -76,7 +76,7 @@ body[data-tags~="OS"] {
 
 body[data-tags~="OS"] #ui-overlay {
   	visibility: visible;
-  	background-image: url("https://media.discordapp.net/attachments/603405372748988426/1185227203512897689/noise.png?ex=658ed7d9&is=657c62d9&hm=d0f95208bc8ffa6f32109fa59feef6e3e1cd06b61e11845aeac29d4d5fb27e0b&=&format=webp&quality=lossless&width=384&height=384");
+  	background-image: url("../images/noise.png");
   	background-repeat: overlay;
   	opacity: 0.08;
   	mix-blend-mode: normal;

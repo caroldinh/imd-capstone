@@ -14,7 +14,7 @@
     	if (window.checkpoint == 3) {
             $("#important").css("display", "none");
             window.composeEmail("EVERYONE AT WORK", "AND THEIR BOSSES", "IMPORTANT: Critical Software Update", 
-            "<img src='https://raw.githubusercontent.com/caroldinh/fairy-quest/main/placeholders/computer-viruses.png'></img>");
+            "<img src='images/placeholders/computer-viruses.png'></img>");
             window.displayLine(window.SCREEN2_SCRIPT2, 0);
             window.checkpoint = 4;
         } else {
