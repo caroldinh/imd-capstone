@@ -1,0 +1,24 @@
+:: Magic Web 1 [Magic-Web] {"position":"675,350","size":"100,100"}
+  
+<style>
+  
+  body {
+    background-image: url("images/ScrollSearch_Page.jpg");
+    background-size: 100vw 100vh;
+  }
+
+/*
+  #scroll-search {
+    display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: left;
+      height: fit-content;
+      border: 1px solid white;
+      border-radius: 64px;
+      width: 60%;
+      margin-bottom: 16px;
+  }
+*/
+
+</style>

@@ -1,0 +1,16 @@
+#ui-bar {
+    background-color: var(--flip-flop-dialog-color);
+    color: var(--dark-text-color);
+}
+
+#ui-bar-body header{
+    display: none !important;
+}
+
+#ui-bar-body nav{
+    display: none !important;
+}
+
+#ui-bar-history {
+    display: none;
+}

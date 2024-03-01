@@ -1,3 +1,33 @@
+body[data-tags~="OS"] #ui-overlay {
+  	visibility: visible;
+  	background-image: url("../images/noise.png");
+  	background-repeat: overlay;
+  	opacity: 0.08;
+  	mix-blend-mode: normal;
+  	pointer-events: none;
+}
+
+body[data-tags~="Inbox"] #passages {
+  all: unset;
+  width: 100%;
+  margin: 0;
+}
+
+body[data-tags~="Inbox"] .passage {
+  	all: unset;
+    padding: 32px;
+	display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: center;
+    line-height: 1;
+}
+
+#ui-bar {
+  display: none;
+  width: 0;
+}
+
 #inbox-template {
   width: 100%;
   height: 100%;

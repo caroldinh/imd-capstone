@@ -1,8 +1,3 @@
-#ui-bar {
-  display: none;
-  width: 0;
-}
-
 #story {
   margin: 0;
   font-family: var(--body-font);
@@ -74,31 +69,6 @@ body[data-tags~="OS"] {
  	background-color: var(--os-background); 
 }
 
-body[data-tags~="OS"] #ui-overlay {
-  	visibility: visible;
-  	background-image: url("../images/noise.png");
-  	background-repeat: overlay;
-  	opacity: 0.08;
-  	mix-blend-mode: normal;
-  	pointer-events: none;
-}
-
-body[data-tags~="Inbox"] #passages {
-  all: unset;
-  width: 100%;
-  margin: 0;
-}
-
-body[data-tags~="Inbox"] .passage {
-  	all: unset;
-    padding: 32px;
-	display: flex;
-    flex-direction: row;
-    align-items: left;
-    justify-content: center;
-    line-height: 1;
-}
-
 body[data-tags~="Magic-Web"] #passages {
   all: unset;
   width: 100%;
@@ -110,11 +80,6 @@ body[data-tags~="Magic-Web"] .passage {
     padding: 32px;
 	display: flex;
     flex-direction: column;
-}
-
-body[data-tags~="Magic-Web"] {
-  background-image: url("https://github.com/caroldinh/fairy-quest/blob/main/images/ScrollBlank.jpg?raw=true");
-  background-size: 100vw 100vh;
 }
 
 .flip-flop {

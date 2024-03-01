@@ -1,0 +1,44 @@
+:: Desktop 1 [Desktop OS] {"position":"600,500","size":"100,100"}
+
+<<cycle "$iconClicked" once>>
+    <<option "<img src='images/Tax Forms.png'>">>
+    <<option "<img src='images/DO Not Open.png'>">>
+    <<option "<img src='images/TOPSECRET.png'>">>
+    <<option "<img src='images/FINE.png'>">>
+    <<option "<a href='act1scene2.html'><div id='cycling-image'></div></a>">>
+<</cycle>>
+
+<style>
+    body {
+        background-color: var(--os-background);
+        background-image: url('images/desktop.png');
+        background-size: auto 100vh;
+        object-fit: cover;
+        background-repeat: no-repeat;
+    }
+    img {
+        position: fixed;
+        top: 30%;
+        left: 20%;
+        width: 80px;
+        height: auto;
+    }
+    #cycling-image {
+        position: fixed;
+        top: 30%;
+        left: 20%;
+        width: 80px;
+        height: 100px;
+        background-image: url('images/Magic Web1.png');
+        background-repeat: no-repeat;
+        object-fit: cover;
+        background-size: contain;
+        animation: change-bg 1s infinite;
+    }
+
+    @keyframes change-bg {
+        0%, 100%   {background-image: url('images/Magic Web1.png');}
+        33%   {background-image: url('images/Magic Web2.png');}
+        66%   {background-image: url('images/Magic Web3.png');}
+    }
+</style>
