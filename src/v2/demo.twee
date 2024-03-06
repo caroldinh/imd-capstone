@@ -20,36 +20,18 @@
 @@#loading;Loading...
 
 :: Underwater
-<<silently>>
-    <<script>>
-        var panorama, viewer, container, infospot, infospot2;
-
-        container = $('#container');
-
-        panorama = new PANOLENS.ImagePanorama('https://i.imgur.com/wTCPouq.jpg');
-
-
-        infospot = new PANOLENS.Infospot();
-        infospot.position.set( 1000, 100, -2000 );
-        infospot.addHoverText( '千葉県' );
-
-        infospot2 = new PANOLENS.Infospot();
-        infospot2.position.set( 1000, 100, 2000 );
-        infospot2.addHoverText( '神奈川県' );
-
-        panorama.add(infospot , infospot2);
-
-        viewer = new PANOLENS.Viewer({
-        container: container
-        });
-        viewer.add(panorama);
-    <</script>>
-<</silently>>
 <div id="container" style="position:fixed;top:0;left:0;width:100vw;height:100vh;"></div>
 Alright, guess it’s game time.
 I’m gonna send Flip Flop to your phone.
 FlipFlop.zip —>
 
+<<silently>>
+    <<script>>
+        $(`
+        <script type="module" src="three/demo.js">
+        `).appendTo(document.body);
+    <</script>>
+<</silently>>
 
 :: Dark Mode
 I can't see a damn thing though.
