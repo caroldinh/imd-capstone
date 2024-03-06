@@ -1,0 +1,32 @@
+:: StoryTitle
+Fairy Quest
+
+:: StoryData
+{
+    "ifid": "AE26E0DF-A919-4DB3-8481-F5CE3A9F2443"
+}
+
+:: UserStylesheet[stylesheet]
+#story {
+    margin-left: 0;
+}
+.passage {
+    background-color: black;
+    padding: 8px;
+}
+#ui-bar {
+    display: none;
+}
+canvas {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#olsen {
+    text-align: right;
+    display: block;
+}

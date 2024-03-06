@@ -1,0 +1,6 @@
+:: UserScript[script]
+if (!window.renderUnderwater) {
+    window.renderUnderwater = () => {
+
+    }
+}

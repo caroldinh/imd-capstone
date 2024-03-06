@@ -18,7 +18,7 @@
   <<timed 5s>>
       <<script>>
       	if (window.checkpoint == 1) {
-            window.displayLine(window.SCREEN1_SCRIPT, 0);
+            //window.displayLine(window.SCREEN1_SCRIPT, 0);
             $(document).on('script-finished', () => {
             console.log("script finished");
             	let inbox = $("#inbox-emails");

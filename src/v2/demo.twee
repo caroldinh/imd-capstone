@@ -1,0 +1,87 @@
+:: Start
+<<silently>>
+    <<script>>
+    // IMPORT ALL SCRIPTS BEFORE STARTING
+
+    importScripts("https://unpkg.com/hydra-synth").then(function() {
+        var hydra = new Hydra({ detectAudio: false });
+
+        importScripts("https://unpkg.com/three@0.162.0/build/three.module.js").then(function() {
+            importScripts("https://cdn.jsdelivr.net/npm/panolens@0.11.0/build/panolens.min.js").then(function() {
+                $("#loading").remove()
+                $("#passage-start").append("<a id='start'>Start</a>")
+                $("#start").click(() => Engine.play("Underwater"))
+            })
+        })
+
+    });
+    <</script>>
+<</silently>>
+@@#loading;Loading...
+
+:: Underwater
+<<silently>>
+    <<script>>
+        var panorama, viewer, container, infospot, infospot2;
+
+        container = $('#container');
+
+        panorama = new PANOLENS.ImagePanorama('https://i.imgur.com/wTCPouq.jpg');
+
+
+        infospot = new PANOLENS.Infospot();
+        infospot.position.set( 1000, 100, -2000 );
+        infospot.addHoverText( '千葉県' );
+
+        infospot2 = new PANOLENS.Infospot();
+        infospot2.position.set( 1000, 100, 2000 );
+        infospot2.addHoverText( '神奈川県' );
+
+        panorama.add(infospot , infospot2);
+
+        viewer = new PANOLENS.Viewer({
+        container: container
+        });
+        viewer.add(panorama);
+    <</script>>
+<</silently>>
+<div id="container" style="position:fixed;top:0;left:0;width:100vw;height:100vh;"></div>
+Alright, guess it’s game time.
+I’m gonna send Flip Flop to your phone.
+FlipFlop.zip —>
+
+
+:: Dark Mode
+I can't see a damn thing though.
+
+@@#olsen;Here, let me switch to [[light mode.|Light Mode]]
+
+:: Light Mode
+<<silently>>
+    <<script>>
+        noise(10, 0.1).modulateRotate(osc(4,0.5,() => mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
+    <</script>>
+<</silently>>
+<<timed "0s">>Oh my gosh.
+    <<next>>It's them!
+    <<next>>They don't have their bodies but I know it's them.
+    <<next>>Hi Uncle Joey!!!
+    <<next>>Hi Aunt Bertha!!!
+    <<next>>hi cousin sue.
+    <<next>>@@#olsen;What did Cousin Sue do?
+    <<next>>You don't want to know.
+    <<next>>We gotta figure out how to round everyone up and get them out of here.
+
+    <<next>>[[D̵̨̧̧̨̡̩̻͙͚͕̯̘̭̘̥͕̞̳͙̜͈͖̑̐́͒̋͊̈́̇̓͊͌̊̅͠͝O̶̢͔̲̹̼͕̞͎̘̟͖̯̠͕̱̗̞͓̲̹̲̬̫͔͐̅̀̈N̷̞͎͉̗̋́͑̄̍͛̀̔̾̄͐̅͆̇́̓͝͝͝͠'̷̧̡̛͖͉̱̙̩̮̞̥͔̯̤̱͈̯̖̬͉̝̞͈͇́̀̄̓̃̽̊̕̚͠ͅŢ̸̬̱̺̯̦̦͔̘̺̖̜͈̦̞̑̀̋̈́̈́͜ͅ ̵̛̛̝̦͉̩̝̌̈́̋́͆̄̀̃̄̌̀̐̽̒̇͆̔̄̕̚̚͝W̸̰̩͚̹̫̟̞̹̺̗͈͊̽̓̓̈́̌̐͒̇̏̀͠͝Ơ̷̢̢̬͕̯̗̼̠̮̗͕̩̗̩̠̞͈̥͐̾̔͛̾̊͌̅̍́́̽͗̂͗͋́̅̉̐̚͠Ŗ̴̡͈͎̗̲̠̜̞̲̙͔̹̹͎̜͖̻̙̳̩̘͌͆̚͜ͅR̶̦̙̖͔̥͖̈́̔̇̏͐̾͌͊̇̓͂̚Y̸̧̢̡̢̙̠̮͇̦̪͙̖̭̥̙͕̩̥͔͂̊̋̆̿́.̵̨̢̮̪͎̙̠̫̟͍̳̱͚͎̘̈́̂͋́̒́̈́͠ ̶̨̗͉̬̹̻̅͛͌̇͝Y̸̧̢̻̲̞͙̭̤̙̭̘͇̞̗̪͔̏̄̌̔͒̈́̇̋͆̈̈́̿͜͝ͅǪ̷̨̧̛͓̖̝̘̺͇̥͕̳̙̰̤̯̣̲̿͗̔́̔͑̍̂̎̀̐̈́̾͆͂̌̕͠͝ͅU̶̧͇͉͚̣̪͆̑͝ ̶̧̢̪̭̱̩̼̜̗̭͕͈̱͕̤̰͔͕̻̬̰̀̔̃̎̑̎̓̀͊͑̓̽̾̀͠ͅW̸̢͖͍̣̦̥̙͈̰̞̻͉̝̊̇́̒͆̕O̴̡̻̬͚̦̼͉̜̯̮̗͓̪̼̮͖͉̠̰̞̾̊̎̆̏̓̋̾̑͌̒͑̾̈͂̎̏̑͘͜͝͝͝N̵̝͎͑͗̋̽̑̔̎́̓͛̐͋̀̕̕̕͝'̶̱̖̫͙̱̱̣͈̜̺̤̼͇̺̖̈́͑̇̋̈́̔͐͆͌͑̆̂̓̄̔̿͗̊̔̀͘̚͜͠ͅŤ̵̨͖̠̞̼̗̩͎̩̝̝͇̻̜̋̉̍͗̑̈̏͌͒̎̄͒́͋̇́̕̚͝ ̸̡̛̹̹̹͙̝̯̩̣͍̟͙̪͔͈͇̻̥͈̪̜̻̖̙͑̇́̎̇͛́̎̈́͒́͗͆̈́͋̍͂̕͝͝͠͝Ǵ̴̻͖̥͓̪͉̟͕̜̻̳̪̳̲͇͕̜̦̻̮̘́́͐̑̅̕̕͠͠ͅÈ̵̜̣͇̩̙̑̿̀̈́̌̏͆̋͘Ţ̴̧̙͖͈̣̝̹͚̙͎̯͔͉̙͚̥̰̰̺̓̀̀̌̀̅̉͐̍̏͋̿̽͑͌́͝ ̴̛̫̭̦̫̬̩̯̺̩̬͖͈̤͚̭͇̹̺͔̋̏͂̈̏̆̌̉͌̈̿̀͋͗̍̊̎̔̇͘͝͠͝T̷͙̪̟̿̅͑̎̽̃̐̄̔͌̆̎̾̽̍̓̓͛̚̚H̴̢̛͖̦̝̘̮̙͈̠̹̖̦̪͉̭̜̣̝͉́̉̀͆͜͜͜͠͠ͅẰ̶̠̻̤͙̣̙̣̙̠͎͓͔̭̼̬̯͚͕̞̳̯̄̊͛̅̎͑͛̌̇̔̒̾̍̊̎̀̎̀͐̎ͅT̸̡̗͚̲͓͖͈͎͔͓͈̦̲̻̪̟̺͙͈̻̬̗̮̊͋̔̓̃̂͋͠͝ ̴̡̧̨̹̠͇̖̩̖̜̼͕̼͖͇̳͎̖̠͂͐̇̑̊F̸̱͈͚͎͍̖̘̰̩̯̱̙̦̮̮̥̘̣͐̓ͅA̴̯̮̦͖̙̺̬̩͓͍̜̞̮͉̟̜̽̒̑̆̆̃̕͝R̴̨̧̝̳͎̰̗͉͆́̈͛̌͗͌̒̈́̔̾̐͆̏̕͘͠͠.̵̧̡̱̜̟̲̙̪̟̪̀̂̅̍̄͋̓̆̈́̿̋͒͋̈́̇̿͘͠͝͝͝|Sphinx]]
+<</timed>>
+
+:: Sphinx
+<<silently>>
+    <<script>>
+        osc(10).out()
+    <</script>>
+<</silently>>
+<<timed "0s">>Oh my gosh.
+    <<next>>@@#olsen;Oh no.
+    <<next>>@@#flip-flop;Kaptcha?
+<</timed>>
