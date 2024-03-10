@@ -1,96 +1,101 @@
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-			import { AsciiEffect } from 'three/addons/effects/AsciiEffect.js';
-			import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
+// References: 	https://threejs.org/docs/#examples/en/controls/OrbitControls
+//			 	https://threejs.org/docs/#manual/en/introduction/Loading-3D-models
+//				https://github.com/mrdoob/three.js/blob/master/examples/misc_controls_orbit.html
 
-			let camera, controls, scene, renderer, effect;
+let camera, controls, scene, renderer;
 
-			let sphere, plane;
+init();
+//render(); // remove when using next line for animation loop (requestAnimationFrame)
+animate();
 
-			const start = Date.now();
+function init() {
 
-			init();
-			animate();
+	scene = new THREE.Scene();
+	scene.background = new THREE.Color( 0x000000 );
+	scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
 
-			function init() {
+	renderer = new THREE.WebGLRenderer( { antialias: true } );
+	renderer.setPixelRatio( window.devicePixelRatio );
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	document.body.appendChild( renderer.domElement );
 
-				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
-				camera.position.y = 150;
-				camera.position.z = 500;
+	camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
+	camera.position.set(0, 0, 0);
 
-				scene = new THREE.Scene();
-				scene.background = new THREE.Color( 0, 0, 0 );
+	// controls
 
-				const pointLight1 = new THREE.PointLight( 0xffffff, 3, 0, 0 );
-				pointLight1.position.set( 500, 500, 500 );
-				scene.add( pointLight1 );
+	controls = new OrbitControls( camera, renderer.domElement );
+	controls.listenToKeyEvents( window ); // optional
+	controls.autoRotate = true;
 
-				const pointLight2 = new THREE.PointLight( 0xffffff, 1, 0, 0 );
-				pointLight2.position.set( - 500, - 500, - 500 );
-				scene.add( pointLight2 );
+	controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
 
-				sphere = new THREE.Mesh( new THREE.SphereGeometry( 200, 20, 10 ), new THREE.MeshPhongMaterial( { flatShading: true } ) );
-				scene.add( sphere );
+	controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+	controls.dampingFactor = 0.05;
 
-				// Plane
+	controls.screenSpacePanning = false;
 
-				plane = new THREE.Mesh( new THREE.PlaneGeometry( 400, 400 ), new THREE.MeshBasicMaterial( { color: 0xe0e0e0 } ) );
-				plane.position.y = - 200;
-				plane.rotation.x = - Math.PI / 2;
-				scene.add( plane );
+	controls.minDistance = 100;
+	controls.maxDistance = 500;
 
-				renderer = new THREE.WebGLRenderer();
-				renderer.setSize( window.innerWidth, window.innerHeight );
+	controls.maxPolarAngle = Math.PI / 2;
 
-				effect = new AsciiEffect( renderer, ' .:-+*=%@#', { invert: true } );
-				effect.setSize( window.innerWidth, window.innerHeight );
-				effect.domElement.style.color = 'white';
-				effect.domElement.style.backgroundColor = 'black';
-                effect.domElement.classList.add("container");
+	// 3D model
 
-				// Special case: append effect.domElement, instead of renderer.domElement.
-				// AsciiEffect creates a custom domElement (a div container) where the ASCII elements are placed.
+	const loader = new GLTFLoader();
 
-				document.body.appendChild( effect.domElement );
+	loader.load( 'three/models/scene_test.glb', function ( gltf ) {
+		scene.add( gltf.scene );
 
-				controls = new TrackballControls( camera, effect.domElement );
+	}, undefined, function ( error ) {
+		console.error( error );
 
-				//
+	} );
 
-				window.addEventListener( 'resize', onWindowResize );
+	// lights
 
-			}
+	const dirLight1 = new THREE.DirectionalLight( 0xffffff, 3 );
+	dirLight1.position.set( 1, 1, 1 );
+	scene.add( dirLight1 );
 
-			function onWindowResize() {
+	const dirLight2 = new THREE.DirectionalLight( 0x002288, 3 );
+	dirLight2.position.set( - 1, - 1, - 1 );
+	scene.add( dirLight2 );
 
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
+	const ambientLight = new THREE.AmbientLight( 0x555555 );
+	scene.add( ambientLight );
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				effect.setSize( window.innerWidth, window.innerHeight );
+	//
 
-			}
+	window.addEventListener( 'resize', onWindowResize );
 
-			//
+}
 
-			function animate() {
+function onWindowResize() {
 
-				requestAnimationFrame( animate );
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
 
-				render();
+	renderer.setSize( window.innerWidth, window.innerHeight );
 
-			}
+}
 
-			function render() {
+function animate() {
 
-				const timer = Date.now() - start;
+	requestAnimationFrame( animate );
 
-				sphere.position.y = Math.abs( Math.sin( timer * 0.002 ) ) * 150;
-				sphere.rotation.x = timer * 0.0003;
-				sphere.rotation.z = timer * 0.0002;
+	controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
 
-				controls.update();
+	render();
 
-				effect.render( scene, camera );
+}
 
-			}
+function render() {
+
+	renderer.render( scene, camera );
+
+}

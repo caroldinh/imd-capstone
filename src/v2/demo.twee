@@ -1,58 +1,89 @@
-:: Start
-<<silently>>
-    <<script>>
-    // IMPORT ALL SCRIPTS BEFORE STARTING
-
-    importScripts("https://unpkg.com/hydra-synth").then(function() {
-        var hydra = new Hydra({ detectAudio: false });
-
-        importScripts("https://unpkg.com/three@0.162.0/build/three.module.js").then(function() {
-            importScripts("https://cdn.jsdelivr.net/npm/panolens@0.11.0/build/panolens.min.js").then(function() {
-                $("#loading").remove()
-                $("#passage-start").append("<a id='start'>Start</a>")
-                $("#start").click(() => Engine.play("Underwater"))
-            })
-        })
-
-    });
-    <</script>>
-<</silently>>
+:: Loading
 @@#loading;Loading...
 
-:: Underwater
-<div id="container" style="position:fixed;top:0;left:0;width:100vw;height:100vh;"></div>
-Alright, guess it’s game time.
-I’m gonna send Flip Flop to your phone.
-FlipFlop.zip —>
+:: Start
+@@.olsen;Alright, guess it’s game time.
+<<timed "0s">>@@.olsen;I’m gonna send Flip Flop to your phone.
+    <<next>><<linkappend "FlipFlop.zip —>">>
+        @@.flip-flop.align-right;Oh shit.
+        <<timed "0s">>@@.flip-flop.align-right;I'm over here now!
+            <img class="sprite align-right" src="images/sprites/Flip Flop/Shock mouth open.png">
+            <<next>>@@.olsen.align-left;Alright.
+            <<next>>@@.olsen.align-left;There's gotta be some way to access this thing from the outside.
+            <<next>>@@.olsen.align-left;Use your magic, try to find some way into it.
+            <<next>>@@.olsen.align-left;Some kind of magic Bluetooth or [[wi-fi connection.|Portal]]
+        <</timed>>\
+    <</linkappend>>\
+<</timed>>\
 
 <<silently>>
     <<script>>
-        $(`
-        <script type="module" src="three/demo.js">
-        `).appendTo(document.body);
+        $(document.body).prepend(`<script id="three-demo-module" type="module" src="three/demo.js">`);
     <</script>>
 <</silently>>
 
-:: Dark Mode
-I can't see a damn thing though.
+:: Portal
+<<script>>
+    $("canvas").remove();
+    $("#three-demo-module").remove();
+<</script>>
+<img class="sprite" src="images/sprites/Flip Flop/Thinking idle.png">
+<<timed 2s>>
+    <<script>>
+        importScripts("https://unpkg.com/hydra-synth").then(function() {
+            var hydra = new Hydra({ detectAudio: false });
+            noise(10, 0.1).modulateRotate(osc(4,0.5,() => mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
+        });
+    <</script>>
+    <<next 1s>>@@.olsen;[[I see it.|Terminal]]
+<</timed>>
 
-@@#olsen;Here, let me switch to [[light mode.|Light Mode]]
+:: Terminal
+<<script>>
+    $("canvas").remove();
+    $("#three-demo-module").remove();
+<</script>>
+<<type "0.05s">>
+@@.olsen;I'm in. Always wanted to say that.
+<</type>>\
+<<timed 2s>>\
+    <<type "0.05s">>\
+        @@.olsen;I can't see a damn thing though. Let me switch to [[light mode.|Light Mode]]
+    <</type>>
+<</timed>>
+<div id="terminal-bg">
+</div>
+<style>
+#terminal-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: 0;
+    background-image: url('images/hackertyper.gif');
+}
+</style>
 
 :: Light Mode
 <<silently>>
     <<script>>
-        noise(10, 0.1).modulateRotate(osc(4,0.5,() => mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
+        importScripts("https://unpkg.com/hydra-synth").then(function() {
+            var hydra = new Hydra({ detectAudio: false });
+            noise(10, 0.1).modulateRotate(osc(4,0.5,() => mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
+        });
     <</script>>
 <</silently>>
-<<timed "0s">>Oh my gosh.
-    <<next>>It's them!
-    <<next>>They don't have their bodies but I know it's them.
-    <<next>>Hi Uncle Joey!!!
-    <<next>>Hi Aunt Bertha!!!
-    <<next>>hi cousin sue.
-    <<next>>@@#olsen;What did Cousin Sue do?
-    <<next>>You don't want to know.
-    <<next>>We gotta figure out how to round everyone up and get them out of here.
+<<timed "0s">>@@.flip-flop;Oh my gosh.
+    <<next>>@@.flip-flop;It's them!
+    <<next>>@@.flip-flop;They don't have their bodies but I know it's them.
+    <<next>>@@.flip-flop;Hi Uncle Joey!!!
+    <<next>>@@.flip-flop;Hi Aunt Bertha!!!
+    <<next>>@@.flip-flop;hi cousin sue.
+    <<next>>@@.olsen.align-right;What did Cousin Sue do?
+    <<next>>@@.flip-flop;You don't want to know.
+    <<next>>@@.flip-flop;We gotta figure out how to round everyone up and get them out of here.
 
     <<next>>[[D̵̨̧̧̨̡̩̻͙͚͕̯̘̭̘̥͕̞̳͙̜͈͖̑̐́͒̋͊̈́̇̓͊͌̊̅͠͝O̶̢͔̲̹̼͕̞͎̘̟͖̯̠͕̱̗̞͓̲̹̲̬̫͔͐̅̀̈N̷̞͎͉̗̋́͑̄̍͛̀̔̾̄͐̅͆̇́̓͝͝͝͠'̷̧̡̛͖͉̱̙̩̮̞̥͔̯̤̱͈̯̖̬͉̝̞͈͇́̀̄̓̃̽̊̕̚͠ͅŢ̸̬̱̺̯̦̦͔̘̺̖̜͈̦̞̑̀̋̈́̈́͜ͅ ̵̛̛̝̦͉̩̝̌̈́̋́͆̄̀̃̄̌̀̐̽̒̇͆̔̄̕̚̚͝W̸̰̩͚̹̫̟̞̹̺̗͈͊̽̓̓̈́̌̐͒̇̏̀͠͝Ơ̷̢̢̬͕̯̗̼̠̮̗͕̩̗̩̠̞͈̥͐̾̔͛̾̊͌̅̍́́̽͗̂͗͋́̅̉̐̚͠Ŗ̴̡͈͎̗̲̠̜̞̲̙͔̹̹͎̜͖̻̙̳̩̘͌͆̚͜ͅR̶̦̙̖͔̥͖̈́̔̇̏͐̾͌͊̇̓͂̚Y̸̧̢̡̢̙̠̮͇̦̪͙̖̭̥̙͕̩̥͔͂̊̋̆̿́.̵̨̢̮̪͎̙̠̫̟͍̳̱͚͎̘̈́̂͋́̒́̈́͠ ̶̨̗͉̬̹̻̅͛͌̇͝Y̸̧̢̻̲̞͙̭̤̙̭̘͇̞̗̪͔̏̄̌̔͒̈́̇̋͆̈̈́̿͜͝ͅǪ̷̨̧̛͓̖̝̘̺͇̥͕̳̙̰̤̯̣̲̿͗̔́̔͑̍̂̎̀̐̈́̾͆͂̌̕͠͝ͅU̶̧͇͉͚̣̪͆̑͝ ̶̧̢̪̭̱̩̼̜̗̭͕͈̱͕̤̰͔͕̻̬̰̀̔̃̎̑̎̓̀͊͑̓̽̾̀͠ͅW̸̢͖͍̣̦̥̙͈̰̞̻͉̝̊̇́̒͆̕O̴̡̻̬͚̦̼͉̜̯̮̗͓̪̼̮͖͉̠̰̞̾̊̎̆̏̓̋̾̑͌̒͑̾̈͂̎̏̑͘͜͝͝͝N̵̝͎͑͗̋̽̑̔̎́̓͛̐͋̀̕̕̕͝'̶̱̖̫͙̱̱̣͈̜̺̤̼͇̺̖̈́͑̇̋̈́̔͐͆͌͑̆̂̓̄̔̿͗̊̔̀͘̚͜͠ͅŤ̵̨͖̠̞̼̗̩͎̩̝̝͇̻̜̋̉̍͗̑̈̏͌͒̎̄͒́͋̇́̕̚͝ ̸̡̛̹̹̹͙̝̯̩̣͍̟͙̪͔͈͇̻̥͈̪̜̻̖̙͑̇́̎̇͛́̎̈́͒́͗͆̈́͋̍͂̕͝͝͠͝Ǵ̴̻͖̥͓̪͉̟͕̜̻̳̪̳̲͇͕̜̦̻̮̘́́͐̑̅̕̕͠͠ͅÈ̵̜̣͇̩̙̑̿̀̈́̌̏͆̋͘Ţ̴̧̙͖͈̣̝̹͚̙͎̯͔͉̙͚̥̰̰̺̓̀̀̌̀̅̉͐̍̏͋̿̽͑͌́͝ ̴̛̫̭̦̫̬̩̯̺̩̬͖͈̤͚̭͇̹̺͔̋̏͂̈̏̆̌̉͌̈̿̀͋͗̍̊̎̔̇͘͝͠͝T̷͙̪̟̿̅͑̎̽̃̐̄̔͌̆̎̾̽̍̓̓͛̚̚H̴̢̛͖̦̝̘̮̙͈̠̹̖̦̪͉̭̜̣̝͉́̉̀͆͜͜͜͠͠ͅẰ̶̠̻̤͙̣̙̣̙̠͎͓͔̭̼̬̯͚͕̞̳̯̄̊͛̅̎͑͛̌̇̔̒̾̍̊̎̀̎̀͐̎ͅT̸̡̗͚̲͓͖͈͎͔͓͈̦̲̻̪̟̺͙͈̻̬̗̮̊͋̔̓̃̂͋͠͝ ̴̡̧̨̹̠͇̖̩̖̜̼͕̼͖͇̳͎̖̠͂͐̇̑̊F̸̱͈͚͎͍̖̘̰̩̯̱̙̦̮̮̥̘̣͐̓ͅA̴̯̮̦͖̙̺̬̩͓͍̜̞̮͉̟̜̽̒̑̆̆̃̕͝R̴̨̧̝̳͎̰̗͉͆́̈͛̌͗͌̒̈́̔̾̐͆̏̕͘͠͠.̵̧̡̱̜̟̲̙̪̟̪̀̂̅̍̄͋̓̆̈́̿̋͒͋̈́̇̿͘͠͝͝͝|Sphinx]]
 <</timed>>
@@ -63,7 +94,7 @@ I can't see a damn thing though.
         osc(10).out()
     <</script>>
 <</silently>>
-<<timed "0s">>Oh my gosh.
-    <<next>>@@#olsen;Oh no.
-    <<next>>@@#flip-flop;Kaptcha?
+<<timed "0s">>@@.flip-flop;Oh my gosh.
+    <<next>>@@.olsen.align-right;Oh no.
+    <<next>>@@.flip-flop;Kaptcha?
 <</timed>>

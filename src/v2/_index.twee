@@ -3,10 +3,24 @@ Fairy Quest
 
 :: StoryData
 {
-    "ifid": "AE26E0DF-A919-4DB3-8481-F5CE3A9F2443"
+    "ifid": "AE26E0DF-A919-4DB3-8481-F5CE3A9F2443",
+    "format": "SugarCube",
+    "format-version": "2.36.1",
+    "zoom": 1
 }
 
 :: UserStylesheet[stylesheet]
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+body {
+    font-family: "Inconsolata", monospace;
+}
+
+a {
+    color: unset;
+    font-weight: bold;
+    text-decoration: underline;
+}
 #story {
     margin-left: 0;
 }
@@ -26,7 +40,29 @@ canvas {
     z-index: -1;
 }
 
-#olsen {
+.sprite {
+    height: 100px;
+}
+.olsen {
+    display: block;
+    color: #00b5a0;
+}
+
+.flip-flop {
+    display: block;
+    color: #b187ff;
+}
+
+.align-right {
+    margin-right: none;
+    margin-left: auto;
     text-align: right;
+    display: block;
+}
+
+.align-left {
+    margin-left: none;
+    margin-right: auto;
+    text-align: left;
     display: block;
 }
