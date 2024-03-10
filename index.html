@@ -102,6 +102,8 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	}
 </script>
 
+<script src="https://unpkg.com/hydra-synth"></script>
+
 <script type="module">
 
 	import * as THREE from 'three';
@@ -208,7 +210,6 @@ canvas {
 &lt;img class=&quot;sprite&quot; src=&quot;images/sprites/Flip Flop/Thinking idle.png&quot;&gt;
 &lt;&lt;timed 2s&gt;&gt;
     &lt;&lt;script&gt;&gt;
-        importScripts(&quot;https://unpkg.com/hydra-synth&quot;).then(function() {
             var hydra = new Hydra({ detectAudio: false });
             var frame = 0;
             voronoi(100,3,5)
@@ -219,7 +220,6 @@ canvas {
                 return frame;
             })
             .out(o0)
-        });
     &lt;&lt;/script&gt;&gt;
     &lt;&lt;next 1s&gt;&gt;@@.olsen;[[I see it.|Terminal]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Terminal" tags="" position="475,100" size="100,100">&lt;&lt;script&gt;&gt;
@@ -249,10 +249,8 @@ canvas {
 }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="5" name="Light Mode" tags="" position="600,100" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;&lt;script&gt;&gt;
-        importScripts(&quot;https://unpkg.com/hydra-synth&quot;).then(function() {
-            var hydra = new Hydra({ detectAudio: false });
-            noise(10, 0.1).modulateRotate(osc(4,0.5,() =&gt; mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
-        });
+        var hydra = new Hydra({ detectAudio: false });
+        noise(10, 0.1).modulateRotate(osc(4,0.5,() =&gt; mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
     &lt;&lt;/script&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;&lt;timed &quot;0s&quot;&gt;&gt;@@.flip-flop;Oh my gosh.
@@ -268,13 +266,11 @@ canvas {
 
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Sphinx" tags="" position="725,100" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;&lt;script&gt;&gt;
-    importScripts(&quot;https://unpkg.com/hydra-synth&quot;).then(function() {
-        var hydra = new Hydra({ detectAudio: false });
-        let frame = 0;
-            gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
-            .modulateRotate(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0).color(1, 0, 0)
-            .out()
-    });
+    var hydra = new Hydra({ detectAudio: false });
+    let frame = 0;
+        gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
+        .modulateRotate(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0).color(1, 0, 0)
+        .out()
     &lt;&lt;/script&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;&lt;timed &quot;0s&quot;&gt;&gt;@@.flip-flop;Oh my gosh.

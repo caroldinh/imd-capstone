@@ -30,18 +30,16 @@
 <img class="sprite" src="images/sprites/Flip Flop/Thinking idle.png">
 <<timed 2s>>
     <<script>>
-        importScripts("https://unpkg.com/hydra-synth").then(function() {
-            var hydra = new Hydra({ detectAudio: false });
-            var frame = 0;
-            voronoi(100,3,5)
-            .modulateRotate(osc(1,0.5,0).kaleid(50).hue(0.5).scale(0.5),15,0)
-            .mult(osc(50,-0.1,8).kaleid(25))
-            .brightness(0.9).color(1, 0, 1).shift(0.5, 0, 0).hue(() => {
-                frame = (frame + 0.002) % 1;
-                return frame;
-            })
-            .out(o0)
-        });
+        var hydra = new Hydra({ detectAudio: false });
+        var frame = 0;
+        voronoi(100,3,5)
+        .modulateRotate(osc(1,0.5,0).kaleid(50).hue(0.5).scale(0.5),15,0)
+        .mult(osc(50,-0.1,8).kaleid(25))
+        .brightness(0.9).color(1, 0, 1).shift(0.5, 0, 0).hue(() => {
+            frame = (frame + 0.002) % 1;
+            return frame;
+        })
+        .out(o0)
     <</script>>
     <<next 1s>>@@.olsen;[[I see it.|Terminal]]
 <</timed>>
@@ -77,10 +75,8 @@
 :: Light Mode
 <<silently>>
     <<script>>
-        importScripts("https://unpkg.com/hydra-synth").then(function() {
-            var hydra = new Hydra({ detectAudio: false });
-            noise(10, 0.1).modulateRotate(osc(4,0.5,() => mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
-        });
+        var hydra = new Hydra({ detectAudio: false });
+        noise(10, 0.1).modulateRotate(osc(4,0.5,() => mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
     <</script>>
 <</silently>>
 <<timed "0s">>@@.flip-flop;Oh my gosh.
@@ -99,13 +95,11 @@
 :: Sphinx
 <<silently>>
     <<script>>
-    importScripts("https://unpkg.com/hydra-synth").then(function() {
-        var hydra = new Hydra({ detectAudio: false });
-        let frame = 0;
-            gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
-            .modulateRotate(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0).color(1, 0, 0)
-            .out()
-    });
+    var hydra = new Hydra({ detectAudio: false });
+    let frame = 0;
+        gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
+        .modulateRotate(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0).color(1, 0, 0)
+        .out()
     <</script>>
 <</silently>>
 <<timed "0s">>@@.flip-flop;Oh my gosh.
