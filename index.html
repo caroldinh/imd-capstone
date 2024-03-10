@@ -120,6 +120,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 
 body {
     font-family: "Inconsolata", monospace;
+    font-size: 16pt;
 }
 
 a {
@@ -147,7 +148,7 @@ canvas {
 }
 
 .sprite {
-    height: 100px;
+    height: 200px;
 }
 .olsen {
     display: block;
@@ -160,17 +161,24 @@ canvas {
 }
 
 .align-right {
-    margin-right: none;
+    margin-right: 0;
     margin-left: auto;
     text-align: right;
     display: block;
 }
 
 .align-left {
-    margin-left: none;
+    margin-left: 0;
     margin-right: auto;
     text-align: left;
     display: block;
+}
+
+.zalgo {
+    font-weight: unset !important;
+    font-size: 24pt;
+    font-style: italic;
+    color: #e3000b;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">if (!window.renderUnderwater) {
     window.renderUnderwater = () => {
 
@@ -202,7 +210,15 @@ canvas {
     &lt;&lt;script&gt;&gt;
         importScripts(&quot;https://unpkg.com/hydra-synth&quot;).then(function() {
             var hydra = new Hydra({ detectAudio: false });
-            noise(10, 0.1).modulateRotate(osc(4,0.5,() =&gt; mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
+            var frame = 0;
+            voronoi(100,3,5)
+            .modulateRotate(osc(1,0.5,0).kaleid(50).hue(0.5).scale(0.5),15,0)
+            .mult(osc(50,-0.1,8).kaleid(25))
+            .brightness(0.9).color(1, 0, 1).shift(0.5, 0, 0).hue(() =&gt; {
+                frame = (frame + 0.002) % 1;
+                return frame;
+            })
+            .out(o0)
         });
     &lt;&lt;/script&gt;&gt;
     &lt;&lt;next 1s&gt;&gt;@@.olsen;[[I see it.|Terminal]]
@@ -248,11 +264,17 @@ canvas {
     &lt;&lt;next&gt;&gt;@@.olsen.align-right;What did Cousin Sue do?
     &lt;&lt;next&gt;&gt;@@.flip-flop;You don&#39;t want to know.
     &lt;&lt;next&gt;&gt;@@.flip-flop;We gotta figure out how to round everyone up and get them out of here.
+    &lt;&lt;next&gt;&gt;@@.zalgo;[[D̵̗͊O̵̥̒Ń̸̜&#39;̸̹̈́T̴̯̚ ̴̭̃W̸̟͑Ǒ̸̪R̵̙̄R̶̦̐Y̵̭̓.̴̢͘ ̶̈́͜Y̸͍͌O̶̤̓U̷̘̿ ̵̭̾W̶̹̋Ǫ̴̍Ņ̴́&#39;̸͉͑T̷̟̆ ̸̧̛G̴̘͝Ė̶͜T̷̝̎ ̵̭͝T̷͖́H̶̝̽Ȧ̸ͅT̵̙͝ ̵̙̉F̶͇́A̸̖͌R̴̖͘.̵̫̄|Sphinx]]
 
-    &lt;&lt;next&gt;&gt;[[D̵̨̧̧̨̡̩̻͙͚͕̯̘̭̘̥͕̞̳͙̜͈͖̑̐́͒̋͊̈́̇̓͊͌̊̅͠͝O̶̢͔̲̹̼͕̞͎̘̟͖̯̠͕̱̗̞͓̲̹̲̬̫͔͐̅̀̈N̷̞͎͉̗̋́͑̄̍͛̀̔̾̄͐̅͆̇́̓͝͝͝͠&#39;̷̧̡̛͖͉̱̙̩̮̞̥͔̯̤̱͈̯̖̬͉̝̞͈͇́̀̄̓̃̽̊̕̚͠ͅŢ̸̬̱̺̯̦̦͔̘̺̖̜͈̦̞̑̀̋̈́̈́͜ͅ ̵̛̛̝̦͉̩̝̌̈́̋́͆̄̀̃̄̌̀̐̽̒̇͆̔̄̕̚̚͝W̸̰̩͚̹̫̟̞̹̺̗͈͊̽̓̓̈́̌̐͒̇̏̀͠͝Ơ̷̢̢̬͕̯̗̼̠̮̗͕̩̗̩̠̞͈̥͐̾̔͛̾̊͌̅̍́́̽͗̂͗͋́̅̉̐̚͠Ŗ̴̡͈͎̗̲̠̜̞̲̙͔̹̹͎̜͖̻̙̳̩̘͌͆̚͜ͅR̶̦̙̖͔̥͖̈́̔̇̏͐̾͌͊̇̓͂̚Y̸̧̢̡̢̙̠̮͇̦̪͙̖̭̥̙͕̩̥͔͂̊̋̆̿́.̵̨̢̮̪͎̙̠̫̟͍̳̱͚͎̘̈́̂͋́̒́̈́͠ ̶̨̗͉̬̹̻̅͛͌̇͝Y̸̧̢̻̲̞͙̭̤̙̭̘͇̞̗̪͔̏̄̌̔͒̈́̇̋͆̈̈́̿͜͝ͅǪ̷̨̧̛͓̖̝̘̺͇̥͕̳̙̰̤̯̣̲̿͗̔́̔͑̍̂̎̀̐̈́̾͆͂̌̕͠͝ͅU̶̧͇͉͚̣̪͆̑͝ ̶̧̢̪̭̱̩̼̜̗̭͕͈̱͕̤̰͔͕̻̬̰̀̔̃̎̑̎̓̀͊͑̓̽̾̀͠ͅW̸̢͖͍̣̦̥̙͈̰̞̻͉̝̊̇́̒͆̕O̴̡̻̬͚̦̼͉̜̯̮̗͓̪̼̮͖͉̠̰̞̾̊̎̆̏̓̋̾̑͌̒͑̾̈͂̎̏̑͘͜͝͝͝N̵̝͎͑͗̋̽̑̔̎́̓͛̐͋̀̕̕̕͝&#39;̶̱̖̫͙̱̱̣͈̜̺̤̼͇̺̖̈́͑̇̋̈́̔͐͆͌͑̆̂̓̄̔̿͗̊̔̀͘̚͜͠ͅŤ̵̨͖̠̞̼̗̩͎̩̝̝͇̻̜̋̉̍͗̑̈̏͌͒̎̄͒́͋̇́̕̚͝ ̸̡̛̹̹̹͙̝̯̩̣͍̟͙̪͔͈͇̻̥͈̪̜̻̖̙͑̇́̎̇͛́̎̈́͒́͗͆̈́͋̍͂̕͝͝͠͝Ǵ̴̻͖̥͓̪͉̟͕̜̻̳̪̳̲͇͕̜̦̻̮̘́́͐̑̅̕̕͠͠ͅÈ̵̜̣͇̩̙̑̿̀̈́̌̏͆̋͘Ţ̴̧̙͖͈̣̝̹͚̙͎̯͔͉̙͚̥̰̰̺̓̀̀̌̀̅̉͐̍̏͋̿̽͑͌́͝ ̴̛̫̭̦̫̬̩̯̺̩̬͖͈̤͚̭͇̹̺͔̋̏͂̈̏̆̌̉͌̈̿̀͋͗̍̊̎̔̇͘͝͠͝T̷͙̪̟̿̅͑̎̽̃̐̄̔͌̆̎̾̽̍̓̓͛̚̚H̴̢̛͖̦̝̘̮̙͈̠̹̖̦̪͉̭̜̣̝͉́̉̀͆͜͜͜͠͠ͅẰ̶̠̻̤͙̣̙̣̙̠͎͓͔̭̼̬̯͚͕̞̳̯̄̊͛̅̎͑͛̌̇̔̒̾̍̊̎̀̎̀͐̎ͅT̸̡̗͚̲͓͖͈͎͔͓͈̦̲̻̪̟̺͙͈̻̬̗̮̊͋̔̓̃̂͋͠͝ ̴̡̧̨̹̠͇̖̩̖̜̼͕̼͖͇̳͎̖̠͂͐̇̑̊F̸̱͈͚͎͍̖̘̰̩̯̱̙̦̮̮̥̘̣͐̓ͅA̴̯̮̦͖̙̺̬̩͓͍̜̞̮͉̟̜̽̒̑̆̆̃̕͝R̴̨̧̝̳͎̰̗͉͆́̈͛̌͗͌̒̈́̔̾̐͆̏̕͘͠͠.̵̧̡̱̜̟̲̙̪̟̪̀̂̅̍̄͋̓̆̈́̿̋͒͋̈́̇̿͘͠͝͝͝|Sphinx]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="Sphinx" tags="" position="725,100" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;&lt;script&gt;&gt;
-        osc(10).out()
+    importScripts(&quot;https://unpkg.com/hydra-synth&quot;).then(function() {
+        var hydra = new Hydra({ detectAudio: false });
+        let frame = 0;
+            gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
+            .modulateRotate(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0).color(1, 0, 0)
+            .out()
+    });
     &lt;&lt;/script&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;&lt;timed &quot;0s&quot;&gt;&gt;@@.flip-flop;Oh my gosh.

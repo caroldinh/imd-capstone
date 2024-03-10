@@ -14,6 +14,7 @@ Fairy Quest
 
 body {
     font-family: "Inconsolata", monospace;
+    font-size: 16pt;
 }
 
 a {
@@ -41,7 +42,7 @@ canvas {
 }
 
 .sprite {
-    height: 100px;
+    height: 200px;
 }
 .olsen {
     display: block;
@@ -54,15 +55,22 @@ canvas {
 }
 
 .align-right {
-    margin-right: none;
+    margin-right: 0;
     margin-left: auto;
     text-align: right;
     display: block;
 }
 
 .align-left {
-    margin-left: none;
+    margin-left: 0;
     margin-right: auto;
     text-align: left;
     display: block;
+}
+
+.zalgo {
+    font-weight: unset !important;
+    font-size: 24pt;
+    font-style: italic;
+    color: #e3000b;
 }
