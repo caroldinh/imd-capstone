@@ -25,6 +25,9 @@ a {
 #story {
     margin-left: 0;
 }
+#passages {
+    max-width: 45vw;
+}
 .passage {
     background-color: black;
     padding: 8px;

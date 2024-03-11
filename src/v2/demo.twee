@@ -1,17 +1,38 @@
 :: Loading
 @@#loading;Loading...
 
+:: StoryInit
+<<cacheaudio "underwater" "/media/audio/underwater-ambience.flac">>
+<<cacheaudio "bloop" "/media/audio/underwater-bloop.flac">>
+<<cacheaudio "magic-wand" "/media/audio/magic-wand.wav">>
+<<cacheaudio "typing" "/media/audio/typing.wav">>
+<<cacheaudio "ethereal" "/media/audio/ethereal.wav">>
+<<cacheaudio "horror" "/media/audio/horror.wav">>
+
 :: Start
+[[Start|Underwater]]
+
+:: Underwater
+<<silently>>
+    <<audio "bloop" play>>
+    <<repeat "1s">>
+        <<set $rand to random(0,10)>>
+        <<if $rand == 0>>
+            <<audio "bloop" play>>
+        <</if>>
+    <</repeat>>
+    <<audio "underwater" loop volume 0 fadeoverto 1 1>>
+<</silently>>
 @@.olsen;Alright, guess it’s game time.
-<<timed "0s">>@@.olsen;I’m gonna send Flip Flop to your phone.
-    <<next>><<linkappend "FlipFlop.zip —>">>
+<<timed "2s">>@@.olsen;I’m gonna send Flip Flop to your phone.
+    <<next>><<linkappend "📁 FlipFlop.zip —>">>
         @@.flip-flop.align-right;Oh shit.
-        <<timed "0s">>@@.flip-flop.align-right;I'm over here now!
+        <<timed "2s">>@@.flip-flop.align-right;I'm over here now!
             <img class="sprite align-right" src="images/sprites/Flip Flop/Shock mouth open.png">
             <<next>>@@.olsen.align-left;Alright.
             <<next>>@@.olsen.align-left;There's gotta be some way to access this thing from the outside.
             <<next>>@@.olsen.align-left;Use your magic, try to find some way into it.
-            <<next>>@@.olsen.align-left;Some kind of magic Bluetooth or [[wi-fi connection.|Portal]]
+            <<next>>@@.olsen.align-left;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]
         <</timed>>\
     <</linkappend>>\
 <</timed>>\
@@ -22,13 +43,57 @@
     <</script>>
 <</silently>>
 
-:: Portal
+:: Bluetooth
 <<script>>
     $("canvas").remove();
     $("#three-demo-module").remove();
 <</script>>
+<<silently>>
+<<repeat "1s">>
+    <<set $rand to random(0,10)>>
+    <<if $rand == 0>>
+        <<audio "bloop" play>>
+    <</if>>
+<</repeat>>
+<</silently>>
 <img class="sprite" src="images/sprites/Flip Flop/Thinking idle.png">
 <<timed 2s>>
+    @@.olsen;[[Damn. Looks like we're out of range for Bluetooth?|Return]]
+<</timed>>
+
+:: Return
+<<silently>>
+    <<script>>
+        $(document.body).prepend(`<script id="three-demo-module" type="module" src="three/demo.js">`);
+    <</script>>
+    <<repeat "1s">>
+        <<set $rand to random(0,10)>>
+        <<if $rand == 0>>
+            <<audio "bloop" play>>
+        <</if>>
+    <</repeat>>
+<</silently>>
+@@.olsen;Alright.  
+@@.olsen;There's gotta be some way to access this thing from the outside.  
+@@.olsen;Use your magic, try to find some way into it.  
+@@.olsen;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]
+
+:: Portal
+<<silently>>
+    <<script>>
+        $("canvas").remove();
+        $("#three-demo-module").remove();
+    <</script>>
+    <<repeat "1s">>
+        <<set $rand to random(0,10)>>
+        <<if $rand == 0>>
+            <<audio "bloop" play>>
+        <</if>>
+    <</repeat>>
+<</silently>>
+<img class="sprite" src="images/sprites/Flip Flop/Thinking idle.png">
+<<timed 2s>>
+    <<audio "magic-wand" play>>\
     <<script>>
         var hydra = new Hydra({ detectAudio: false });
         var frame = 0;
@@ -40,18 +105,20 @@
             return frame;
         })
         .out(o0)
-    <</script>>
+    <</script>>\
     <<next 1s>>@@.olsen;[[I see it.|Terminal]]
 <</timed>>
 
 :: Terminal
-<<script>>
-    $("canvas").remove();
-    $("#three-demo-module").remove();
-<</script>>
-<<type "0.05s">>
-@@.olsen;I'm in. Always wanted to say that.
-<</type>>\
+<<silently>>
+    <<script>>
+        $("canvas").remove();
+        $("#three-demo-module").remove();
+    <</script>>
+    <<audio "typing" loop play>>
+    <<audio "underwater" volume 1 fadeout>>
+<</silently>>
+<<type "0.05s">>@@.olsen;I'm in. Always wanted to say that.<</type>>
 <<timed 2s>>\
     <<type "0.05s">>\
         @@.olsen;I can't see a damn thing though. Let me switch to [[light mode.|Light Mode]]
@@ -78,8 +145,10 @@
         var hydra = new Hydra({ detectAudio: false });
         noise(10, 0.1).modulateRotate(osc(4,0.5,() => mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
     <</script>>
+    <<audio "typing" volume 1 fadeout>>
+    <<audio "ethereal" loop play>>
 <</silently>>
-<<timed "0s">>@@.flip-flop;Oh my gosh.
+<<timed "3s">>@@.flip-flop;Oh my gosh.
     <<next>>@@.flip-flop;It's them!
     <<next>>@@.flip-flop;They don't have their bodies but I know it's them.
     <<next>>@@.flip-flop;Hi Uncle Joey!!!
@@ -87,9 +156,12 @@
     <<next>>@@.flip-flop;hi cousin sue.
     <<next>>@@.olsen.align-right;What did Cousin Sue do?
     <<next>>@@.flip-flop;You don't want to know.
+    <<next>>
     <<next>>@@.flip-flop;We gotta figure out how to round everyone up and get them out of here.
+    <<next>>
     <<next>>@@.zalgo;[[D̵̗͊O̵̥̒Ń̸̜'̸̹̈́T̴̯̚ ̴̭̃W̸̟͑Ǒ̸̪R̵̙̄R̶̦̐Y̵̭̓.̴̢͘ ̶̈́͜Y̸͍͌O̶̤̓U̷̘̿ ̵̭̾W̶̹̋Ǫ̴̍Ņ̴́'̸͉͑T̷̟̆ ̸̧̛G̴̘͝Ė̶͜T̷̝̎ ̵̭͝T̷͖́H̶̝̽Ȧ̸ͅT̵̙͝ ̵̙̉F̶͇́A̸̖͌R̴̖͘.̵̫̄|Sphinx]]
-
+    <<audio "ethereal" volume 1 fadeout>>
+    <<audio "horror" play>>
 <</timed>>
 
 :: Sphinx
