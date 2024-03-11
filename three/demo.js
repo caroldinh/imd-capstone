@@ -48,7 +48,7 @@ function init() {
 
 	const loader = new GLTFLoader();
 
-	loader.load( 'three/models/scene_test.glb', function ( gltf ) {
+	loader.load( 'https://github.com/caroldinh/imd-capstone/raw/main/three/models/scene_test.glb', function ( gltf ) {
 		scene.add( gltf.scene );
 
 	}, undefined, function ( error ) {

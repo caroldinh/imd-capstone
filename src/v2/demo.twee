@@ -2,12 +2,12 @@
 @@#loading;Loading...
 
 :: StoryInit
-<<cacheaudio "underwater" "/media/audio/underwater-ambience.flac">>
-<<cacheaudio "bloop" "/media/audio/underwater-bloop.flac">>
-<<cacheaudio "magic-wand" "/media/audio/magic-wand.wav">>
-<<cacheaudio "typing" "/media/audio/typing.wav">>
-<<cacheaudio "ethereal" "/media/audio/ethereal.wav">>
-<<cacheaudio "horror" "/media/audio/horror.wav">>
+<<cacheaudio "underwater" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/underwater.flac">>
+<<cacheaudio "bloop" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/bloop.flac">>
+<<cacheaudio "magic-wand" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/magic-wand.wav">>
+<<cacheaudio "typing" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/typing.wav">>
+<<cacheaudio "ethereal" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/ethereal.wav">>
+<<cacheaudio "horror" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/horror.wav">>
 
 :: Start
 [[Start|Underwater]]
