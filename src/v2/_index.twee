@@ -17,6 +17,8 @@ Fairy Quest
 <<cacheaudio "ethereal" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/ethereal.wav">>
 <<cacheaudio "horror" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/horror.wav">>
 
+:: Start
+[[Start|Kaptcha 1]]
 
 :: UserStylesheet[stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
@@ -104,4 +106,8 @@ canvas {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left -40px;
+}
+.kaptcha {
+    font-family: serif;
+    color: #911300;
 }

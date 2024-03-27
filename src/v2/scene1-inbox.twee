@@ -1,6 +1,3 @@
-:: Start
-[[Start|Inbox 1]]
-
 :: Inbox 1 [inbox]
 <<silently>>\
     <<audio "typing" loop play>>\
@@ -69,18 +66,21 @@ SUBJECT: [ACS-49] Bug report on internal firewall tool
 <div id="terminal-bg"></div>\
 
 :: Desktop 1
-<<cycle "$iconClicked" once>>
-    <<option "<img src='images/Tax Forms.png'>">>
-    <<option "<img src='images/DO Not Open.png'>">>
-    <<option "<img src='images/TOPSECRET.png'>">>
-    <<option "<img src='images/FINE.png'>">>
-    <<option "<a href='act1scene2.html'><div id='cycling-image'></div></a>">>
+<<cycle "$iconClicked">>
+    <<option "<img src='images/Tax Forms.png'>" 1>>
+    <<option "<img src='images/DO Not Open.png'>" 2>>
+    <<option "<img src='images/TOPSECRET.png'>" 3>>
+    <<option "<img src='images/FINE.png'>" 4>>
+    <<option "<div id='cycling-image' onClick='window.goToMagicWeb()'></div>" 5>>
 <</cycle>>
 <style>
+    .passage {
+        background-color: transparent;
+    }
     body {
         background-color: var(--os-background);
         background-image: url('images/desktop.png');
-        background-size: auto 100vh;
+        background-size: 100vw auto;
         object-fit: cover;
         background-repeat: no-repeat;
     }
@@ -110,3 +110,8 @@ SUBJECT: [ACS-49] Bug report on internal firewall tool
         66%   {background-image: url('images/Magic Web3.png');}
     }
 </style>
+
+:: MagicWebTransition [script]
+window.goToMagicWeb = () => {
+    Engine.play("Magic Web 1");
+};
