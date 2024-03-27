@@ -9,6 +9,15 @@ Fairy Quest
     "zoom": 1
 }
 
+:: StoryInit
+<<cacheaudio "underwater" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/underwater-ambience.flac">>
+<<cacheaudio "bloop" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/underwater-bloop.flac">>
+<<cacheaudio "magic-wand" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/magic-wand.wav">>
+<<cacheaudio "typing" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/typing.wav">>
+<<cacheaudio "ethereal" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/ethereal.wav">>
+<<cacheaudio "horror" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/horror.wav">>
+
+
 :: UserStylesheet[stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 
@@ -76,4 +85,23 @@ canvas {
     font-size: 24pt;
     font-style: italic;
     color: #e3000b;
+}
+
+.work {
+    font-size: 14px;
+    color: #024f46;
+}
+
+#terminal-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: 0;
+    background-image: url('images/emails.gif');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left -40px;
 }

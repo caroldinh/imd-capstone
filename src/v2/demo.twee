@@ -1,17 +1,6 @@
 :: Loading
 @@#loading;Loading...
 
-:: StoryInit
-<<cacheaudio "underwater" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/underwater.flac">>
-<<cacheaudio "bloop" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/bloop.flac">>
-<<cacheaudio "magic-wand" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/magic-wand.wav">>
-<<cacheaudio "typing" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/typing.wav">>
-<<cacheaudio "ethereal" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/ethereal.wav">>
-<<cacheaudio "horror" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/horror.wav">>
-
-:: Start
-[[Start|Underwater]]
-
 :: Underwater
 <<silently>>
     <<audio "bloop" play>>
@@ -29,10 +18,10 @@
         @@.flip-flop.align-right;Oh shit.
         <<timed "2s">>@@.flip-flop.align-right;I'm over here now!
             <img class="sprite align-right" src="images/sprites/Flip Flop/Shock mouth open.png">
-            <<next>>@@.olsen.align-left;Alright.
-            <<next>>@@.olsen.align-left;There's gotta be some way to access this thing from the outside.
-            <<next>>@@.olsen.align-left;Use your magic, try to find some way into it.
-            <<next>>@@.olsen.align-left;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]
+            <<next>>@@.olsen.align-left;Alright.@@
+            <<next>>@@.olsen.align-left;There's gotta be some way to access this thing from the outside.@@
+            <<next>>@@.olsen.align-left;Use your magic, try to find some way into it.@@
+            <<next>>@@.olsen.align-left;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]@@
         <</timed>>\
     <</linkappend>>\
 <</timed>>\
@@ -73,9 +62,9 @@
         <</if>>
     <</repeat>>
 <</silently>>
-@@.olsen;Alright.  
-@@.olsen;There's gotta be some way to access this thing from the outside.  
-@@.olsen;Use your magic, try to find some way into it.  
+@@.olsen;Alright.  @@
+@@.olsen;There's gotta be some way to access this thing from the outside.  @@
+@@.olsen;Use your magic, try to find some way into it.  @@
 @@.olsen;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]
 
 :: Portal
