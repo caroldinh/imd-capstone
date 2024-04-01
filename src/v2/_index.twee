@@ -18,7 +18,7 @@ Fairy Quest
 <<cacheaudio "horror" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/horror.wav">>
 
 :: Start
-[[Start|Inbox 1]]
+[[Start|Inbox 4]]
 
 :: UserStylesheet[stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');

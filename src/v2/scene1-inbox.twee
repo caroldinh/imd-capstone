@@ -36,9 +36,10 @@ SUBJECT: [ACS-49] Bug report on internal firewall tool
 <div id="terminal-bg"></div>\
 
 :: Inbox 2 [inbox]
-@@.olsen.align-left;Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?@@
+@@.olsen;Oh. Hey Flip Flop.@@
 <<timed 2s>>
-    @@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
+    @@.olsen.align-left;Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?@@
+    <<next>>@@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
     <<next>>@@.flip-flop.align-right;I’ve been up all night searching for leads and what have you been doing? Sleeping? For 8 whole hours? Ridiculous.@@
     <<next>>@@.flip-flop.align-right;Even back when I HAD a physical body, I only ever slept for 3 MAX.@@
     <<next>>@@.olsen.align-left;I’ve got work to do. Shush.@@
@@ -47,6 +48,9 @@ SUBJECT: [ACS-49] Bug report on internal firewall tool
     <<next>>@@.olsen.align-left;[[I'm going back to work.|Inbox 3]]@@
 <</timed>>
 <div id="terminal-bg"></div>\
+<<script>>
+    $(document).unbind(':typingstop');
+<</script>>
 
 :: Inbox 3 [inbox]
 <<timed 2s>>\
@@ -57,18 +61,32 @@ SUBJECT: [ACS-49] Bug report on internal firewall tool
 
 :: Inbox 4 [inbox]
 <<timed 2s>>\
-    @@.work;Placeholder: Flip-flop sends a virus@@
-    <<next>>@@.flip-flop.align-right;There we go! That should keep em busy for a few hours.@@
-    <<next>>@@.olsen.align-left;Oh my god. You’re not gonna leave me alone unless I do what you want, are you?@@
+    <<type 0.05s>>\
+    @@.work.purple;COMPOSE EMAIL
+    FROM: olsen@faken-it.net
+    TO: frank@kraken-it.net, tori@kraken-it.net, saul@kraken-it.net  
+    CC: tech-support@kraken-it.net  
+    SUBJECT: ⚠️⚠️⚠️⚠️ IMPORTANT SECURITY UPDATE: DOWNLOAD NOW!!! ⚠️⚠️⚠️⚠️
+    ---
+    📎 1 Attachment: 🦠🦠🦠.EXE
+    😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈
+    <</type>>
+    <<next 25s>>@@.flip-flop.align-right;There we go! That should keep em busy for a few hours.@@
+    <<next 2s>>@@.olsen.align-left;Oh my god. You’re not gonna leave me alone unless I do what you want, are you?@@
     <<next>>@@.flip-flop.align-right;Nope!@@
     <<next>>@@.olsen.align-left;[[Ughhh, fine.|Desktop 1]]@@
 <</timed>>
 <div id="terminal-bg"></div>\
+<style>
+.purple {
+    color: #b187ff;
+}
+</style>
 
 :: Desktop 1
 <<cycle "$iconClicked">>
     <<option "<img src='images/Tax Forms.png'>" 1>>
-    <<option "<img src='images/DO Not Open.png'>" 2>>
+    <<option "<img src='images/Do Not Open.png'>" 2>>
     <<option "<img src='images/TOPSECRET.png'>" 3>>
     <<option "<img src='images/FINE.png'>" 4>>
     <<option "<div id='cycling-image' onClick='window.goToMagicWeb()'></div>" 5>>
