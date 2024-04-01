@@ -37,7 +37,7 @@ SUBJECT: [ACS-49] Bug report on internal firewall tool
 
 :: Inbox 2 [inbox]
 @@.olsen.align-left;Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?@@
-<<timed 0s>>
+<<timed 2s>>
     @@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
     <<next>>@@.flip-flop.align-right;I’ve been up all night searching for leads and what have you been doing? Sleeping? For 8 whole hours? Ridiculous.@@
     <<next>>@@.flip-flop.align-right;Even back when I HAD a physical body, I only ever slept for 3 MAX.@@

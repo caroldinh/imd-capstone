@@ -1,0 +1,42 @@
+:: Bonding
+<<timed 2s>>
+    @@.flip-flop.align-right;Phew!@@
+    <<next>>@@.flip-flop.align-right;That was a close one.@@
+    <<next>>@@.flip-flop.align-right;Those Anti-Virus guys almost got me.@@
+    <<next>>@@.olsen;I know.@@
+    <<next>>@@.olsen;You shouldn't have gone off alone.@@
+    <<next>>@@.flip-flop.align-right;Are you mad at me?@@
+    <<next>>@@.olsen;Flip Flop, you should know how dangerous it is going around the web on your own.@@
+    <<next>>@@.olsen;You almost just got deleted. And now K’aptcha’s gonna have the Anti-Malware patrol looking for us so they can chop you up into little bytes of code.@@
+    <<next>>@@.olsen;What were you thinking???@@
+    <<next>>@@.flip-flop.align-right;Ugh, forget it.@@
+    <<next>>@@.olsen;No, why didn't you tell me you were going to talk to Gary?@@
+    <<next>>@@.olsen;Am I not a good partner?@@
+    <<next>>@@.flip-flop.align-right;God damn it. No...@@
+    <<next>>@@.flip-flop.align-right;Look. I@@
+    <<next>>@@.flip-flop.align-right;I just didn't want you to get in trouble again.@@
+    <<next>>@@.olsen;Huh?@@
+    <<next>>@@.flip-flop.align-right;Last night, I was rifling through your emails and I found this:
+    <<next>>@@.work;[Email from boss]@@
+    <<next>>@@.flip-flop.align-right;I felt... bad@@
+    <<next>>@@.flip-flop.align-right;That I always interrupt your work day@@
+    <<next>>@@.flip-flop.align-right;I didn’t want you to lose your job just cause you were helping me out so I thought I’d just do this one on my own, ok?@@
+    <<next 5s>>@@.olsen;...@@
+    <<next 2s>>@@.olsen;Look, Flip Flop,@@
+    <<next 2s>>@@.olsen;It’s not that I don't want to help you@@
+    <<next>>@@.olsen;It’s just that I can’t help you all the time.@@
+    <<next>>@@.olsen;Maybe I haven’t necessarily been giving my all to helping find your family@@
+    <<next>>@@.olsen;But I’m not a paranormal detective. I’ve got other stuff to do.@@
+    <<next>>@@.olsen;I promise, tomorrow, I’ll take the day off and we can go all in on the search, alright?@@
+    <<next>>@@.flip-flop.align-right;Okay@@
+    <<next>>@@.flip-flop.align-right;Yeah, let's do it@@
+    <<next>>@@.olsen;Also please don't hijack any more emails of mine and keep them hidden@@
+    <<next>>@@.olsen;I really do need to see stuff like that.@@
+    <<next>>@@.flip-flop.align-right;Okay!@@
+    <<next>><<type 0.05s>>[Insert 10 more important emails here]<</type>>
+    <<next 8s>>@@.olsen;Shit.@@
+    <<next 5s>>[[Transition to Act 3|Unity 4]]
+<</timed>>
+
+:: Unity 4
+[[Placeholder for Gary Unity scene|Underwater]]

@@ -12,6 +12,7 @@
     <</repeat>>
     <<audio "underwater" loop volume 0 fadeoverto 1 1>>
 <</silently>>
+@@.gary.align-right;Found it.@@
 @@.olsen;Alright, guess it’s game time.
 <<timed "2s">>@@.olsen;I’m gonna send Flip Flop to your phone.
     <<next>><<linkappend "📁 FlipFlop.zip —>">>
@@ -151,19 +152,4 @@
     <<next>>@@.zalgo;[[D̵̗͊O̵̥̒Ń̸̜'̸̹̈́T̴̯̚ ̴̭̃W̸̟͑Ǒ̸̪R̵̙̄R̶̦̐Y̵̭̓.̴̢͘ ̶̈́͜Y̸͍͌O̶̤̓U̷̘̿ ̵̭̾W̶̹̋Ǫ̴̍Ņ̴́'̸͉͑T̷̟̆ ̸̧̛G̴̘͝Ė̶͜T̷̝̎ ̵̭͝T̷͖́H̶̝̽Ȧ̸ͅT̵̙͝ ̵̙̉F̶͇́A̸̖͌R̴̖͘.̵̫̄|Sphinx]]
     <<audio "ethereal" volume 1 fadeout>>
     <<audio "horror" play>>
-<</timed>>
-
-:: Sphinx
-<<silently>>
-    <<script>>
-    var hydra = new Hydra({ detectAudio: false });
-    let frame = 0;
-        gradient(5).repeat(50,50).kaleid([3,5,7,9].fast(0.5))
-        .modulateRotate(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0).color(1, 0, 0)
-        .out()
-    <</script>>
-<</silently>>
-<<timed "0s">>@@.flip-flop;Oh my gosh.
-    <<next>>@@.olsen.align-right;Oh no.
-    <<next>>@@.flip-flop;Kaptcha?
 <</timed>>

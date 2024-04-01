@@ -1,12 +1,12 @@
 
 :: Magic Web 1
 [Placeholder: magic web feed assets - news articles, videos, etc.]
-<<timed 0s>>
+<<timed 2s>>
     <<next>>@@.flip-flop.align-right;Ok, Ok. [[Look what I found!|Magic Web 2]]@@
 <</timed>>
 
 :: Magic Web 2
-<<timed 0s>>
+<<timed 2s>>
     <<next>>[Placeholder of Asha video]
     <<next>>@@.olsen.align-left;Who is this exactly?@@
     <<next>>@@.flip-flop.align-right;Her name’s Asha Blake. She’s a famous werwolf live-streamer and look!@@
