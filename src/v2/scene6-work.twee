@@ -1,6 +1,6 @@
 :: Back to work
 <<silently>>\
-    <<audio "typing" loop play>>\
+    <<audio "office" loop play>>\
 <</silently>>\
 <<type 0.05s>>\
 @@.work;
@@ -60,35 +60,60 @@ MIKE: Enjoy your wknd in the meantime.@@\
 </style>
 
 :: Thorrent
-[[Back|bookmarks]]
+<<timed 2s>>
+    @@.olsen;Flip-Flop?@@
+    @@.olsen;Huh. The ship looks empty.@@
+    @@.olsen;...and heavily armed. I dunno if I want to run into these guys later.@@
+    <<next>>[[Back|bookmarks]]
+<</timed>>
 
 :: WizardChess
 [[Back|bookmarks]]
 
 :: Spriteify
 [Background: ocean, sirens]
+<<audio "advertisement" loop play>>
 <<timed 2s>>
     @@.olsen;Excuse me, have you seen my friend, she's--@@
-    <<next>>@@.spriteify.align-right;Thanks for listening to Spriteify.@@
+    <<next>>@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
     <<next>>@@.olsen;Um. Yeah. Anyway, she's a fairy with like purple-pink hair@@
-    <<next>>@@.spriteify.align-right.large;NO REALLY.@@
-    <<next 0.5s>>@@.spriteify.align-right;We’re working together to build a better tomorrow. Our podcasts and audiobooks are made with cleaner, more affordable solutions.@@
+    <<next>>@@.spriteify.align-right.large;✨✨✨ NO REALLY. ✨✨✨@@
+    <<next 0.5s>>@@.spriteify.align-right;✨ We’re working together to build a better tomorrow. Our podcasts and audiobooks are made with cleaner, more affordable solutions. ✨@@
     <<next 2s>>@@.olsen;Podcasts? Um... well... I do like podcasts...@@
-    <<next>>@@.spriteify.align-right;It’s time for you to explore the hottest tracks of today. Meet your next audiobook sensation.@@
+    <<next>>@@.spriteify.align-right;✨ It’s time for you to explore the hottest tracks of today. Meet your next audiobook sensation. ✨@@
     <<next>>@@.olsen;Well... I guess it couldn't hurt...@@
-    <<next>>@@.spriteify.align-right;[[Tap the banner to learn more.|Banner]]@@
+    <<next>>@@.spriteify.align-right;✨ [[Tap the banner to learn more.|Banner]] ✨@@
 <</timed>>
 <style>
 .spriteify {
     font-family: "Poppins", sans-serif;
     font-size: 1.5em;
     background-color: #1DB954;
+    background: linear-gradient(335deg, #1db954, #00ffdc, #ed93ff);
     color: #1a1a1a;
     padding: 4px;
     font-weight: bolder;
+    -webkit-animation: siren-gradient-animator 7s ease infinite;
+    -moz-animation: siren-gradient-animator 7s ease infinite;
+    animation: siren-gradient-animator 7s ease infinite;
 }
 .large {
     font-size: 3em;
+}
+@-webkit-keyframes siren-gradient-animator {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes siren-gradient-animator {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes siren-gradient-animator {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 </style>
 

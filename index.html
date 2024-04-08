@@ -120,18 +120,64 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	</div>
 	<!-- UUID://AE26E0DF-A919-4DB3-8481-F5CE3A9F2443// --><tw-storydata name="Fairy Quest" startnode="2" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="AE26E0DF-A919-4DB3-8481-F5CE3A9F2443" zoom="1" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Press+Start+2P&display=swap');
+
+:root {
+    --olsen-theme: #00b5a0;
+    --flip-flop-theme: #b187ff;
+    --kaptcha-theme: #911300;
+    --sybor-theme: #6300ba;
+    --work-theme: #024f46;
+    --work-light: #246c55;
+}
 
 body {
     font-family: "Inconsolata", monospace;
     font-size: 16pt;
+    --character-theme: var(--work-theme);
+}
+
+@keyframes linkhover {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 100%; }
+}
+@-webkit-keyframes linkhover {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 100%; }
+}
+@-moz-keyframes linkhover {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 100%; }
 }
 
 a {
     color: unset;
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 4px solid white;
 }
+
+a:hover {
+    color: white;
+    text-decoration: none;
+    /*
+    background: linear-gradient(90deg, var(--olsen-theme), rgba(0, 0, 0, 0))
+    -webkit-animation: linkhover 0.3s ease;
+    -moz-animation: linkhover 0.3s ease;
+    animation: linkhover 0.3s ease;
+    */
+    background: var(--character-theme);
+}
+
+a::before {
+    content: ">> ";
+    color: white;
+}
+
 #story {
     margin-left: 0;
 }
@@ -140,7 +186,10 @@ a {
 }
 .passage {
     background-color: black;
-    padding: 8px;
+    padding: 24px;
+    border: 1px solid white;
+    border-radius: 0px 0px 8px 8px;
+    border-top: 16px solid white;
 }
 #ui-bar {
     display: none;
@@ -158,13 +207,17 @@ canvas {
     height: 200px;
 }
 .olsen {
+    --character-theme: var(--olsen-theme);
+    color: var(--olsen-theme);
     display: block;
-    color: #00b5a0;
 }
 
 .flip-flop {
+    --character-theme: var(--flip-flop-theme);
     display: block;
-    color: #b187ff;
+    color: var(--flip-flop-theme);
+    font-family: "Press Start 2P", system-ui;
+    font-size: 14px;
 }
 
 .align-right {
@@ -190,7 +243,20 @@ canvas {
 
 .work {
     font-size: 14px;
-    color: #024f46;
+    color: var(--work-theme);
+}
+
+.work-dialog {
+    background-color: var(--work-theme);
+    margin: 16px;
+    padding: 16px;
+    border: 1px solid var(--olsen-theme);
+    border-radius: 0px 0px 8px 8px;
+    border-top: 16px solid var(--olsen-theme);
+}
+
+.work-dialog .work {
+    color: white;
 }
 
 #terminal-bg {
@@ -203,18 +269,24 @@ canvas {
     pointer-events: 0;
     background-image: url('images/emails.gif');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: auto calc(100vh + 80px);
     background-position: left -40px;
 }
 .kaptcha {
+    --character-theme: var(--kaptcha-theme);
+    color: var(--kaptcha-theme);
     font-family: serif;
-    color: #911300;
     font-size: 1.5em;
 }
 .sybor {
+    --character-theme: var(--sybor-theme);
     font-family: serif;
-    color: #6300ba;
+    color: var(--sybor-theme);
     font-size: 2.5em;
+}
+.contact-card {
+    width: -webkit-fill-available;
+    padding: 8px;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* twine-user-script #1: "UserScript" */
 if (!window.renderUnderwater) {
     window.renderUnderwater = () => {
@@ -229,40 +301,46 @@ window.goToMagicWeb = () => {
 &lt;&lt;cacheaudio &quot;magic-wand&quot; &quot;https://github.com/caroldinh/imd-capstone/raw/main/media/audio/magic-wand.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;typing&quot; &quot;https://github.com/caroldinh/imd-capstone/raw/main/media/audio/typing.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;ethereal&quot; &quot;https://github.com/caroldinh/imd-capstone/raw/main/media/audio/ethereal.wav&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;horror&quot; &quot;https://github.com/caroldinh/imd-capstone/raw/main/media/audio/horror.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="225,100" size="100,100">[[Start|Inbox 4]]</tw-passagedata><tw-passagedata pid="3" name="Inbox 1" tags="inbox" position="350,100" size="100,100">&lt;&lt;silently&gt;&gt;\
-    &lt;&lt;audio &quot;typing&quot; loop play&gt;&gt;\
+&lt;&lt;cacheaudio &quot;horror&quot; &quot;https://github.com/caroldinh/imd-capstone/raw/main/media/audio/horror.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;office&quot; &quot;media/audio/office_ambiance.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;notif&quot; &quot;media/audio/notif.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;advertisement&quot; &quot;media/audio/advertisement.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="225,100" size="100,100">[[Start|Inbox 1]]</tw-passagedata><tw-passagedata pid="3" name="Inbox 1" tags="inbox" position="350,100" size="100,100">&lt;&lt;silently&gt;&gt;\
+    &lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
 &lt;&lt;/silently&gt;&gt;\
+&lt;div class=&quot;work-dialog&quot;&gt;\
 &lt;&lt;type 0.05s&gt;&gt;\
-@@.work;COMPOSE EMAIL
-FROM: olsen@kraken-it.net
-TO: frank@kraken-it.net, tori@kraken-it.net, saul@kraken-it.net  
-CC: tech-support@kraken-it.net  
-SUBJECT: [ACS-49] Bug report on internal firewall tool  
-&lt;&lt;/type&gt;&gt;
-@@#flip-flop-hi;.flip-flop;@@
-@@#links-container;@@
+    @@.work;COMPOSE EMAIL
+    FROM: olsen@kraken-it.net
+    TO: frank@kraken-it.net, tori@kraken-it.net, saul@kraken-it.net  
+    CC: tech-support@kraken-it.net  
+    SUBJECT: [ACS-49] Bug report on internal firewall tool@@\
+&lt;&lt;/type&gt;&gt;\
+&lt;/div&gt;
+&lt;&lt;timed 12s&gt;&gt;\
+    &lt;&lt;audio &quot;notif&quot; play&gt;&gt;\
+    @@.flip-flop;Hiiiiiii :3@@
+    &lt;img class=&quot;contact-card&quot; src=&quot;/images/contact-cards/Flip-Flop.png&quot;&gt;\
+    &lt;&lt;next 1s&gt;&gt;\
+    &lt;div class=&quot;work-dialog&quot;&gt;\
+    &lt;&lt;type 0.05s&gt;&gt;\
+        @@.work;Client has reported unprecedented activity on their firewall. It&#39;s stronger than it needs to be. Cause: dragonflies? Could any of you take a look for this sprint? 3 pts.@@
+    &lt;&lt;/type&gt;&gt;\
+    &lt;/div&gt;
+    &lt;&lt;timed 12s&gt;&gt;\
+        &lt;&lt;audio &quot;notif&quot; play&gt;&gt;\
+        @@.flip-flop;Oh come on, you’re seriously doing work right now?
+        [[Reply|Inbox 2]]
+        [[Dismiss|Inbox 3]]
+    &lt;&lt;/timed&gt;&gt;\
+&lt;&lt;/timed&gt;&gt;
+/*
 &lt;&lt;script&gt;&gt;
     $(document).on(&#39;:typingstop&#39;, function (ev) {
         $.wiki(`
-            &lt;&lt;replace &#39;#flip-flop-hi&#39;&gt;&gt;Hiiiiiii :3&lt;&lt;/replace&gt;&gt;
-            &lt;&lt;replace &#39;#links-container&#39;&gt;&gt;
-            [[Reply|Inbox 2]]
-            [[Dismiss|Inbox 3]]
-            &lt;&lt;/replace&gt;&gt;
-            &lt;&lt;audio &quot;typing&quot; pause&gt;&gt;
-            &lt;&lt;timed 1s&gt;&gt;
-                &lt;&lt;type 0.05s&gt;&gt;\
-                @@.work;COMPOSE EMAIL
-                FROM: olsen@kraken-it.net
-                TO: frank@kraken-it.net, tori@kraken-it.net, saul@kraken-it.net  
-                CC: tech-support@kraken-it.net  
-                SUBJECT: [ACS-49] Bug report on internal firewall tool  
-                &lt;&lt;/type&gt;&gt;\
-                @@.flip-flop;Oh come on, you’re seriously doing work right now?
-            &lt;&lt;/timed&gt;&gt;
         `);
     });
 &lt;&lt;/script&gt;&gt;
+*/
 &lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="4" name="Inbox 2" tags="inbox" position="475,100" size="100,100">@@.olsen;Oh. Hey Flip Flop.@@
 &lt;&lt;timed 2s&gt;&gt;
     @@.olsen.align-left;Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?@@
@@ -281,17 +359,20 @@ SUBJECT: [ACS-49] Bug report on internal firewall tool
     @@.work;NEW MESSAGE IN INBOX: &lt;strong&gt;[URGENT] Action Required: Please Respond&lt;/strong&gt;@@
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;[[I bet I can speed up all this dumb work stuff.|Inbox 4]]@@
 &lt;&lt;/timed&gt;&gt;
-&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="6" name="Inbox 4" tags="inbox" position="725,100" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
-    &lt;&lt;type 0.05s&gt;&gt;\
-    @@.work.purple;COMPOSE EMAIL
-    FROM: olsen@faken-it.net
-    TO: frank@kraken-it.net, tori@kraken-it.net, saul@kraken-it.net  
-    CC: tech-support@kraken-it.net  
-    SUBJECT: ⚠️⚠️⚠️⚠️ IMPORTANT SECURITY UPDATE: DOWNLOAD NOW!!! ⚠️⚠️⚠️⚠️
-    ---
-    📎 1 Attachment: 🦠🦠🦠.EXE
-    😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈
-    &lt;&lt;/type&gt;&gt;
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="6" name="Inbox 4" tags="inbox" position="725,100" size="100,100">&lt;&lt;audio &quot;office&quot; loop play&gt;&gt;
+&lt;&lt;timed 2s&gt;&gt;\
+    &lt;div class=&quot;work-dialog&quot;&gt;\
+        &lt;&lt;type 0.05s&gt;&gt;\
+        @@.work.purple;COMPOSE EMAIL
+        FROM: olsen@faken-it.net
+        TO: frank@kraken-it.net, tori@kraken-it.net, saul@kraken-it.net  
+        CC: tech-support@kraken-it.net  
+        SUBJECT: ⚠️⚠️⚠️⚠️ IMPORTANT SECURITY UPDATE: DOWNLOAD NOW!!! ⚠️⚠️⚠️⚠️
+        ---
+        📎 1 Attachment: 🦠🦠🦠.EXE
+        😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈@@
+        &lt;&lt;/type&gt;&gt;\
+    &lt;/div&gt;
     &lt;&lt;next 25s&gt;&gt;@@.flip-flop.align-right;There we go! That should keep em busy for a few hours.@@
     &lt;&lt;next 2s&gt;&gt;@@.olsen.align-left;Oh my god. You’re not gonna leave me alone unless I do what you want, are you?@@
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Nope!@@
@@ -302,7 +383,8 @@ SUBJECT: [ACS-49] Bug report on internal firewall tool
 .purple {
     color: #b187ff;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="7" name="Desktop 1" tags="" position="850,100" size="100,100">&lt;&lt;cycle &quot;$iconClicked&quot;&gt;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="7" name="Desktop 1" tags="" position="850,100" size="100,100">&lt;&lt;audio &quot;office&quot; volume 1 fadeout&gt;&gt;
+&lt;&lt;cycle &quot;$iconClicked&quot;&gt;&gt;
     &lt;&lt;option &quot;&lt;img src=&#39;images/Tax Forms.png&#39;&gt;&quot; 1&gt;&gt;
     &lt;&lt;option &quot;&lt;img src=&#39;images/Do Not Open.png&#39;&gt;&quot; 2&gt;&gt;
     &lt;&lt;option &quot;&lt;img src=&#39;images/TOPSECRET.png&#39;&gt;&quot; 3&gt;&gt;
@@ -606,7 +688,7 @@ SUBJECT: [ACS-49] Bug report on internal firewall tool
     &lt;&lt;next&gt;&gt;@@.flip-flop;Fiiiiiiiiiiiiiiiiiiiiine :/@@
     &lt;&lt;next 3s&gt;&gt;[[Back to work]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Back to work" tags="" position="350,350" size="100,100">&lt;&lt;silently&gt;&gt;\
-    &lt;&lt;audio &quot;typing&quot; loop play&gt;&gt;\
+    &lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
 &lt;&lt;/silently&gt;&gt;\
 &lt;&lt;type 0.05s&gt;&gt;\
 @@.work;
@@ -654,29 +736,54 @@ MIKE: Enjoy your wknd in the meantime.@@\
 .witchtagram {
  font-family: &quot;Rubik&quot;, sans-serif;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="27" name="Thorrent" tags="" position="850,350" size="100,100">[[Back|bookmarks]]</tw-passagedata><tw-passagedata pid="28" name="WizardChess" tags="" position="975,350" size="100,100">[[Back|bookmarks]]</tw-passagedata><tw-passagedata pid="29" name="Spriteify" tags="" position="1100,350" size="100,100">[Background: ocean, sirens]
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="27" name="Thorrent" tags="" position="850,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;
+    @@.olsen;Flip-Flop?@@
+    @@.olsen;Huh. The ship looks empty.@@
+    @@.olsen;...and heavily armed. I dunno if I want to run into these guys later.@@
+    &lt;&lt;next&gt;&gt;[[Back|bookmarks]]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="WizardChess" tags="" position="975,350" size="100,100">[[Back|bookmarks]]</tw-passagedata><tw-passagedata pid="29" name="Spriteify" tags="" position="1100,350" size="100,100">[Background: ocean, sirens]
+&lt;&lt;audio &quot;advertisement&quot; loop play&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt;
     @@.olsen;Excuse me, have you seen my friend, she&#39;s--@@
-    &lt;&lt;next&gt;&gt;@@.spriteify.align-right;Thanks for listening to Spriteify.@@
+    &lt;&lt;next&gt;&gt;@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
     &lt;&lt;next&gt;&gt;@@.olsen;Um. Yeah. Anyway, she&#39;s a fairy with like purple-pink hair@@
-    &lt;&lt;next&gt;&gt;@@.spriteify.align-right.large;NO REALLY.@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.spriteify.align-right;We’re working together to build a better tomorrow. Our podcasts and audiobooks are made with cleaner, more affordable solutions.@@
+    &lt;&lt;next&gt;&gt;@@.spriteify.align-right.large;✨✨✨ NO REALLY. ✨✨✨@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.spriteify.align-right;✨ We’re working together to build a better tomorrow. Our podcasts and audiobooks are made with cleaner, more affordable solutions. ✨@@
     &lt;&lt;next 2s&gt;&gt;@@.olsen;Podcasts? Um... well... I do like podcasts...@@
-    &lt;&lt;next&gt;&gt;@@.spriteify.align-right;It’s time for you to explore the hottest tracks of today. Meet your next audiobook sensation.@@
+    &lt;&lt;next&gt;&gt;@@.spriteify.align-right;✨ It’s time for you to explore the hottest tracks of today. Meet your next audiobook sensation. ✨@@
     &lt;&lt;next&gt;&gt;@@.olsen;Well... I guess it couldn&#39;t hurt...@@
-    &lt;&lt;next&gt;&gt;@@.spriteify.align-right;[[Tap the banner to learn more.|Banner]]@@
+    &lt;&lt;next&gt;&gt;@@.spriteify.align-right;✨ [[Tap the banner to learn more.|Banner]] ✨@@
 &lt;&lt;/timed&gt;&gt;
 &lt;style&gt;
 .spriteify {
     font-family: &quot;Poppins&quot;, sans-serif;
     font-size: 1.5em;
     background-color: #1DB954;
+    background: linear-gradient(335deg, #1db954, #00ffdc, #ed93ff);
     color: #1a1a1a;
     padding: 4px;
     font-weight: bolder;
+    -webkit-animation: siren-gradient-animator 7s ease infinite;
+    -moz-animation: siren-gradient-animator 7s ease infinite;
+    animation: siren-gradient-animator 7s ease infinite;
 }
 .large {
     font-size: 3em;
+}
+@-webkit-keyframes siren-gradient-animator {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes siren-gradient-animator {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes siren-gradient-animator {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 &lt;/style&gt;</tw-passagedata><tw-passagedata pid="30" name="Banner" tags="" position="1225,350" size="100,100">@@.pirate;NOOOO LADDIE! LISTEN NOT TO HER DEVILISH SONG!@@
 &lt;&lt;timed 2s&gt;&gt;

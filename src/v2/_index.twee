@@ -16,25 +16,74 @@ Fairy Quest
 <<cacheaudio "typing" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/typing.wav">>
 <<cacheaudio "ethereal" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/ethereal.wav">>
 <<cacheaudio "horror" "https://github.com/caroldinh/imd-capstone/raw/main/media/audio/horror.wav">>
+<<cacheaudio "office" "media/audio/office_ambiance.wav">>
+<<cacheaudio "notif" "media/audio/notif.mp3">>
+<<cacheaudio "advertisement" "media/audio/advertisement.mp3">>
 
 :: Start
-[[Start|Inbox 4]]
+[[Start|Inbox 1]]
 
 :: UserStylesheet[stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Press+Start+2P&display=swap');
+
+:root {
+    --olsen-theme: #00b5a0;
+    --flip-flop-theme: #b187ff;
+    --kaptcha-theme: #911300;
+    --sybor-theme: #6300ba;
+    --work-theme: #024f46;
+    --work-light: #246c55;
+}
 
 body {
     font-family: "Inconsolata", monospace;
     font-size: 16pt;
+    --character-theme: var(--work-theme);
+}
+
+@keyframes linkhover {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 100%; }
+}
+@-webkit-keyframes linkhover {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 100%; }
+}
+@-moz-keyframes linkhover {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 100%; }
 }
 
 a {
     color: unset;
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 4px solid white;
 }
+
+a:hover {
+    color: white;
+    text-decoration: none;
+    /*
+    background: linear-gradient(90deg, var(--olsen-theme), rgba(0, 0, 0, 0))
+    -webkit-animation: linkhover 0.3s ease;
+    -moz-animation: linkhover 0.3s ease;
+    animation: linkhover 0.3s ease;
+    */
+    background: var(--character-theme);
+}
+
+a::before {
+    content: ">> ";
+    color: white;
+}
+
 #story {
     margin-left: 0;
 }
@@ -43,7 +92,10 @@ a {
 }
 .passage {
     background-color: black;
-    padding: 8px;
+    padding: 24px;
+    border: 1px solid white;
+    border-radius: 0px 0px 8px 8px;
+    border-top: 16px solid white;
 }
 #ui-bar {
     display: none;
@@ -61,13 +113,17 @@ canvas {
     height: 200px;
 }
 .olsen {
+    --character-theme: var(--olsen-theme);
+    color: var(--olsen-theme);
     display: block;
-    color: #00b5a0;
 }
 
 .flip-flop {
+    --character-theme: var(--flip-flop-theme);
     display: block;
-    color: #b187ff;
+    color: var(--flip-flop-theme);
+    font-family: "Press Start 2P", system-ui;
+    font-size: 14px;
 }
 
 .align-right {
@@ -93,7 +149,20 @@ canvas {
 
 .work {
     font-size: 14px;
-    color: #024f46;
+    color: var(--work-theme);
+}
+
+.work-dialog {
+    background-color: var(--work-theme);
+    margin: 16px;
+    padding: 16px;
+    border: 1px solid var(--olsen-theme);
+    border-radius: 0px 0px 8px 8px;
+    border-top: 16px solid var(--olsen-theme);
+}
+
+.work-dialog .work {
+    color: white;
 }
 
 #terminal-bg {
@@ -106,16 +175,22 @@ canvas {
     pointer-events: 0;
     background-image: url('images/emails.gif');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: auto calc(100vh + 80px);
     background-position: left -40px;
 }
 .kaptcha {
+    --character-theme: var(--kaptcha-theme);
+    color: var(--kaptcha-theme);
     font-family: serif;
-    color: #911300;
     font-size: 1.5em;
 }
 .sybor {
+    --character-theme: var(--sybor-theme);
     font-family: serif;
-    color: #6300ba;
+    color: var(--sybor-theme);
     font-size: 2.5em;
+}
+.contact-card {
+    width: -webkit-fill-available;
+    padding: 8px;
 }
