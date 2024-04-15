@@ -28,27 +28,19 @@
         [[Dismiss|Inbox 3]]
     <</timed>>\
 <</timed>>
-/*
-<<script>>
-    $(document).on(':typingstop', function (ev) {
-        $.wiki(`
-        `);
-    });
-<</script>>
-*/
 <div id="terminal-bg"></div>\
 
 :: Inbox 2 [inbox]
 @@.olsen;Oh. Hey Flip Flop.@@
 <<timed 2s>>
     @@.olsen.align-left;Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?@@
-    <<next>>@@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
-    <<next>>@@.flip-flop.align-right;I’ve been up all night searching for leads and what have you been doing? Sleeping? For 8 whole hours? Ridiculous.@@
-    <<next>>@@.flip-flop.align-right;Even back when I HAD a physical body, I only ever slept for 3 MAX.@@
-    <<next>>@@.olsen.align-left;I’ve got work to do. Shush.@@
-    <<next>>@@.flip-flop.align-right;It’s always  “Flip Flop, I have a job”, “Flip Flop, don’t delete my work documents”, “Flip Flop, I can’t bring my laptop to the Centaurs on Assateague Island so they can enchant on my hard drive blah blah blah”. You’re no fun >:/@@
-    <<next>>@@.olsen.align-left;I was never fun. Also those centaurs were totally scamming you.@@
-    <<next>>@@.olsen.align-left;[[I'm going back to work.|Inbox 3]]@@
+    <<next 5s>>@@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
+    <<next 4s>>@@.flip-flop.align-right;I’ve been up all night searching for leads and what have you been doing? Sleeping? For 8 whole hours? Ridiculous.@@
+    <<next 4s>>@@.flip-flop.align-right;Even back when I HAD a physical body, I only ever slept for 3 MAX.@@
+    <<next 3s>>@@.olsen.align-left;I’ve got work to do. Shush.@@
+    <<next 2s>>@@.flip-flop.align-right;It’s always  “Flip Flop, I have a job”, “Flip Flop, don’t delete my work documents”, “Flip Flop, I can’t bring my laptop to the Centaurs on Assateague Island so they can enchant on my hard drive blah blah blah”. You’re no fun >:/@@
+    <<next 6s>>@@.olsen.align-left;I was never fun. Also those centaurs were totally scamming you.@@
+    <<next 3s>>@@.olsen.align-left;[[I'm going back to work.|Inbox 3]]@@
 <</timed>>
 <div id="terminal-bg"></div>\
 <<script>>
@@ -57,8 +49,12 @@
 
 :: Inbox 3 [inbox]
 <<timed 2s>>\
-    @@.work;NEW MESSAGE IN INBOX: <strong>[URGENT] Action Required: Please Respond</strong>@@
-    <<next>>@@.flip-flop.align-right;[[I bet I can speed up all this dumb work stuff.|Inbox 4]]@@
+    <div class="work-dialog">\
+        @@.work;NEW MESSAGE IN INBOX: <strong>[URGENT] Action Required: Please Respond</strong>@@
+    </div>
+    <<next 4s>>\
+    <<audio "notif" play>>\
+    @@.flip-flop.align-right;[[I bet I can speed up all this dumb work stuff.|Inbox 4]]@@
 <</timed>>
 <div id="terminal-bg"></div>\
 
@@ -77,10 +73,10 @@
         😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈@@
         <</type>>\
     </div>
-    <<next 25s>>@@.flip-flop.align-right;There we go! That should keep em busy for a few hours.@@
-    <<next 2s>>@@.olsen.align-left;Oh my god. You’re not gonna leave me alone unless I do what you want, are you?@@
-    <<next>>@@.flip-flop.align-right;Nope!@@
-    <<next>>@@.olsen.align-left;[[Ughhh, fine.|Desktop 1]]@@
+    <<next 30s>>@@.flip-flop.align-right;There we go! That should keep em busy for a few hours.@@
+    <<next 3s>>@@.olsen.align-left;Oh my god. You’re not gonna leave me alone unless I do what you want, are you?@@
+    <<next 3s>>@@.flip-flop.align-right;Nope!@@
+    <<next 2s>>@@.olsen.align-left;[[Ughhh, fine.|Desktop 1]]@@
 <</timed>>
 <div id="terminal-bg"></div>\
 <style>
@@ -100,7 +96,17 @@
 <</cycle>>
 <style>
     .passage {
+        all: unset;
         background-color: transparent;
+    }
+    a {
+        all: unset;
+    }
+    a:before {
+        all: unset;
+    }
+    a:hover {
+        cursor: pointer;
     }
     body {
         background-color: var(--os-background);

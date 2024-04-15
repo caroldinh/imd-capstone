@@ -4,3 +4,7 @@ if (!window.renderUnderwater) {
 
     }
 }
+
+document.getElementById("story").addEventListener( 'DOMNodeInserted', function ( event ) {
+   $(this)[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
+}, false );

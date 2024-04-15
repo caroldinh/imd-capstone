@@ -71,8 +71,19 @@ MIKE: Enjoy your wknd in the meantime.@@\
 [[Back|bookmarks]]
 
 :: Spriteify
-[Background: ocean, sirens]
-<<audio "advertisement" loop play>>
+<<silently>>
+    <<audio "advertisement" volume 0.75 loop play>>
+    <<script>>
+        var hydra = new Hydra({ detectAudio: false });
+        s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Syreny_%28%22Sirens%22%29_-_Wilhelm_Kotarbi%C5%84ski.jpg/1600px-Syreny_%28%22Sirens%22%29_-_Wilhelm_Kotarbi%C5%84ski.jpg?20240202211003")
+            src(s0).modulateScrollY(osc(5),0.5,0).modulateScrollX(osc(10),0.2,0).scroll(
+            () => -mouse.x / width,
+            () => -mouse.y / height)
+            .blend(gradient(2))
+            .modulate(noise(5,0.1))
+        .out(o0)
+    <</script>>
+<</silently>>
 <<timed 2s>>
     @@.olsen;Excuse me, have you seen my friend, she's--@@
     <<next>>@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
@@ -118,20 +129,33 @@ MIKE: Enjoy your wknd in the meantime.@@\
 </style>
 
 :: Banner 
+<<silently>>\
+    <<audio "advertisement" volume 0.75 fadeto 0.25>>
+    <<audio "pirate-ship" volume 0 fadein>>
+<</silently>>\
 @@.pirate;NOOOO LADDIE! LISTEN NOT TO HER DEVILISH SONG!@@
-<<timed 2s>>
+<<timed 3s>>
     @@.olsen;Wuh?@@
     <<next>>@@.pirate.align-right;I’ve been a PIRATER of music for years. I’ve seen too many good men, wasted upon the rocks, spending 7.99 a month. @@
     <<next>>@@.pirate.align-right;GO!!!! QUICK!!! Before she grabs a hold of ya! Saaaave YERSELF!@@
     <<next>>@@.pirate.align-right;GLOOOOOOOOOOOOOOOOOORY!
+            <<audio "sword-fight" play>>
+
     <<next>>[[Close tab|Searching 2]]
 <</timed>>
 
 :: Searching 2
-!!!Search History
-[Background: Archive institution of some sort?]
+<<silently>>\
+    <<script>>
+        $("canvas").remove();
+    <</script>>
+    <<audio "advertisement" stop>>
+    <<audio "pirate-ship" stop>>
+    <<audio "sword-fight" stop>>
+<</silently>>\
 <<timed 2s>>
-    @@.olsen;Okkkkk, where have you gone Flip Flop...@@
+    @@.olsen;Phew.@@
+    <<next>>@@.olsen;Okkkkk, where have you gone Flip Flop...@@
     <<next>>@@.olsen;HELLOOOOOOO@@
     <<next>>@@.incognitus.align-right;Oy. You. Shush.@@
     <<next>>@@.olsen;Ah! Um, excuse me. Hello. I didnt realize anyone else was in here. @@

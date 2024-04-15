@@ -19,9 +19,12 @@ Fairy Quest
 <<cacheaudio "office" "media/audio/office_ambiance.wav">>
 <<cacheaudio "notif" "media/audio/notif.mp3">>
 <<cacheaudio "advertisement" "media/audio/advertisement.mp3">>
+<<cacheaudio "kaptcha-ambiance" "media/audio/kaptcha-ambiance.wav">>
+<<cacheaudio "pirate-ship" "media/audio/pirate-ship-louder.wav">>
+<<cacheaudio "sword-fight" "media/audio/swordfight.wav">>
 
 :: Start
-[[Start|Inbox 1]]
+[[Start|Kaptcha 1]]
 
 :: UserStylesheet[stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
@@ -32,7 +35,8 @@ Fairy Quest
 :root {
     --olsen-theme: #00b5a0;
     --flip-flop-theme: #b187ff;
-    --kaptcha-theme: #911300;
+    --kaptcha-theme: #1170e2;
+    --kaptcha-secondary: #1a0300;
     --sybor-theme: #6300ba;
     --work-theme: #024f46;
     --work-light: #246c55;
@@ -178,9 +182,26 @@ canvas {
     background-size: auto calc(100vh + 80px);
     background-position: left -40px;
 }
+
+#scroll-bg {
+    background-color: #221c10;
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: 0;
+    background-image: url('images/ScrollBlank.jpg');
+    background-size: auto 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
 .kaptcha {
     --character-theme: var(--kaptcha-theme);
     color: var(--kaptcha-theme);
+    background-color: var(--kaptcha-secondary);
     font-family: serif;
     font-size: 1.5em;
 }

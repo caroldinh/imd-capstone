@@ -11,6 +11,17 @@
         <</if>>
     <</repeat>>
     <<audio "underwater" loop volume 0 fadeoverto 1 1>>
+    <<script>>
+        var hydra = new Hydra({ detectAudio: false });
+        s0.initImage("images/eniac.jpg");
+        src(s0).modulateScrollY(osc(5),0.5,0).modulateScrollX(osc(10),0.2,0).scroll(
+            () => -mouse.x / width,
+            () => -mouse.y / height)
+            .blend(osc(5).color(0, 0.8, 0.6))
+            .brightness(-0.3)
+            .modulatePixelate(osc(5).modulate(noise(5,0.1)), 200)
+        .out(o0)
+    <</script>>
 <</silently>>
 @@.gary.align-right;Found it.@@
 @@.olsen;Alright, guess it’s game time.
@@ -27,17 +38,15 @@
     <</linkappend>>\
 <</timed>>\
 
+<!--
 <<silently>>
     <<script>>
         $(document.body).prepend(`<script id="three-demo-module" type="module" src="three/demo.js">`);
     <</script>>
 <</silently>>
+-->
 
 :: Bluetooth
-<<script>>
-    $("canvas").remove();
-    $("#three-demo-module").remove();
-<</script>>
 <<silently>>
 <<repeat "1s">>
     <<set $rand to random(0,10)>>
@@ -53,9 +62,11 @@
 
 :: Return
 <<silently>>
+    <!--
     <<script>>
         $(document.body).prepend(`<script id="three-demo-module" type="module" src="three/demo.js">`);
     <</script>>
+    -->
     <<repeat "1s">>
         <<set $rand to random(0,10)>>
         <<if $rand == 0>>
@@ -70,10 +81,6 @@
 
 :: Portal
 <<silently>>
-    <<script>>
-        $("canvas").remove();
-        $("#three-demo-module").remove();
-    <</script>>
     <<repeat "1s">>
         <<set $rand to random(0,10)>>
         <<if $rand == 0>>
@@ -83,6 +90,10 @@
 <</silently>>
 <img class="sprite" src="images/sprites/Flip Flop/Thinking idle.png">
 <<timed 2s>>
+    <<script>>
+        $("canvas").remove();
+        $("#three-demo-module").remove();
+    <</script>>
     <<audio "magic-wand" play>>\
     <<script>>
         var hydra = new Hydra({ detectAudio: false });

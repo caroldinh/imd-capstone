@@ -103,6 +103,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 </script>
 
 <script src="https://unpkg.com/hydra-synth"></script>
+<script src="https://hyper-hydra.glitch.me/hydra-text.js"></script>
 
 <script type="module">
 
@@ -126,7 +127,8 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 :root {
     --olsen-theme: #00b5a0;
     --flip-flop-theme: #b187ff;
-    --kaptcha-theme: #911300;
+    --kaptcha-theme: #1170e2;
+    --kaptcha-secondary: #1a0300;
     --sybor-theme: #6300ba;
     --work-theme: #024f46;
     --work-light: #246c55;
@@ -272,9 +274,26 @@ canvas {
     background-size: auto calc(100vh + 80px);
     background-position: left -40px;
 }
+
+#scroll-bg {
+    background-color: #221c10;
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: 0;
+    background-image: url('images/ScrollBlank.jpg');
+    background-size: auto 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
 .kaptcha {
     --character-theme: var(--kaptcha-theme);
     color: var(--kaptcha-theme);
+    background-color: var(--kaptcha-secondary);
     font-family: serif;
     font-size: 1.5em;
 }
@@ -293,6 +312,10 @@ if (!window.renderUnderwater) {
 
     }
 }
+
+document.getElementById("story").addEventListener( 'DOMNodeInserted', function ( event ) {
+   $(this)[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
+}, false );
 /* twine-user-script #2: "MagicWebTransition" */
 window.goToMagicWeb = () => {
     Engine.play("Magic Web 1");
@@ -304,7 +327,10 @@ window.goToMagicWeb = () => {
 &lt;&lt;cacheaudio &quot;horror&quot; &quot;https://github.com/caroldinh/imd-capstone/raw/main/media/audio/horror.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;office&quot; &quot;media/audio/office_ambiance.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;notif&quot; &quot;media/audio/notif.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;advertisement&quot; &quot;media/audio/advertisement.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="225,100" size="100,100">[[Start|Inbox 1]]</tw-passagedata><tw-passagedata pid="3" name="Inbox 1" tags="inbox" position="350,100" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;&lt;cacheaudio &quot;advertisement&quot; &quot;media/audio/advertisement.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;kaptcha-ambiance&quot; &quot;media/audio/kaptcha-ambiance.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;pirate-ship&quot; &quot;media/audio/pirate-ship-louder.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;sword-fight&quot; &quot;media/audio/swordfight.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="225,100" size="100,100">[[Start|Kaptcha 1]]</tw-passagedata><tw-passagedata pid="3" name="Inbox 1" tags="inbox" position="350,100" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
 &lt;&lt;/silently&gt;&gt;\
 &lt;div class=&quot;work-dialog&quot;&gt;\
@@ -333,31 +359,27 @@ window.goToMagicWeb = () => {
         [[Dismiss|Inbox 3]]
     &lt;&lt;/timed&gt;&gt;\
 &lt;&lt;/timed&gt;&gt;
-/*
-&lt;&lt;script&gt;&gt;
-    $(document).on(&#39;:typingstop&#39;, function (ev) {
-        $.wiki(`
-        `);
-    });
-&lt;&lt;/script&gt;&gt;
-*/
 &lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="4" name="Inbox 2" tags="inbox" position="475,100" size="100,100">@@.olsen;Oh. Hey Flip Flop.@@
 &lt;&lt;timed 2s&gt;&gt;
     @@.olsen.align-left;Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;I’ve been up all night searching for leads and what have you been doing? Sleeping? For 8 whole hours? Ridiculous.@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Even back when I HAD a physical body, I only ever slept for 3 MAX.@@
-    &lt;&lt;next&gt;&gt;@@.olsen.align-left;I’ve got work to do. Shush.@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;It’s always  “Flip Flop, I have a job”, “Flip Flop, don’t delete my work documents”, “Flip Flop, I can’t bring my laptop to the Centaurs on Assateague Island so they can enchant on my hard drive blah blah blah”. You’re no fun &gt;:/@@
-    &lt;&lt;next&gt;&gt;@@.olsen.align-left;I was never fun. Also those centaurs were totally scamming you.@@
-    &lt;&lt;next&gt;&gt;@@.olsen.align-left;[[I&#39;m going back to work.|Inbox 3]]@@
+    &lt;&lt;next 5s&gt;&gt;@@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
+    &lt;&lt;next 4s&gt;&gt;@@.flip-flop.align-right;I’ve been up all night searching for leads and what have you been doing? Sleeping? For 8 whole hours? Ridiculous.@@
+    &lt;&lt;next 4s&gt;&gt;@@.flip-flop.align-right;Even back when I HAD a physical body, I only ever slept for 3 MAX.@@
+    &lt;&lt;next 3s&gt;&gt;@@.olsen.align-left;I’ve got work to do. Shush.@@
+    &lt;&lt;next 2s&gt;&gt;@@.flip-flop.align-right;It’s always  “Flip Flop, I have a job”, “Flip Flop, don’t delete my work documents”, “Flip Flop, I can’t bring my laptop to the Centaurs on Assateague Island so they can enchant on my hard drive blah blah blah”. You’re no fun &gt;:/@@
+    &lt;&lt;next 6s&gt;&gt;@@.olsen.align-left;I was never fun. Also those centaurs were totally scamming you.@@
+    &lt;&lt;next 3s&gt;&gt;@@.olsen.align-left;[[I&#39;m going back to work.|Inbox 3]]@@
 &lt;&lt;/timed&gt;&gt;
 &lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\
 &lt;&lt;script&gt;&gt;
     $(document).unbind(&#39;:typingstop&#39;);
 &lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Inbox 3" tags="inbox" position="600,100" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
-    @@.work;NEW MESSAGE IN INBOX: &lt;strong&gt;[URGENT] Action Required: Please Respond&lt;/strong&gt;@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;[[I bet I can speed up all this dumb work stuff.|Inbox 4]]@@
+    &lt;div class=&quot;work-dialog&quot;&gt;\
+        @@.work;NEW MESSAGE IN INBOX: &lt;strong&gt;[URGENT] Action Required: Please Respond&lt;/strong&gt;@@
+    &lt;/div&gt;
+    &lt;&lt;next 4s&gt;&gt;\
+    &lt;&lt;audio &quot;notif&quot; play&gt;&gt;\
+    @@.flip-flop.align-right;[[I bet I can speed up all this dumb work stuff.|Inbox 4]]@@
 &lt;&lt;/timed&gt;&gt;
 &lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="6" name="Inbox 4" tags="inbox" position="725,100" size="100,100">&lt;&lt;audio &quot;office&quot; loop play&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt;\
@@ -373,10 +395,10 @@ window.goToMagicWeb = () => {
         😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈@@
         &lt;&lt;/type&gt;&gt;\
     &lt;/div&gt;
-    &lt;&lt;next 25s&gt;&gt;@@.flip-flop.align-right;There we go! That should keep em busy for a few hours.@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen.align-left;Oh my god. You’re not gonna leave me alone unless I do what you want, are you?@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Nope!@@
-    &lt;&lt;next&gt;&gt;@@.olsen.align-left;[[Ughhh, fine.|Desktop 1]]@@
+    &lt;&lt;next 30s&gt;&gt;@@.flip-flop.align-right;There we go! That should keep em busy for a few hours.@@
+    &lt;&lt;next 3s&gt;&gt;@@.olsen.align-left;Oh my god. You’re not gonna leave me alone unless I do what you want, are you?@@
+    &lt;&lt;next 3s&gt;&gt;@@.flip-flop.align-right;Nope!@@
+    &lt;&lt;next 2s&gt;&gt;@@.olsen.align-left;[[Ughhh, fine.|Desktop 1]]@@
 &lt;&lt;/timed&gt;&gt;
 &lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\
 &lt;style&gt;
@@ -393,7 +415,17 @@ window.goToMagicWeb = () => {
 &lt;&lt;/cycle&gt;&gt;
 &lt;style&gt;
     .passage {
+        all: unset;
         background-color: transparent;
+    }
+    a {
+        all: unset;
+    }
+    a:before {
+        all: unset;
+    }
+    a:hover {
+        cursor: pointer;
     }
     body {
         background-color: var(--os-background);
@@ -436,6 +468,17 @@ window.goToMagicWeb = () => {
         &lt;&lt;/if&gt;&gt;
     &lt;&lt;/repeat&gt;&gt;
     &lt;&lt;audio &quot;underwater&quot; loop volume 0 fadeoverto 1 1&gt;&gt;
+    &lt;&lt;script&gt;&gt;
+        var hydra = new Hydra({ detectAudio: false });
+        s0.initImage(&quot;images/eniac.jpg&quot;);
+        src(s0).modulateScrollY(osc(5),0.5,0).modulateScrollX(osc(10),0.2,0).scroll(
+            () =&gt; -mouse.x / width,
+            () =&gt; -mouse.y / height)
+            .blend(osc(5).color(0, 0.8, 0.6))
+            .brightness(-0.3)
+            .modulatePixelate(osc(5).modulate(noise(5,0.1)), 200)
+        .out(o0)
+    &lt;&lt;/script&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 @@.gary.align-right;Found it.@@
 @@.olsen;Alright, guess it’s game time.
@@ -452,15 +495,13 @@ window.goToMagicWeb = () => {
     &lt;&lt;/linkappend&gt;&gt;\
 &lt;&lt;/timed&gt;&gt;\
 
+&lt;!--
 &lt;&lt;silently&gt;&gt;
     &lt;&lt;script&gt;&gt;
         $(document.body).prepend(`&lt;script id=&quot;three-demo-module&quot; type=&quot;module&quot; src=&quot;three/demo.js&quot;&gt;`);
     &lt;&lt;/script&gt;&gt;
-&lt;&lt;/silently&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Bluetooth" tags="" position="1225,100" size="100,100">&lt;&lt;script&gt;&gt;
-    $(&quot;canvas&quot;).remove();
-    $(&quot;#three-demo-module&quot;).remove();
-&lt;&lt;/script&gt;&gt;
-&lt;&lt;silently&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
+--&gt;</tw-passagedata><tw-passagedata pid="10" name="Bluetooth" tags="" position="1225,100" size="100,100">&lt;&lt;silently&gt;&gt;
 &lt;&lt;repeat &quot;1s&quot;&gt;&gt;
     &lt;&lt;set $rand to random(0,10)&gt;&gt;
     &lt;&lt;if $rand == 0&gt;&gt;
@@ -472,9 +513,11 @@ window.goToMagicWeb = () => {
 &lt;&lt;timed 2s&gt;&gt;
     @@.olsen;[[Damn. Looks like we&#39;re out of range for Bluetooth?|Return]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Return" tags="" position="100,225" size="100,100">&lt;&lt;silently&gt;&gt;
+    &lt;!--
     &lt;&lt;script&gt;&gt;
         $(document.body).prepend(`&lt;script id=&quot;three-demo-module&quot; type=&quot;module&quot; src=&quot;three/demo.js&quot;&gt;`);
     &lt;&lt;/script&gt;&gt;
+    --&gt;
     &lt;&lt;repeat &quot;1s&quot;&gt;&gt;
         &lt;&lt;set $rand to random(0,10)&gt;&gt;
         &lt;&lt;if $rand == 0&gt;&gt;
@@ -486,10 +529,6 @@ window.goToMagicWeb = () => {
 @@.olsen;There&#39;s gotta be some way to access this thing from the outside.  @@
 @@.olsen;Use your magic, try to find some way into it.  @@
 @@.olsen;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]</tw-passagedata><tw-passagedata pid="12" name="Portal" tags="" position="225,225" size="100,100">&lt;&lt;silently&gt;&gt;
-    &lt;&lt;script&gt;&gt;
-        $(&quot;canvas&quot;).remove();
-        $(&quot;#three-demo-module&quot;).remove();
-    &lt;&lt;/script&gt;&gt;
     &lt;&lt;repeat &quot;1s&quot;&gt;&gt;
         &lt;&lt;set $rand to random(0,10)&gt;&gt;
         &lt;&lt;if $rand == 0&gt;&gt;
@@ -499,6 +538,10 @@ window.goToMagicWeb = () => {
 &lt;&lt;/silently&gt;&gt;
 &lt;img class=&quot;sprite&quot; src=&quot;images/sprites/Flip Flop/Thinking idle.png&quot;&gt;
 &lt;&lt;timed 2s&gt;&gt;
+    &lt;&lt;script&gt;&gt;
+        $(&quot;canvas&quot;).remove();
+        $(&quot;#three-demo-module&quot;).remove();
+    &lt;&lt;/script&gt;&gt;
     &lt;&lt;audio &quot;magic-wand&quot; play&gt;&gt;\
     &lt;&lt;script&gt;&gt;
         var hydra = new Hydra({ detectAudio: false });
@@ -600,7 +643,8 @@ window.goToMagicWeb = () => {
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Unity 5" tags="" position="725,225" size="100,100">PLACEHOLDER FOR FINAL UNITY SCENE &amp; EPILOGUE</tw-passagedata><tw-passagedata pid="17" name="Magic Web 1" tags="" position="850,225" size="100,100">[Placeholder: magic web feed assets - news articles, videos, etc.]
 &lt;&lt;timed 2s&gt;&gt;
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Ok, Ok. [[Look what I found!|Magic Web 2]]@@
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Magic Web 2" tags="" position="975,225" size="100,100">&lt;&lt;timed 2s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="18" name="Magic Web 2" tags="" position="975,225" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
     &lt;&lt;next&gt;&gt;[Placeholder of Asha video]
     &lt;&lt;next&gt;&gt;@@.olsen.align-left;Who is this exactly?@@
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Her name’s Asha Blake. She’s a famous werwolf live-streamer and look!@@
@@ -618,26 +662,40 @@ window.goToMagicWeb = () => {
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Ugh fine. How about you be the guard that tells only lies, and I’LL be the guard who tells only truths.@@
     &lt;&lt;next&gt;&gt;@@.olsen.align-left;Just send me the link@@
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-left;[[Portal|Unity 1]]@@
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="Unity 1" tags="" position="1100,225" size="100,100">[[Placeholder for Unity section with Asha|Kaptcha 1]]</tw-passagedata><tw-passagedata pid="20" name="Kaptcha 1" tags="" position="1225,225" size="100,100">&lt;&lt;timed 2s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="19" name="Unity 1" tags="" position="1100,225" size="100,100">[[Placeholder for Unity section with Asha|Kaptcha 1]]</tw-passagedata><tw-passagedata pid="20" name="Kaptcha 1" tags="" position="1225,225" size="100,100">&lt;&lt;silently&gt;&gt;\
+    &lt;&lt;script&gt;&gt;
+        var hydra = new Hydra({ detectAudio: false });
+        s0.initImage(&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Duga-1_radar_data_center_inside_empty_server_racks_2018.jpg/1600px-Duga-1_radar_data_center_inside_empty_server_racks_2018.jpg?20191008182809&quot;);
+        //hydraText.font = &quot;serif&quot;
+        //hydraText.lineWidth = &quot;2%&quot;
+        //let str = (Math.random() + 1).toString(36).substring(7);
+        src(s0).modulateScale(osc(4,-0.5,0).kaleid(3).scale(0.8),15,0).posterize(3)
+        //.diff(strokeText(str).modulateScale(noise(1,1), .8).modulateScrollY(osc(10),0.5,0))
+        .repeatX(3, 0.5).repeatY(4, 0.5).out()
+    &lt;&lt;/script&gt;&gt;
+&lt;&lt;/silently&gt;&gt;\
+&lt;&lt;timed 2s&gt;&gt;\
+    &lt;&lt;audio &quot;kaptcha-ambiance&quot; loop play&gt;&gt;\
     @@.kaptcha.align-right;&lt;&lt;linkreplace &quot;Ḥ̶͖̌̂A̴͙͌̊A̴̜̬̾Å̵̤͜A̶̟͉͐A̸̟͎̿̄A̸̼͒͜Å̷͎͔Ȁ̷̲̰À̴͕A̷̲͒A̷̗͐L̸͍̠̾͠L̵̗̈̈́L̶̞̇Ĺ̴͆ͅL̴̜̱͒L̷̡̛̻͝Ĺ̸̼̕L̷̨̨̓͂L̸̛̫T̷͕̑T̸̫̃̿ͅT̸̠͔͐̈T̴̺̣̀&quot;&gt;&gt;\
     HAAAAAAAAAAALLLLLLLLLTTTT&lt;&lt;/linkreplace&gt;&gt;@@
-    &lt;&lt;next&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̵͓͖͖̬̚W̴͈̫̾̏͗̎̃e̴̮̔̔̽̔l̶̩̂̚̚͘ĺ̵̨̓̈̔̄,̴͖̦͔̈́ ̶̳̗͊̈͊̀̓w̶̯͎̞̋͐é̷̮̭̐̚͝l̷̛̟̝͈͚͙̑̉̕͘l̴̼̲̈͘,̴̢̧̩̗̹̌̒͊̔̕ ̸̛̭̲̰̂͛ẘ̵̨͍̲̝e̸̱͖̤̞͂ḽ̶̟̈́̃͜ḹ̶̨͝.̶̨͎͍̽̀͜͝ ̷̨̣̳̖̪͌̉͋Ẅ̸̜̄ë̴͎̖̗̰́̃̋̓̀ ̶̘̭̥͓̲̄̀m̷͈̝̯̚ḛ̸̢̩̮͎́e̴̖͉̐̈́͝t̷̫̪͚̲̟̑̆ ̶̛̜̿͛ả̴͇ǧ̷̡̩͉̯̅a̵̟͚̼̥̿̋̾̍̇i̶̻̜̔̔̍n̸̡͚̮̑.̸̢̼̋̒&quot;&gt;&gt;\
+    &lt;&lt;next 5s&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̵͓͖͖̬̚W̴͈̫̾̏͗̎̃e̴̮̔̔̽̔l̶̩̂̚̚͘ĺ̵̨̓̈̔̄,̴͖̦͔̈́ ̶̳̗͊̈͊̀̓w̶̯͎̞̋͐é̷̮̭̐̚͝l̷̛̟̝͈͚͙̑̉̕͘l̴̼̲̈͘,̴̢̧̩̗̹̌̒͊̔̕ ̸̛̭̲̰̂͛ẘ̵̨͍̲̝e̸̱͖̤̞͂ḽ̶̟̈́̃͜ḹ̶̨͝.̶̨͎͍̽̀͜͝ ̷̨̣̳̖̪͌̉͋Ẅ̸̜̄ë̴͎̖̗̰́̃̋̓̀ ̶̘̭̥͓̲̄̀m̷͈̝̯̚ḛ̸̢̩̮͎́e̴̖͉̐̈́͝t̷̫̪͚̲̟̑̆ ̶̛̜̿͛ả̴͇ǧ̷̡̩͉̯̅a̵̟͚̼̥̿̋̾̍̇i̶̻̜̔̔̍n̸̡͚̮̑.̸̢̼̋̒&quot;&gt;&gt;\
     Well, well, well. We meet again.&lt;&lt;/linkreplace&gt;&gt;@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop;Ahhhh!@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Oh great.@@
+    &lt;&lt;next 2s&gt;&gt;@@.flip-flop;Ahhhh!@@
+    &lt;&lt;next 1s&gt;&gt;@@.olsen;Oh great.@@
     &lt;&lt;next&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;G̷̨̣̔͆̏̽́͝r̶̩͈͈̊͌̄̌̚e̵͓̟̍͌́͐e̴̪͐̑̍͗̎t̵̀̆̋̕͝ͅi̷̡̻̞͈̳͊̾͒̀̔̒n̴̦̜͑̓̀̈́̊̀ġ̴̨̜̣͉̤͊͜s̵̢̫̭̯̝͂̂̇̈̅ ̴̨̥̺̪̘̣̄̇̔̈́̎͝t̵̫̗̭̭̖͊̓͛̋͘o̶̠͎̲̔ ̶̖̼̼̯͋͌̒̊͘y̴̺̤̺̞̘̩͊̔́õ̴̺̏͐̽ǔ̸̢̼̒͆̃̕͜͜ ̷̨̰͖͓͗o̵̼̿͐͗͒̓ͅṉ̷̲͋̑͠c̷̩̘͕̎͑̊͛̚ẻ̶̝̺̱͎̥̔͌̚ ̷̼̟̪̮͆̈́́͗̅̾a̶̲͍̾̃͜g̶̘̟̣͐̔å̵̝̙̞̺͖̉̈͒̊ǐ̸͕̣̭̣̠͚̎͠n̴̰̬̯̤͑̇͌͛͑͑,̶͓̝̐ ̸̥̃ͅh̴̳͉͓̊͒ų̴̤̝͍̏́́͘m̶̻̉̔̈́͐a̸͉̬͘͝n̵͙͖͉͘͜ ̷̮͕͉̼̺̓a̴͇̳̙̰̰͛̐̈́͆̎͜n̷͇̬̖̰̙͋͑͛͊̈́͘ḓ̷̨̻̆̌͌̈͝ ̸̘̻̣̆̚f̵̢̩͕̯̗͑̽̀̍͆̈a̵̹͎̽i̶̱͙͕̣̰͂̀̔͝ȑ̵̲y̶̛̗̌͌͘͘͝.̴̛̘̮̓͊̄̕ͅ ̶͚̙͎̱̫̓̎͂͐́͜T̶̤̪̎̎́͒̈́͝i̴̱̓ś̴̗̝̯̰͊̋͛̈́’̷̢̰͊̈́͐ ̴̥͍̫̫̉͝Ì̴͈͉̤̂̍,̸̣͍̀ͅ ̵̢̦̼̖̮́̔̆̏͝T̷̺̀̿͆͛̔̅h̴̡̜̥̩̭̐̀ͅe̴͖͙̘͙̺̐̓̓̍͌̔ ̶̖̙̙͛̀͐̋g̶̠̃̕ú̴̲̯͎̉̇͗̀̚à̵̛͇̬̝̞̏r̶̘͚̤̿̌̈̏͝͝ḏ̵̫̾̐͒͠i̷̯̯̹͆̓̃͆ą̴̜̜͊͊ͅn̸̢͕̑͛̄͝ ̴̳̳̰̓̂͌͑͘͝Ḳ̴̨̨͎̥̠̾͊̿’̴̞̖͖͙̟͑̏ä̵̝̠p̶̣̙̙̥̑̌̾̈́ṭ̵̛̰̎̿̊͠c̸̖͈̑̍̾̍̕ͅh̷̖̠̦̔̔̽͂͐a̶̭̟̰̰̜̮͊͂͆̍̓̕.̶̢̠̝͋̐̃́̂͘ͅ ̸̦͕̲̄̑̈́Ÿ̵̗͍͕́̒͝o̸̟͉͂̐̈́̆̾u̴̘̬̘̙̗͖͒̐̈ ̸̦͊̔̐͊̀ş̸̡̳̾e̷̪̜̱̐ē̵̝̙̌m̵̧̛̫̹̮̝̭̓̃̃̉̏ ̵̡͎̝̯͍͉͆t̴̲̥̑͘o̴̢̹̻̥͓̿̀̇̕͘ ̴͓̻̯̭̏ḧ̶̡̲́́͌a̸̡̲͍͖̻͖̋́͒͝v̷̤͍̯͍̻͂ḙ̸͚̂̐͐̅̔̕ ̷̱̩̙͂̕͘o̶̱̩̭͇͓̭̽n̶̬̬͚̦̐̍̍̂͗̈c̷̼̹̓̾͆͒͘e̶̡̙̣̘̱͋́̀ ̶̝͔̬̮̹̏̿͂ṁ̸̙̭̘͖̻o̷̹͚̼̟̘̝̐̿̈́͋r̴̜͍̀̽̍̅̚e̶̜̳͔͕̊ ̴͉̤̺͒̑̅͘ë̷̩̪̯̭̰̰́̈́̍̎ň̸̲̙̣̓͛̈͐͝c̴͈͙̙̤̅̑r̷̢̢̘̬͖̐̂̈̓͐͝o̴̪̓̀̂̕͝a̴̡͍̟͚̪͔͊̈́̎̈́́͗c̸̞̮̀̾͜h̴͚̟͚̣̬͖͌̀̈́̌́e̴̯̩̬͗͊̈́d̷̖̩͈̋̉̓ ̴̮̬͍̪͒̈́̇́͑͜ų̴̨̧͍̤̗̓̕͝p̴̘͉̗̮̼̓͑͆̔̈͛ȯ̴̜̖̱́̓͝ͅn̵͉̆̈̀̒͘ ̵̡̨̛͖͕̞̮m̶̛̦̖͕͑͝y̵̧̨̯̩̾̽ͅ ̷̨̼̗͑̉͐ͅm̷̻̩̰͚͚͍̉̕a̸̡̪̟̽̒̉̌̉͑n̶̺̫̄͛̈́̏̚y̷̧̠̻͙̾͗̊̈́̅͋ ̷̯̰̼͎̗̅̋t̴̡̲̞̃ͅë̶̛̮́́́̕͠r̴̘̯̤̮͓̹̄̾͋̾͘r̷̗̟̱̂͜i̵̢̟̔͒͠t̴̻͙͉̥̪̓̓̉̐̿̀ò̷̬̲̦̗́͑̔͝r̵̻̹̼͌͂î̸̡͑̌̈̕ë̵̺̥͍̜̜̯́̏̂̎͒̐s̴̞̣̪̻̘̉̕͘͜ ̶̻̠͈̮̣̔̀̎͒ŏ̷͓̩̹͆v̴̦̗́́̈͘ȅ̸͕̳͇̙̲͊̓̋͐ͅr̴̲̈́̐̈́ ̷̧̨̻͎̄̆t̷̤̜͉͔̐h̷͕̕i̷͕̰͕͍̚s̶̠̓̑̆̐̂͑ ̶̢͉̮͕́̀̒v̵̥̞͚̔̂̏̄̐͝ͅǎ̶̦̜͒̓̀̋s̴̢̙͈̩̪̖̐͒̒͠t̵̢͚̹̗̝̙͊̐͐̈́ ̶̣̝͐a̴̟̳̋̾̏ń̸̖̞̝͉̊̅̓͐͐ḑ̸͉͓̺́̒͌̃̓̚͜ ̶̲̻̔ţ̴̮͍̬̱̈́̏̽̂͐̿e̸̬͔̝͇̻͍̾̈́̒̽͝r̴̰̅̾͗́̇r̴̩͒i̷͍̱̼̅͗̾̈́͠b̷̖̱̰̠̂̈́̏̉̕̚ḽ̴̯̰͉͈̇͜͝ȇ̵͕͕̝͖͍̮͒̈́ ̸̻̲̱͍̑ͅw̸͎̉o̶͖̲̊̒̾͊r̵̙̬̝͔̝͂̂l̴̲̟̩̱̲͌̽̑̈͘ͅd̶͙̀͛̈́̾̅ ̵̩̝̳̪̭͈̓́̌̎w̷̡͎̙̭̠̉͒ͅi̶̢̛̻̝̳͉̫̇́̄̆͘d̸̢͓̖̦̦͑̄̀̅̃̔ḛ̴̘̃́͠ ̸̢̧̰̲͙͉̾͑͘͘ẅ̸̢́͋ė̴͎̪̫̩̊b̶̤̳͚̼͑͊̅͜b̵̮̙͛͝i̷͖͠n̶̛̯̘͑̎̐͒g̶̡̳̟̒͛̒͗̈́͘.̵̦̹́&quot;&gt;&gt;\
     Greetings to you once again, human and fairy. Tis’ I, The guardian K’aptcha. You seem to have once more encroached upon my many territories over this vast and terrible world wide webbing.&lt;&lt;/linkreplace&gt;&gt;@@
-    &lt;&lt;next 4s&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;A̴̡̛̱̼̖̔ͅń̴̥̘̯͔͖̈́̒̃d̶̫̬͎͈͌̈́̐̍̉ͅ ̷̬͌w̴̯͉̭͍͍͗̈́͠h̴͔͙̎́̐a̴̘̦̥͎̦͂̇͆͒ẗ̴̪̪́ ̵͍̞̎̋͘i̵̧̳̙͈͊͛̀̇̊ś̵̱ ̵̜̞̞̈́ͅt̵̗͔͓̮͒h̴̢̪̣͕͆̕i̸̮͚̋s̶̮͎̳̭̯̈̌̒̊̇ ̷̧̥̏̔I̴̖̜̫̋͑̉̄͑ ̷͙̙͈̖̚ͅs̴̮̬̬̺͖̆̔͂̓̄m̷͚̯̞̍́̐̇̂ḙ̶̱͎͍̞͋͠l̵͔̤͎̀͘ļ̶̫͕̼̮̃̾̀̈́?̵̻͎̐̿&quot;&gt;&gt;\
+    &lt;&lt;next 5s&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;A̴̡̛̱̼̖̔ͅń̴̥̘̯͔͖̈́̒̃d̶̫̬͎͈͌̈́̐̍̉ͅ ̷̬͌w̴̯͉̭͍͍͗̈́͠h̴͔͙̎́̐a̴̘̦̥͎̦͂̇͆͒ẗ̴̪̪́ ̵͍̞̎̋͘i̵̧̳̙͈͊͛̀̇̊ś̵̱ ̵̜̞̞̈́ͅt̵̗͔͓̮͒h̴̢̪̣͕͆̕i̸̮͚̋s̶̮͎̳̭̯̈̌̒̊̇ ̷̧̥̏̔I̴̖̜̫̋͑̉̄͑ ̷͙̙͈̖̚ͅs̴̮̬̬̺͖̆̔͂̓̄m̷͚̯̞̍́̐̇̂ḙ̶̱͎͍̞͋͠l̵͔̤͎̀͘ļ̶̫͕̼̮̃̾̀̈́?̵̻͎̐̿&quot;&gt;&gt;\
     And what is this I smell?&lt;&lt;/linkreplace&gt;&gt;@@
-    &lt;&lt;next&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̶̢̯͔̜̺̀D̴̨͍̪̳͑̇͂̎̄ō̵͎͉͌̚͝͠ ̸͍̪͇̲̚Į̴̛̪̙̉ ̸͍̎͛͜͠d̴̬̠̙̜̲̈́̚e̵͙̱̠̗͋͌̈́̚ͅt̶̙̯̭̋è̶̤̿̃c̴̠͙̒̑͜͝ṱ̵̹̱̓̇̔̎…̷͓̻̿̊̋&quot;&gt;&gt;\
+    &lt;&lt;next 2s&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̶̢̯͔̜̺̀D̴̨͍̪̳͑̇͂̎̄ō̵͎͉͌̚͝͠ ̸͍̪͇̲̚Į̴̛̪̙̉ ̸͍̎͛͜͠d̴̬̠̙̜̲̈́̚e̵͙̱̠̗͋͌̈́̚ͅt̶̙̯̭̋è̶̤̿̃c̴̠͙̒̑͜͝ṱ̵̹̱̓̇̔̎…̷͓̻̿̊̋&quot;&gt;&gt;\
     Do I detect...&lt;&lt;/linkreplace&gt;&gt;@@
     &lt;&lt;next&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̴͎̺̺̃̈́̕ ̷̹̮̈́̉̅̔̽F̴͉͌̋̿Ṛ̴͔̜̽À̸̢̩͐̓̓U̶̮̭͛̓̄D̴̦̞́̊̍͝?̶͕̉̊?̷̳̗̍̊̈̃͝?̶͈̤̭̩̒̏̿?̸̰̔̈&quot;&gt;&gt;\
     FRAUD????&lt;&lt;/linkreplace&gt;&gt;@@
-    &lt;&lt;next&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̴̼̘̼͠B̸̠͙̼̪͓̐̿̕͘ḁ̴̧̞̹̃c̵̡̯͓̟͑͆̍̔k̸̭̯̬̙͒̀͝,̴͚̥̤͕͐̈́ ̴̡̨̘̥̞̎͘f̴̨̛̘̺̜̀̽͑ī̶̝̺̻͋̚̚ę̵̄n̸̙̰̹͑̏̑d̶̩̙̭͖̾̕,̵̹͕͐̈́̽̽͘ͅ ̴̼̅̈́͛B̵̛̫̠͛̽̈́͑a̵̢͒̍͑̆ͅç̷͈̤̦̾̈̇̾̚k̵̯̼̠̼̣̔͐!̵̛͙͇̭̞̒̈́̑&quot;&gt;&gt;\
+    &lt;&lt;next 4s&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̴̼̘̼͠B̸̠͙̼̪͓̐̿̕͘ḁ̴̧̞̹̃c̵̡̯͓̟͑͆̍̔k̸̭̯̬̙͒̀͝,̴͚̥̤͕͐̈́ ̴̡̨̘̥̞̎͘f̴̨̛̘̺̜̀̽͑ī̶̝̺̻͋̚̚ę̵̄n̸̙̰̹͑̏̑d̶̩̙̭͖̾̕,̵̹͕͐̈́̽̽͘ͅ ̴̼̅̈́͛B̵̛̫̠͛̽̈́͑a̵̢͒̍͑̆ͅç̷͈̤̦̾̈̇̾̚k̵̯̼̠̼̣̔͐!̵̛͙͇̭̞̒̈́̑&quot;&gt;&gt;\
     Back, fiend, back!&lt;&lt;/linkreplace&gt;&gt;@@
-    &lt;&lt;next&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̶̡̨̲̪͕̏̋̂G̵̝̈́͒̂̓͜o̵͖̼̾̊͜ỏ̴̼̞̫̟́̀́d̸͖̦͋͑̊̓͑ ̸̧̡̟̙̹͌͝Ḻ̵̢̺̙̰̀͘͠͝a̴̬͓̥̟̋͌͆d̵̢̰̺̼̣͊͋y̶͖̲̐̈́̓̂̉͜ ̴͈̲̥̼͗Ą̸̼͖͇̟̓̎s̶̀̑̐͝ͅͅh̸̬̺̓͊̓̚͜a̷͎̗͇̲͆̊,̴̘͚͉̑͂ ̶̧̬͇̟̏S̵̼͛̿̀̏̇o̵̧͓͓̽̈̏̾̚m̵̨̳̩͆́̀̿͝ë̷̢̮̟̞̬́̀ȏ̴͎̟̏n̴͍͝ẻ̶̻̬̺͓̞̽̎̒̚ ̵̜̯̂͠i̸̳̹͝ͅn̶̯͙̳̓̅̈́͝ ̸͇̈͗͠O̷̡̤͇͇̥̎c̵̭͐é̴͕̽a̶̙̰̫͂͊̒̈́ͅn̷̤͕̱̹̤̑̌͐ ̵̢̛̻̲̏̃̏͌ͅC̸̪̏̾̅į̷͇͉͎͆͐̐̕ṭ̶͂͂̋͝y̷̻͒̑͆̿͝,̸̡̦̼͆̀͑ ̴̞̩̓͒M̴̝͕̒͝ạ̸͍̗̀̀̐r̸̖̜͈͍̃̀͠y̵̡̜̝̝͂̅̓̓̐l̴̨̠̈́͊a̴̧̗͇̠̾̂n̴̻͙̤̭̯͘d̶͍͕͎̪̓̚ ̶̤̓̈́̓͗͝ḭ̵̓͐s̷͔͍͕̯̟̄̈̔́ ̵̟̥͓̪́̆a̷̖͒̑̎́t̸̻͖̏͛͑t̴͓̫̱̟͗͂͜ḙ̶̛̯͚̟̎̒͝m̸̢̼͔͓̅͊͝͝ͅp̵̖̗̼̹͐t̶͕̊̓į̶̙͈̼͓̓͆̊͠ǹ̶̢͓̥͉͈g̶̠͈̀͜͜ ̷̤̼̺̪̦̌̀t̸͚̻̭̜͋͒̅̿͜͝ố̶̝̜̠͑̆͒ ̸̗͠l̴̨̀̄͝ö̵͓̩́̏̊̃g̴̞̗̭̈́̉ ̴̙͕̉̓̊̕i̸̧͈͋n̴̮̪̪̩͌̋̀͝t̶̘͙͈̥̓͗̕ö̴̪́ ̸͎͚̇̓͂y̶̳̳̺͈̙̆̌́͒̆ó̸͈̫̈́͊u̵̬̤̓̉r̷͙̹̱̜̐͂̈̄͝ͅ ̵̨̰̼̭̯͝a̶̺͇͕̬̒c̴̨̢̢̫̪͂͑͆̉c̴̺͔̮̗͌͋̅̀̾o̶̿̇̿̓͜u̵̺̘̪͐͂̄͠n̴͎̘̝̊̐̐̅t̵̖̙̙̖̣͋̅̓̈́̂!̴̢̬̫͙͉̿͠!̶̻̮̉!̶̘͉̰͚͈̈́&quot;&gt;&gt;\
+    &lt;&lt;next 2s&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̶̡̨̲̪͕̏̋̂G̵̝̈́͒̂̓͜o̵͖̼̾̊͜ỏ̴̼̞̫̟́̀́d̸͖̦͋͑̊̓͑ ̸̧̡̟̙̹͌͝Ḻ̵̢̺̙̰̀͘͠͝a̴̬͓̥̟̋͌͆d̵̢̰̺̼̣͊͋y̶͖̲̐̈́̓̂̉͜ ̴͈̲̥̼͗Ą̸̼͖͇̟̓̎s̶̀̑̐͝ͅͅh̸̬̺̓͊̓̚͜a̷͎̗͇̲͆̊,̴̘͚͉̑͂ ̶̧̬͇̟̏S̵̼͛̿̀̏̇o̵̧͓͓̽̈̏̾̚m̵̨̳̩͆́̀̿͝ë̷̢̮̟̞̬́̀ȏ̴͎̟̏n̴͍͝ẻ̶̻̬̺͓̞̽̎̒̚ ̵̜̯̂͠i̸̳̹͝ͅn̶̯͙̳̓̅̈́͝ ̸͇̈͗͠O̷̡̤͇͇̥̎c̵̭͐é̴͕̽a̶̙̰̫͂͊̒̈́ͅn̷̤͕̱̹̤̑̌͐ ̵̢̛̻̲̏̃̏͌ͅC̸̪̏̾̅į̷͇͉͎͆͐̐̕ṭ̶͂͂̋͝y̷̻͒̑͆̿͝,̸̡̦̼͆̀͑ ̴̞̩̓͒M̴̝͕̒͝ạ̸͍̗̀̀̐r̸̖̜͈͍̃̀͠y̵̡̜̝̝͂̅̓̓̐l̴̨̠̈́͊a̴̧̗͇̠̾̂n̴̻͙̤̭̯͘d̶͍͕͎̪̓̚ ̶̤̓̈́̓͗͝ḭ̵̓͐s̷͔͍͕̯̟̄̈̔́ ̵̟̥͓̪́̆a̷̖͒̑̎́t̸̻͖̏͛͑t̴͓̫̱̟͗͂͜ḙ̶̛̯͚̟̎̒͝m̸̢̼͔͓̅͊͝͝ͅp̵̖̗̼̹͐t̶͕̊̓į̶̙͈̼͓̓͆̊͠ǹ̶̢͓̥͉͈g̶̠͈̀͜͜ ̷̤̼̺̪̦̌̀t̸͚̻̭̜͋͒̅̿͜͝ố̶̝̜̠͑̆͒ ̸̗͠l̴̨̀̄͝ö̵͓̩́̏̊̃g̴̞̗̭̈́̉ ̴̙͕̉̓̊̕i̸̧͈͋n̴̮̪̪̩͌̋̀͝t̶̘͙͈̥̓͗̕ö̴̪́ ̸͎͚̇̓͂y̶̳̳̺͈̙̆̌́͒̆ó̸͈̫̈́͊u̵̬̤̓̉r̷͙̹̱̜̐͂̈̄͝ͅ ̵̨̰̼̭̯͝a̶̺͇͕̬̒c̴̨̢̢̫̪͂͑͆̉c̴̺͔̮̗͌͋̅̀̾o̶̿̇̿̓͜u̵̺̘̪͐͂̄͠n̴͎̘̝̊̐̐̅t̵̖̙̙̖̣͋̅̓̈́̂!̴̢̬̫͙͉̿͠!̶̻̮̉!̶̘͉̰͚͈̈́&quot;&gt;&gt;\
     Good Lady Asha, Someone in Ocean City, Maryland is attempting to log into your account!!!&lt;&lt;/linkreplace&gt;&gt;@@
-    &lt;&lt;next&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̴̛̝͔̤͖̅͒͂Ẅ̵̰͊̈́h̶̹̣̙̣̃̈̌͌͜ë̶͔́̈ŗ̵̠͈̦̳̊e̶̘͔̓̊͛ ̵̛̣͎̩̄͒̓̅i̵̙͓͙̮͔͛s̶̝͓̞̓ ̴̮̬̽̈́̀͂͋s̶̟̿̐̋̏͝h̷̥̔̐è̵̪̙̯̦?̶͍͎̬̿̿͌̈?̷̯͕̭̟͕̎̉?̴̗͊ ̴̳̒͌H̸̡̗͎̰̙̐̓̈́ă̶͇̲͐̕v̷͖̬̺͋̀̓ę̸͉̜͚͕̈͝ ̷̝̜̤̄̆́́̏ẏ̵̤̭̜o̴̢̗͕̼̒ú̸̧̬͎̻̉͗͘͝ͅ ̴̖̲̍̃͠s̸̛̝͎̜̐͗͗̎l̵͍̝̟͐̀̔̍͘a̸͇̦̎̕i̴̟̕ǹ̷̙̞̝̹̎̄͂͝ ̴̢̰͈̟̌h̷͉̺̆̓e̸̡̲̊r̸͎̆͒̾͘͝?̵͍̈́͌?̷̤̱͓̻͆̀̐̆̚?̵͓̭͎̮̰̎̊̉͆̀ ̶̺͎͗̀I̴̢̛͇̤̱̮̎̿͂̎s̶̨̈̄̅̾ ̴̰̜̺̦̅̎̓̓͑t̵̤͈̝̂ͅẖ̵̦̩̏̒̕e̵̼͂̈́ ̸̥̑̂m̵̧̙̯̺͖͂͋̃͝ȁ̸̖̽̓̀̌ͅc̶̢̟͆̐̚͝h̸̙͚̣̖̲̄ȋ̵̪͈̖͆͑͝n̷̙̠͝e̸̞͎̼̠͂͋͒͝ ̵̢́̔̔u̵̦͛̈͒̒p̵̗̱͓͐ͅr̶̫̟͂́͗͆i̴̮̳̙̿́͒s̸̭͎͚̞̻̈͊̃̃ĩ̶̛̖͓̥̩̘͛n̷̨̮̓͗͂̕g̵̟̮̉̆ ̶̣̔̎͗̚ǹ̶̯̽̈́͠o̴̻͍͂̂͌̆w̷̢̛̲̼̤̯̐ ̸͙͔͖͐̇à̵̞̾t̶͔͕͛ ̴̳̈͝͝h̵̛̘̰̪̰̜͐͌̇ḁ̵̪̾͗̀n̵̛̹̣͔͐̀̌̂d̷͓̰̭̆̉̽͜?̴͖̀͘?̵̧̼̦̲͔̀͌?̶̧̞͂͑̉&quot;&gt;&gt;\
+    &lt;&lt;next 3s&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̴̛̝͔̤͖̅͒͂Ẅ̵̰͊̈́h̶̹̣̙̣̃̈̌͌͜ë̶͔́̈ŗ̵̠͈̦̳̊e̶̘͔̓̊͛ ̵̛̣͎̩̄͒̓̅i̵̙͓͙̮͔͛s̶̝͓̞̓ ̴̮̬̽̈́̀͂͋s̶̟̿̐̋̏͝h̷̥̔̐è̵̪̙̯̦?̶͍͎̬̿̿͌̈?̷̯͕̭̟͕̎̉?̴̗͊ ̴̳̒͌H̸̡̗͎̰̙̐̓̈́ă̶͇̲͐̕v̷͖̬̺͋̀̓ę̸͉̜͚͕̈͝ ̷̝̜̤̄̆́́̏ẏ̵̤̭̜o̴̢̗͕̼̒ú̸̧̬͎̻̉͗͘͝ͅ ̴̖̲̍̃͠s̸̛̝͎̜̐͗͗̎l̵͍̝̟͐̀̔̍͘a̸͇̦̎̕i̴̟̕ǹ̷̙̞̝̹̎̄͂͝ ̴̢̰͈̟̌h̷͉̺̆̓e̸̡̲̊r̸͎̆͒̾͘͝?̵͍̈́͌?̷̤̱͓̻͆̀̐̆̚?̵͓̭͎̮̰̎̊̉͆̀ ̶̺͎͗̀I̴̢̛͇̤̱̮̎̿͂̎s̶̨̈̄̅̾ ̴̰̜̺̦̅̎̓̓͑t̵̤͈̝̂ͅẖ̵̦̩̏̒̕e̵̼͂̈́ ̸̥̑̂m̵̧̙̯̺͖͂͋̃͝ȁ̸̖̽̓̀̌ͅc̶̢̟͆̐̚͝h̸̙͚̣̖̲̄ȋ̵̪͈̖͆͑͝n̷̙̠͝e̸̞͎̼̠͂͋͒͝ ̵̢́̔̔u̵̦͛̈͒̒p̵̗̱͓͐ͅr̶̫̟͂́͗͆i̴̮̳̙̿́͒s̸̭͎͚̞̻̈͊̃̃ĩ̶̛̖͓̥̩̘͛n̷̨̮̓͗͂̕g̵̟̮̉̆ ̶̣̔̎͗̚ǹ̶̯̽̈́͠o̴̻͍͂̂͌̆w̷̢̛̲̼̤̯̐ ̸͙͔͖͐̇à̵̞̾t̶͔͕͛ ̴̳̈͝͝h̵̛̘̰̪̰̜͐͌̇ḁ̵̪̾͗̀n̵̛̹̣͔͐̀̌̂d̷͓̰̭̆̉̽͜?̴͖̀͘?̵̧̼̦̲͔̀͌?̶̧̞͂͑̉&quot;&gt;&gt;\
     Where is she??? Have you slain her??? Is the machine uprising now at hand???&lt;&lt;/linkreplace&gt;&gt;@@
     &lt;&lt;next&gt;&gt;@@.flip-flop;Calm Down! She told us it was ok! She was the one who gave us the password.@@
     &lt;&lt;next&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;Y̶̯̺͇̫̯̏̇͗̽͊̒͜ő̵͎͎̱͉̗̬̳̥̭̜̺͑̈́̾̾͐̎̂͝ͅů̸̮̗̗̻͖̉̓͂ ̷̢̛̮͙͔̩̖̻̤̳̰͊͌̔̀̂͐̑̀̽m̴̡̖͔̜̱̳̻̯͕̦̫̰̻̩̦̘̃͋̂̈́̈̿̈͠͠á̶̳̠̫̑̓͐̉̔͗̈́ỵ̸̛̥̼̖̼͍̟̦̹̩͙̹̻͓̲͗̂́͐͘͠ͅ ̵͕͚̓h̶̻̠̞̞̥͎̝͋̉̾͆̇͋͊ͅͅä̶̗̖̖̪͍͚̺̪̑̃́̿͂͑̽͠ͅv̷͇̮͗͒͐̆e̶̯̭͂͗́̊͂̓̇͋̊ ̷̨̛͋̂͂͐̃̆̾̐̀̉̅̚ṯ̴̢̛̛̖̥̞̯̫͖̫̰͚̇̈́̓̆̊̉͐͂͗͋͋͘̕ḧ̸̢̨̨̭͈̲͉̘̫̯̠̱̲̥̬́̃̄̈̇͌̌̍̀̎̾͘͜͠͝͝ę̴̨̛̜̫͙̫̼̱͈͎̺̲̻̻̪̭̱̄̐̉̌̈̉̂̂͑͛̓͂͊ ̵̲̫̻̈̑͊̽̀̀̈́̊̐̑̅̈́̆̔͘̚͠p̴̣̥͔̆̔̂́͂͌͆́͘͝å̶̧̫̥̮̞̯͍͕̝̣̮̻̲̟̈́͌̇̌̆̇͊͠s̵̢̭̰̪̻̯̣̫̗͙̹̝͙̩̀̕͜s̴̢̖̹̳̬̜͓͙̦̦͍̿́̄͒̑̓́̾͛ẃ̸̨͖̼̺̦͖͎̦̠̞̹̱̻̞͒͂́̆̃̈́̎̓̚͝͝ọ̵͔̗̠͖̞͓̼̎̚r̴̨͕̩̠̝̞̭͉͚̾̈́͋̓͛̚d̵͔̼̱͉̥́̂̔́̓̉̒̐̈́̽̍̎͝͝ͅ,̷̨̢̢͈̙̰͖̳̯̺̗̜̇̾̿̌͋̂̓̈́̒̒̏͘͠ ̴̛͈͚̭̜̮͉͖̘̰̝̹́̆̽̃͂̌́̂̔̇̐̕̚͜t̷̢͕̾̀́͐͊̈́̂͋͐͠͝ŗ̴̛̺͖̞̞̞̦̭̮̩̣̬͈̇̅̋̅ǘ̷̧̡̘͙̘͓̬̥̰̱͔͖̝̼̼͆̏̒͗̀̇̀͂̏̉̈́͘̚͜͝e̶̡̢̧̮͓͖͙̣̙̊̈́͝ͅ,̶̨̢̡̺͓̼͎̹̳͈̤̺̜̥̗͆̽̈́̀͒̂̒͋͑͐͌͊͘͠ ̶̛̠͑̎̏͑̉̎͠b̴̧͎͚̥̦̲̖̮̦͖̏̅̽̏̏͘͝u̸̢̠̟̒̈́̈́͂͑͋͗̉̌̉̃̉̃̔͋̐͝ṱ̴̢̹̱̯̖̥͙̘͈̟͔̬̙͐̾͊͜ͅ ̸̢̨̡̢͙̺͈̯͔̦̗͇̯̩̖͂́́̾͑͋̋͐̅̐̆̈́̕͠͝ͅͅm̸̡̝̫̣̖̖̳͚̘͍̫͓͔̓ý̷͔͈͕͖̈́̉̾̀ ̸̢̡̧̧̛̤̰͚͎̤̱͕͍͇̱̮̮̼̉́̅̍̑̈̒̊̽͐͊ȩ̸̜̮̌̆̄̌̐̏͌͆́̋͒̔̆̀̈y̵̨̮͙̳͗̑̈́́̈́̈́͌͊͑̓͋̎̿̏͠ȩ̵̩̞̜̗̪̞̙͚̣̺̙̙͇̹̿s̴̮͉̉͂͐̀̕ ̸̨̯̭̝̟͉̱͚͎͔̙͔͈̺̈́̒̉͋̈́͆͂̂͗̔̈́͘͜͠o̶̡̭̙̠͓̭̩̫̦̻͎̎̉̓ͅͅͅf̷̠͚͕̖͔̪̟̥͎̙̦͈̖͕̋̎͑̈́͊̃̈́͆͗̾̕͠ ̸̧̧̡̥̮͕̤̦̼͓̣̭̜͗̓͗̄̊̄̏̍̓̌͆͆̕ͅH̴̥̻̻̐̿̾̚O̵̢͚̮̣̩̘̜̖͕̫͈͒̉̒̏̍̾̉̏͋͑̍͂̎͝͝͝͠R̵̰̼͕̟͖͖̗͓̜̣̘͍̣̍͜U̷̧̡̢͉̺͉̘͇͚͈̥̻͉̫͔͇͕͆͆͌̈́͊͌S̶̨̢͔̱͇̩͇̤̮͒ ̵͉̖̗̆k̴̙̫̥̪̭̉̍̍́̏̓n̶̡̧̙̪̰̟̹͍͍̥͔̺̰̼͚̍̂̊̉̓͌̆̄̈̄̂͠ô̴̡͉͈̗̦̙͚̬͇͛̓̾̂͐͑͐̽͘w̶̢̛̪̪͊̉̽͑̓͂̂̈́̚͘͠͠͝ŝ̸͉͙̯̲̯͇̣͆̅͗͗̽̿̾͒̚͘̚͠͝͠ ̵̢̡͚͔͙̭̖̤̪̭̮̹̠̖̗̱̇̍̍̃̀͂̿̆͛̊͛́̕͜͝͝y̶̧͊͂̇͒̍̓̈́̌̂̋̊̕͝͝͝ơ̵̡̙̭̗̍̽̍͒̾͑̉̑͛́͗̈́̇̈́̈͠u̶̥̞̭̳̤̤͔͙̅̂̃͝ ̵̧̤̜̰̏̀̈͒̏̚̕͝ţ̸̮͚͔̤̖͍͉̻̩̪̦̺̝̿̍̽̎͋͐̇̂͘͘̕͝͝ͅô̵͇͇͂ ̶̡̰̫̲̺̞̭͎̦̺̫̞̠̳̜̝̖͒̂͊́̇̅̇͆̂͗͘̚͠b̶̢̙̺͖̠͉̞̋͌̈́́̅̃̃́̄̾͆̿͝͝ȩ̴̧͍̘̰͉͈̼̫͎̫̤͍̜͑̈́̆̈͛̍̃̽͘̕͜͝ ̶̛̛̙͇͔̰̬̼͓͖̣̌̎̅̚̕͠ͅą̶̛̱̗̠͔̜͎͈͎̣̤̗͔̝̈̓͐̔͊̓̊͑́̚ͅ ̴͖͕͔̠͖͙͚͍̪̰̞̽̍͌̓̏̇̂̉̉͒̊͌͘̕͠͝d̷̙͔͇͕͓͉̦̯͚̓̃̂̄̾̑̄̿̉̿͗̃̈́͗͘͝ȩ̶̧̨̛̣̠̬̬̮̱̜̩̫̬̝͌̈͆̎̂̌̐̇̏̓͘̕͜͠͠c̵̡͈̝̖̺͔̜͚̯͚͚̗̱̝̤̀͑̂͜ͅe̵̫̳̳̣͌͌̄͂̉̅̑i̵̹̤͈̱̱̞̱͚̭̗̯͛͋̒̅̀̅͛́͜v̶̛͇̙̗̜̩͕̙̲͓̦ĕ̴̛͖̤̯̺̰̲̦̬̺͍̖̳͎̟͍̒̊͊̓̽̿̆͌́̇̇̈͘͘͜r̵̮̭̳͇͚͎̼͔̘͓̣̼͙̈́̊̃̅̃̌̍̈́͑̍̕̕̚͜͠.̴̢̗̘̼̰̠̎͗̇͑̌͋̓̽͐́̏̚̚͝&quot;&gt;&gt;\
@@ -653,7 +711,7 @@ window.goToMagicWeb = () => {
     Psh. As if. You may have solved my challenge last time, but now I’ve got something that’ll make even the cleverest robots COWER!!!!&lt;&lt;/linkreplace&gt;&gt;@@
     &lt;&lt;next 5s&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̸̧͈͕̜̲̪͈̬̝̦͇̃̆̋̒̓̅̏̿̉͑̽̏̋̇͆̋B̷̡̡̢̛̗̪̮̰̹͙̺̈́̏̎̊̈́͋̋̎̑̈́ͅE̶͓̞̜̥̼̋̒̈́̓̒͂͑͌͒͒͒͋̐̏͜͝͝Ḣ̸̨͈̭͖̜̓͜͝Ȍ̵̧̨̢̰̣̞̞͖̺̹͔̮̬̼̺L̶̹̝͓̪̰̫̥̱͖̻̥͈̗̩̠͕͒̈Ḑ̷̛̣͍̞͖̃́̿͌̓́̊͋͜͠͝ͅͅ!̵̤̋͂̈́̑͌̈́͐̔̚!̴̼̝̯̲͎͌̔͐̍ͅ!̶͓̭̦̖̩̞̰̠̱̥̤̠̈̇̈́͝!̸̨̖͙̤͈̱̑̾̓̾̇̔͊͛̕̚͠!̵̛̟̝͔̱̮̙̘͕͇̼̘̯͋̈́̃̉̇̉̈́̉͝ͅ!̶̺̻̼̺̦̞͍̞̲̼̱̪͖̠͍̈́͛͗̀͂̆̒͒̒̐͐͗̂͒̋̔͘!̶̧̧̛̦̣̲͚͇̲̭͔̖͓̟̰̍̄̎̐͐̀͜!̴̢̛̰͉̳̝͓̖̀̽̊͊́̂̈́̃͑̑̋̀̚͘͝!̴̧̺̅̽̌̀͑̉͠!̸̨̨͉̦͉̪͔̞͑̾̊̈͋̇͂̀̂̌̀̇̆̐͒͘͠ͅ!̶̧͓͎̜̠̞̯̲͋͆́̓̔́̄̈̀̌̈́̒̕̕̕̕͝!̵̭͉̝̩͈̝̖̏̾̈̕!̴͈͖̲͍̳̺͉̭̘͓̯̬͙̜̱̲͍͋͛͋͆̾͒!̴̢̌̾̎̀͗͂̇̎͆̈́̋͘!̵̨͓̠̄̀͌́̋̆͑̕̚!̸̹͎̳͓̯̲̭̙̙̘͚͊̓̀̆̅͒̋̂̈̌͒͝ͅ!̸̢̨̛̞̜͓̙̺͓̲̜̺͐̀̈́̀̋̈́́͆̓̈́̐̿̊͗̈́͠!̵̜̤̇̉̿̈́̑̇̎̉̂́!̶̝̮͇̯̒̾͆͑̏̐͂̈́͌̾͐̃̀̓̈́͊̑!̴̡̧̳̫͎̼̰̲͈̼̪͓͛͋̔̇͊͒̆̉̚͝!̸̢̨̘̯̞̺͖͕̻̬͈͉̟̮̹͍̄̈́̚&quot;&gt;&gt;\
     [[BEHOLD!!!!!!!!!!!!!!!!!!!!!|Unity 2]]&lt;&lt;/linkreplace&gt;&gt;@@
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="Unity 2" tags="" position="100,350" size="100,100">[[Placeholder for Unity Kaptcha puzzle|Finish Kaptcha]]</tw-passagedata><tw-passagedata pid="22" name="Finish Kaptcha" tags="" position="225,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="Unity 2" tags="" position="100,350" size="100,100">[[Placeholder for Unity Kaptcha puzzle|Finish Kaptcha]]</tw-passagedata><tw-passagedata pid="22" name="Finish Kaptcha" tags="" position="225,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
     @@.olsen;Finished.@@
     &lt;&lt;next&gt;&gt;@@.asha.align-right;Let me see.@@
     &lt;&lt;next&gt;&gt;@@.asha.align-right;Holy crap. No joke. Thanks mate, you’re a total lifesaver.@@
@@ -687,7 +745,8 @@ window.goToMagicWeb = () => {
     &lt;&lt;next 2s&gt;&gt;@@.olsen;We’ll follow this up tomorrow, ok?@@
     &lt;&lt;next&gt;&gt;@@.flip-flop;Fiiiiiiiiiiiiiiiiiiiiine :/@@
     &lt;&lt;next 3s&gt;&gt;[[Back to work]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="Back to work" tags="" position="350,350" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;&lt;/timed&gt;&gt;\
+&lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="23" name="Back to work" tags="" position="350,350" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
 &lt;&lt;/silently&gt;&gt;\
 &lt;&lt;type 0.05s&gt;&gt;\
@@ -741,8 +800,19 @@ MIKE: Enjoy your wknd in the meantime.@@\
     @@.olsen;Huh. The ship looks empty.@@
     @@.olsen;...and heavily armed. I dunno if I want to run into these guys later.@@
     &lt;&lt;next&gt;&gt;[[Back|bookmarks]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="WizardChess" tags="" position="975,350" size="100,100">[[Back|bookmarks]]</tw-passagedata><tw-passagedata pid="29" name="Spriteify" tags="" position="1100,350" size="100,100">[Background: ocean, sirens]
-&lt;&lt;audio &quot;advertisement&quot; loop play&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="WizardChess" tags="" position="975,350" size="100,100">[[Back|bookmarks]]</tw-passagedata><tw-passagedata pid="29" name="Spriteify" tags="" position="1100,350" size="100,100">&lt;&lt;silently&gt;&gt;
+    &lt;&lt;audio &quot;advertisement&quot; volume 0.75 loop play&gt;&gt;
+    &lt;&lt;script&gt;&gt;
+        var hydra = new Hydra({ detectAudio: false });
+        s0.initImage(&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Syreny_%28%22Sirens%22%29_-_Wilhelm_Kotarbi%C5%84ski.jpg/1600px-Syreny_%28%22Sirens%22%29_-_Wilhelm_Kotarbi%C5%84ski.jpg?20240202211003&quot;)
+            src(s0).modulateScrollY(osc(5),0.5,0).modulateScrollX(osc(10),0.2,0).scroll(
+            () =&gt; -mouse.x / width,
+            () =&gt; -mouse.y / height)
+            .blend(gradient(2))
+            .modulate(noise(5,0.1))
+        .out(o0)
+    &lt;&lt;/script&gt;&gt;
+&lt;&lt;/silently&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt;
     @@.olsen;Excuse me, have you seen my friend, she&#39;s--@@
     &lt;&lt;next&gt;&gt;@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
@@ -785,17 +855,30 @@ MIKE: Enjoy your wknd in the meantime.@@\
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="30" name="Banner" tags="" position="1225,350" size="100,100">@@.pirate;NOOOO LADDIE! LISTEN NOT TO HER DEVILISH SONG!@@
-&lt;&lt;timed 2s&gt;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="30" name="Banner" tags="" position="1225,350" size="100,100">&lt;&lt;silently&gt;&gt;\
+    &lt;&lt;audio &quot;advertisement&quot; volume 0.75 fadeto 0.25&gt;&gt;
+    &lt;&lt;audio &quot;pirate-ship&quot; volume 0 fadein&gt;&gt;
+&lt;&lt;/silently&gt;&gt;\
+@@.pirate;NOOOO LADDIE! LISTEN NOT TO HER DEVILISH SONG!@@
+&lt;&lt;timed 3s&gt;&gt;
     @@.olsen;Wuh?@@
     &lt;&lt;next&gt;&gt;@@.pirate.align-right;I’ve been a PIRATER of music for years. I’ve seen too many good men, wasted upon the rocks, spending 7.99 a month. @@
     &lt;&lt;next&gt;&gt;@@.pirate.align-right;GO!!!! QUICK!!! Before she grabs a hold of ya! Saaaave YERSELF!@@
     &lt;&lt;next&gt;&gt;@@.pirate.align-right;GLOOOOOOOOOOOOOOOOOORY!
+            &lt;&lt;audio &quot;sword-fight&quot; play&gt;&gt;
+
     &lt;&lt;next&gt;&gt;[[Close tab|Searching 2]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="Searching 2" tags="" position="100,475" size="100,100">!!!Search History
-[Background: Archive institution of some sort?]
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="Searching 2" tags="" position="100,475" size="100,100">&lt;&lt;silently&gt;&gt;\
+    &lt;&lt;script&gt;&gt;
+        $(&quot;canvas&quot;).remove();
+    &lt;&lt;/script&gt;&gt;
+    &lt;&lt;audio &quot;advertisement&quot; stop&gt;&gt;
+    &lt;&lt;audio &quot;pirate-ship&quot; stop&gt;&gt;
+    &lt;&lt;audio &quot;sword-fight&quot; stop&gt;&gt;
+&lt;&lt;/silently&gt;&gt;\
 &lt;&lt;timed 2s&gt;&gt;
-    @@.olsen;Okkkkk, where have you gone Flip Flop...@@
+    @@.olsen;Phew.@@
+    &lt;&lt;next&gt;&gt;@@.olsen;Okkkkk, where have you gone Flip Flop...@@
     &lt;&lt;next&gt;&gt;@@.olsen;HELLOOOOOOO@@
     &lt;&lt;next&gt;&gt;@@.incognitus.align-right;Oy. You. Shush.@@
     &lt;&lt;next&gt;&gt;@@.olsen;Ah! Um, excuse me. Hello. I didnt realize anyone else was in here. @@

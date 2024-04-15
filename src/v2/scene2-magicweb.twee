@@ -4,9 +4,10 @@
 <<timed 2s>>
     <<next>>@@.flip-flop.align-right;Ok, Ok. [[Look what I found!|Magic Web 2]]@@
 <</timed>>
+<div id="scroll-bg"></div>\
 
 :: Magic Web 2
-<<timed 2s>>
+<<timed 2s>>\
     <<next>>[Placeholder of Asha video]
     <<next>>@@.olsen.align-left;Who is this exactly?@@
     <<next>>@@.flip-flop.align-right;Her name’s Asha Blake. She’s a famous werwolf live-streamer and look!@@
@@ -25,6 +26,7 @@
     <<next>>@@.olsen.align-left;Just send me the link@@
     <<next>>@@.flip-flop.align-left;[[Portal|Unity 1]]@@
 <</timed>>
+<div id="scroll-bg"></div>\
 
 :: Unity 1
 [[Placeholder for Unity section with Asha|Kaptcha 1]]
