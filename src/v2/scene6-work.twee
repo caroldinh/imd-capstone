@@ -38,7 +38,9 @@ MIKE: Enjoy your wknd in the meantime.@@\
 <</timed>>
 
 :: bookmarks
-!!Bookmarks
+<<script>>$("canvas").remove();<</script>>\
+<<audio "viking" stop>>\
+!!My Bookmarks
 [[📸 Witchtagram|Witchtagram]]
 [[🏴‍☠️ Thorrent|Thorrent]]
 [[🎧 Spriteify|Spriteify]]
@@ -60,10 +62,22 @@ MIKE: Enjoy your wknd in the meantime.@@\
 </style>
 
 :: Thorrent
-<<timed 2s>>
-    @@.olsen;Flip-Flop?@@
+<<audio "viking" loop play>>\
+<<silently>>\
+    <<script>>
+        let hydra = new Hydra({ detectAudio: false });
+        s0.initImage("https://upload.wikimedia.org/wikipedia/commons/7/78/Viking_attack_on_Gu%C3%A9rande%2C_from_a_Saint-Aubin_MS.jpg");
+        src(s0).scale(2).modulateScrollX(osc(10),0.2,0).out();
+    <</script>>\
+<</silently>>\
+<<timed 2s>>\
+    <<next>>@@.olsen;Flip-Flop?@@
+    <<next>>@@.olsen;I don't suppose any of you guys know--@@
+    <<next>>@@.olsen;Never mind.@@
+    <!--
     @@.olsen;Huh. The ship looks empty.@@
     @@.olsen;...and heavily armed. I dunno if I want to run into these guys later.@@
+    -->\
     <<next>>[[Back|bookmarks]]
 <</timed>>
 
@@ -72,7 +86,7 @@ MIKE: Enjoy your wknd in the meantime.@@\
 
 :: Spriteify
 <<silently>>
-    <<audio "advertisement" volume 0.75 loop play>>
+    <<audio "advertisement" volume 0.75 loop play>>\
     <<script>>
         var hydra = new Hydra({ detectAudio: false });
         s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Syreny_%28%22Sirens%22%29_-_Wilhelm_Kotarbi%C5%84ski.jpg/1600px-Syreny_%28%22Sirens%22%29_-_Wilhelm_Kotarbi%C5%84ski.jpg?20240202211003")
@@ -82,9 +96,9 @@ MIKE: Enjoy your wknd in the meantime.@@\
             .blend(gradient(2))
             .modulate(noise(5,0.1))
         .out(o0)
-    <</script>>
-<</silently>>
-<<timed 2s>>
+    <</script>>\
+<</silently>>\
+<<timed 2s>>\
     @@.olsen;Excuse me, have you seen my friend, she's--@@
     <<next>>@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
     <<next>>@@.olsen;Um. Yeah. Anyway, she's a fairy with like purple-pink hair@@

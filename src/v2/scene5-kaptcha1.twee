@@ -1,15 +1,20 @@
 :: Kaptcha 1
 <<silently>>\
+    <!--
     <<script>>
         var hydra = new Hydra({ detectAudio: false });
+        window._hydra = hydra;
+        importScripts("https://hyper-hydra.glitch.me/hydra-text.js");
         s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Duga-1_radar_data_center_inside_empty_server_racks_2018.jpg/1600px-Duga-1_radar_data_center_inside_empty_server_racks_2018.jpg?20191008182809");
-        //hydraText.font = "serif"
-        //hydraText.lineWidth = "2%"
-        //let str = (Math.random() + 1).toString(36).substring(7);
+        console.log(window.hydraText);
+        hydraText.font = "serif";
+        hydraText.lineWidth = "2%";
+        let str = (Math.random() + 1).toString(36).substring(7);
         src(s0).modulateScale(osc(4,-0.5,0).kaleid(3).scale(0.8),15,0).posterize(3)
-        //.diff(strokeText(str).modulateScale(noise(1,1), .8).modulateScrollY(osc(10),0.5,0))
+        .diff(strokeText(str).modulateScale(noise(1,1), .8).modulateScrollY(osc(10),0.5,0))
         .repeatX(3, 0.5).repeatY(4, 0.5).out()
     <</script>>
+    -->
 <</silently>>\
 <<timed 2s>>\
     <<audio "kaptcha-ambiance" loop play>>\
@@ -48,6 +53,7 @@
     <<next 5s>>@@.kaptcha.align-right;<<linkreplace "̸̧͈͕̜̲̪͈̬̝̦͇̃̆̋̒̓̅̏̿̉͑̽̏̋̇͆̋B̷̡̡̢̛̗̪̮̰̹͙̺̈́̏̎̊̈́͋̋̎̑̈́ͅE̶͓̞̜̥̼̋̒̈́̓̒͂͑͌͒͒͒͋̐̏͜͝͝Ḣ̸̨͈̭͖̜̓͜͝Ȍ̵̧̨̢̰̣̞̞͖̺̹͔̮̬̼̺L̶̹̝͓̪̰̫̥̱͖̻̥͈̗̩̠͕͒̈Ḑ̷̛̣͍̞͖̃́̿͌̓́̊͋͜͠͝ͅͅ!̵̤̋͂̈́̑͌̈́͐̔̚!̴̼̝̯̲͎͌̔͐̍ͅ!̶͓̭̦̖̩̞̰̠̱̥̤̠̈̇̈́͝!̸̨̖͙̤͈̱̑̾̓̾̇̔͊͛̕̚͠!̵̛̟̝͔̱̮̙̘͕͇̼̘̯͋̈́̃̉̇̉̈́̉͝ͅ!̶̺̻̼̺̦̞͍̞̲̼̱̪͖̠͍̈́͛͗̀͂̆̒͒̒̐͐͗̂͒̋̔͘!̶̧̧̛̦̣̲͚͇̲̭͔̖͓̟̰̍̄̎̐͐̀͜!̴̢̛̰͉̳̝͓̖̀̽̊͊́̂̈́̃͑̑̋̀̚͘͝!̴̧̺̅̽̌̀͑̉͠!̸̨̨͉̦͉̪͔̞͑̾̊̈͋̇͂̀̂̌̀̇̆̐͒͘͠ͅ!̶̧͓͎̜̠̞̯̲͋͆́̓̔́̄̈̀̌̈́̒̕̕̕̕͝!̵̭͉̝̩͈̝̖̏̾̈̕!̴͈͖̲͍̳̺͉̭̘͓̯̬͙̜̱̲͍͋͛͋͆̾͒!̴̢̌̾̎̀͗͂̇̎͆̈́̋͘!̵̨͓̠̄̀͌́̋̆͑̕̚!̸̹͎̳͓̯̲̭̙̙̘͚͊̓̀̆̅͒̋̂̈̌͒͝ͅ!̸̢̨̛̞̜͓̙̺͓̲̜̺͐̀̈́̀̋̈́́͆̓̈́̐̿̊͗̈́͠!̵̜̤̇̉̿̈́̑̇̎̉̂́!̶̝̮͇̯̒̾͆͑̏̐͂̈́͌̾͐̃̀̓̈́͊̑!̴̡̧̳̫͎̼̰̲͈̼̪͓͛͋̔̇͊͒̆̉̚͝!̸̢̨̘̯̞̺͖͕̻̬͈͉̟̮̹͍̄̈́̚">>\
     [[BEHOLD!!!!!!!!!!!!!!!!!!!!!|Unity 2]]<</linkreplace>>@@
 <</timed>>
+<div id="kaptcha-bg"></div>\
 
 :: Unity 2
 [[Placeholder for Unity Kaptcha puzzle|Finish Kaptcha]]

@@ -125,19 +125,22 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Press+Start+2P&display=swap');
 
 :root {
-    --olsen-theme: #00b5a0;
+    --olsen-theme: #024f46;
     --flip-flop-theme: #b187ff;
     --kaptcha-theme: #1170e2;
     --kaptcha-secondary: #1a0300;
     --sybor-theme: #6300ba;
     --work-theme: #024f46;
     --work-light: #246c55;
+    --link-color: #0032e6;
+    --link-visited: #35216e;
 }
 
 body {
     font-family: "Inconsolata", monospace;
     font-size: 16pt;
     --character-theme: var(--work-theme);
+    color: black;
 }
 
 @keyframes linkhover {
@@ -157,27 +160,32 @@ body {
 }
 
 a {
-    color: unset;
+    color:var(--link-color);
     font-weight: bold;
     text-decoration: none;
-    border-bottom: 4px solid white;
+    border-bottom: 4px solid var(--link-color);
+}
+
+a:visited {
+    color: var(--link-visited)
 }
 
 a:hover {
-    color: white;
+    cursor: pointer;
+    color: var(--link-color);
     text-decoration: none;
     /*
     background: linear-gradient(90deg, var(--olsen-theme), rgba(0, 0, 0, 0))
     -webkit-animation: linkhover 0.3s ease;
     -moz-animation: linkhover 0.3s ease;
     animation: linkhover 0.3s ease;
-    */
     background: var(--character-theme);
+    */
 }
 
 a::before {
     content: ">> ";
-    color: white;
+    color: var(--link-color);
 }
 
 #story {
@@ -186,13 +194,27 @@ a::before {
 #passages {
     max-width: 45vw;
 }
+
 .passage {
-    background-color: black;
+    background-color: #b5a996;
     padding: 24px;
-    border: 1px solid white;
-    border-radius: 0px 0px 8px 8px;
-    border-top: 16px solid white;
+    border: 3px solid #153fee;
+    box-shadow: 3px 3px 5px 6px rgba(18, 29, 74, 0.3) inset;
 }
+
+.passage::before {
+    content: "FAIRY QUEST";
+    color: white;
+    font-size: 16px;
+    padding: 4px;
+    margin: -24px;
+    background: linear-gradient(90deg, rgba(18, 29, 74, 1) 0%, rgba(11, 44, 182, 1) 100%);
+    width: calc(100% + 48px - 8px);
+    display: block;
+    margin-bottom: 24px;
+    border-bottom: 3px solid #153fee;
+}
+
 #ui-bar {
     display: none;
 }
@@ -290,6 +312,20 @@ canvas {
     background-repeat: no-repeat;
 }
 
+#kaptcha-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: 0;
+    background-image: url('images/kaptcha-bg.gif');
+    background-size: 100vw 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
 .kaptcha {
     --character-theme: var(--kaptcha-theme);
     color: var(--kaptcha-theme);
@@ -330,7 +366,8 @@ window.goToMagicWeb = () => {
 &lt;&lt;cacheaudio &quot;advertisement&quot; &quot;media/audio/advertisement.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;kaptcha-ambiance&quot; &quot;media/audio/kaptcha-ambiance.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;pirate-ship&quot; &quot;media/audio/pirate-ship-louder.wav&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;sword-fight&quot; &quot;media/audio/swordfight.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="225,100" size="100,100">[[Start|Kaptcha 1]]</tw-passagedata><tw-passagedata pid="3" name="Inbox 1" tags="inbox" position="350,100" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;&lt;cacheaudio &quot;sword-fight&quot; &quot;media/audio/swordfight.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;viking&quot; &quot;media/audio/viking.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Start" tags="" position="225,100" size="100,100">[[Start|bookmarks]]</tw-passagedata><tw-passagedata pid="3" name="Inbox 1" tags="inbox" position="350,100" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
 &lt;&lt;/silently&gt;&gt;\
 &lt;div class=&quot;work-dialog&quot;&gt;\
@@ -664,16 +701,21 @@ window.goToMagicWeb = () => {
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-left;[[Portal|Unity 1]]@@
 &lt;&lt;/timed&gt;&gt;
 &lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="19" name="Unity 1" tags="" position="1100,225" size="100,100">[[Placeholder for Unity section with Asha|Kaptcha 1]]</tw-passagedata><tw-passagedata pid="20" name="Kaptcha 1" tags="" position="1225,225" size="100,100">&lt;&lt;silently&gt;&gt;\
+    &lt;!--
     &lt;&lt;script&gt;&gt;
         var hydra = new Hydra({ detectAudio: false });
+        window._hydra = hydra;
+        importScripts(&quot;https://hyper-hydra.glitch.me/hydra-text.js&quot;);
         s0.initImage(&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Duga-1_radar_data_center_inside_empty_server_racks_2018.jpg/1600px-Duga-1_radar_data_center_inside_empty_server_racks_2018.jpg?20191008182809&quot;);
-        //hydraText.font = &quot;serif&quot;
-        //hydraText.lineWidth = &quot;2%&quot;
-        //let str = (Math.random() + 1).toString(36).substring(7);
+        console.log(window.hydraText);
+        hydraText.font = &quot;serif&quot;;
+        hydraText.lineWidth = &quot;2%&quot;;
+        let str = (Math.random() + 1).toString(36).substring(7);
         src(s0).modulateScale(osc(4,-0.5,0).kaleid(3).scale(0.8),15,0).posterize(3)
-        //.diff(strokeText(str).modulateScale(noise(1,1), .8).modulateScrollY(osc(10),0.5,0))
+        .diff(strokeText(str).modulateScale(noise(1,1), .8).modulateScrollY(osc(10),0.5,0))
         .repeatX(3, 0.5).repeatY(4, 0.5).out()
     &lt;&lt;/script&gt;&gt;
+    --&gt;
 &lt;&lt;/silently&gt;&gt;\
 &lt;&lt;timed 2s&gt;&gt;\
     &lt;&lt;audio &quot;kaptcha-ambiance&quot; loop play&gt;&gt;\
@@ -711,7 +753,8 @@ window.goToMagicWeb = () => {
     Psh. As if. You may have solved my challenge last time, but now I’ve got something that’ll make even the cleverest robots COWER!!!!&lt;&lt;/linkreplace&gt;&gt;@@
     &lt;&lt;next 5s&gt;&gt;@@.kaptcha.align-right;&lt;&lt;linkreplace &quot;̸̧͈͕̜̲̪͈̬̝̦͇̃̆̋̒̓̅̏̿̉͑̽̏̋̇͆̋B̷̡̡̢̛̗̪̮̰̹͙̺̈́̏̎̊̈́͋̋̎̑̈́ͅE̶͓̞̜̥̼̋̒̈́̓̒͂͑͌͒͒͒͋̐̏͜͝͝Ḣ̸̨͈̭͖̜̓͜͝Ȍ̵̧̨̢̰̣̞̞͖̺̹͔̮̬̼̺L̶̹̝͓̪̰̫̥̱͖̻̥͈̗̩̠͕͒̈Ḑ̷̛̣͍̞͖̃́̿͌̓́̊͋͜͠͝ͅͅ!̵̤̋͂̈́̑͌̈́͐̔̚!̴̼̝̯̲͎͌̔͐̍ͅ!̶͓̭̦̖̩̞̰̠̱̥̤̠̈̇̈́͝!̸̨̖͙̤͈̱̑̾̓̾̇̔͊͛̕̚͠!̵̛̟̝͔̱̮̙̘͕͇̼̘̯͋̈́̃̉̇̉̈́̉͝ͅ!̶̺̻̼̺̦̞͍̞̲̼̱̪͖̠͍̈́͛͗̀͂̆̒͒̒̐͐͗̂͒̋̔͘!̶̧̧̛̦̣̲͚͇̲̭͔̖͓̟̰̍̄̎̐͐̀͜!̴̢̛̰͉̳̝͓̖̀̽̊͊́̂̈́̃͑̑̋̀̚͘͝!̴̧̺̅̽̌̀͑̉͠!̸̨̨͉̦͉̪͔̞͑̾̊̈͋̇͂̀̂̌̀̇̆̐͒͘͠ͅ!̶̧͓͎̜̠̞̯̲͋͆́̓̔́̄̈̀̌̈́̒̕̕̕̕͝!̵̭͉̝̩͈̝̖̏̾̈̕!̴͈͖̲͍̳̺͉̭̘͓̯̬͙̜̱̲͍͋͛͋͆̾͒!̴̢̌̾̎̀͗͂̇̎͆̈́̋͘!̵̨͓̠̄̀͌́̋̆͑̕̚!̸̹͎̳͓̯̲̭̙̙̘͚͊̓̀̆̅͒̋̂̈̌͒͝ͅ!̸̢̨̛̞̜͓̙̺͓̲̜̺͐̀̈́̀̋̈́́͆̓̈́̐̿̊͗̈́͠!̵̜̤̇̉̿̈́̑̇̎̉̂́!̶̝̮͇̯̒̾͆͑̏̐͂̈́͌̾͐̃̀̓̈́͊̑!̴̡̧̳̫͎̼̰̲͈̼̪͓͛͋̔̇͊͒̆̉̚͝!̸̢̨̘̯̞̺͖͕̻̬͈͉̟̮̹͍̄̈́̚&quot;&gt;&gt;\
     [[BEHOLD!!!!!!!!!!!!!!!!!!!!!|Unity 2]]&lt;&lt;/linkreplace&gt;&gt;@@
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="Unity 2" tags="" position="100,350" size="100,100">[[Placeholder for Unity Kaptcha puzzle|Finish Kaptcha]]</tw-passagedata><tw-passagedata pid="22" name="Finish Kaptcha" tags="" position="225,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
+&lt;&lt;/timed&gt;&gt;
+&lt;div id=&quot;kaptcha-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="21" name="Unity 2" tags="" position="100,350" size="100,100">[[Placeholder for Unity Kaptcha puzzle|Finish Kaptcha]]</tw-passagedata><tw-passagedata pid="22" name="Finish Kaptcha" tags="" position="225,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
     @@.olsen;Finished.@@
     &lt;&lt;next&gt;&gt;@@.asha.align-right;Let me see.@@
     &lt;&lt;next&gt;&gt;@@.asha.align-right;Holy crap. No joke. Thanks mate, you’re a total lifesaver.@@
@@ -779,7 +822,9 @@ MIKE: Enjoy your wknd in the meantime.@@\
     &lt;&lt;next&gt;&gt;@@.olsen;HELLLOOOOOOOOO?@@
     &lt;&lt;next&gt;&gt;@@.olsen;hmm@@
     &lt;&lt;next&gt;&gt;@@.olsen;Lemme check my [[bookmarks]]@@
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="bookmarks" tags="" position="600,350" size="100,100">!!Bookmarks
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="bookmarks" tags="" position="600,350" size="100,100">&lt;&lt;script&gt;&gt;$(&quot;canvas&quot;).remove();&lt;&lt;/script&gt;&gt;\
+&lt;&lt;audio &quot;viking&quot; stop&gt;&gt;\
+!!My Bookmarks
 [[📸 Witchtagram|Witchtagram]]
 [[🏴‍☠️ Thorrent|Thorrent]]
 [[🎧 Spriteify|Spriteify]]
@@ -795,13 +840,25 @@ MIKE: Enjoy your wknd in the meantime.@@\
 .witchtagram {
  font-family: &quot;Rubik&quot;, sans-serif;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="27" name="Thorrent" tags="" position="850,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;
-    @@.olsen;Flip-Flop?@@
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="27" name="Thorrent" tags="" position="850,350" size="100,100">&lt;&lt;audio &quot;viking&quot; loop play&gt;&gt;\
+&lt;&lt;silently&gt;&gt;\
+    &lt;&lt;script&gt;&gt;
+        let hydra = new Hydra({ detectAudio: false });
+        s0.initImage(&quot;https://upload.wikimedia.org/wikipedia/commons/7/78/Viking_attack_on_Gu%C3%A9rande%2C_from_a_Saint-Aubin_MS.jpg&quot;);
+        src(s0).scale(2).modulateScrollX(osc(10),0.2,0).out();
+    &lt;&lt;/script&gt;&gt;\
+&lt;&lt;/silently&gt;&gt;\
+&lt;&lt;timed 2s&gt;&gt;\
+    &lt;&lt;next&gt;&gt;@@.olsen;Flip-Flop?@@
+    &lt;&lt;next&gt;&gt;@@.olsen;I don&#39;t suppose any of you guys know--@@
+    &lt;&lt;next&gt;&gt;@@.olsen;Never mind.@@
+    &lt;!--
     @@.olsen;Huh. The ship looks empty.@@
     @@.olsen;...and heavily armed. I dunno if I want to run into these guys later.@@
+    --&gt;\
     &lt;&lt;next&gt;&gt;[[Back|bookmarks]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="WizardChess" tags="" position="975,350" size="100,100">[[Back|bookmarks]]</tw-passagedata><tw-passagedata pid="29" name="Spriteify" tags="" position="1100,350" size="100,100">&lt;&lt;silently&gt;&gt;
-    &lt;&lt;audio &quot;advertisement&quot; volume 0.75 loop play&gt;&gt;
+    &lt;&lt;audio &quot;advertisement&quot; volume 0.75 loop play&gt;&gt;\
     &lt;&lt;script&gt;&gt;
         var hydra = new Hydra({ detectAudio: false });
         s0.initImage(&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Syreny_%28%22Sirens%22%29_-_Wilhelm_Kotarbi%C5%84ski.jpg/1600px-Syreny_%28%22Sirens%22%29_-_Wilhelm_Kotarbi%C5%84ski.jpg?20240202211003&quot;)
@@ -811,9 +868,9 @@ MIKE: Enjoy your wknd in the meantime.@@\
             .blend(gradient(2))
             .modulate(noise(5,0.1))
         .out(o0)
-    &lt;&lt;/script&gt;&gt;
-&lt;&lt;/silently&gt;&gt;
-&lt;&lt;timed 2s&gt;&gt;
+    &lt;&lt;/script&gt;&gt;\
+&lt;&lt;/silently&gt;&gt;\
+&lt;&lt;timed 2s&gt;&gt;\
     @@.olsen;Excuse me, have you seen my friend, she&#39;s--@@
     &lt;&lt;next&gt;&gt;@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
     &lt;&lt;next&gt;&gt;@@.olsen;Um. Yeah. Anyway, she&#39;s a fairy with like purple-pink hair@@
