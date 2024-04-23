@@ -25,7 +25,7 @@ Fairy Quest
 <<cacheaudio "viking" "media/audio/viking.wav">>
 
 :: Start
-[[Start|bookmarks]]
+[[Start|Inbox 1]]
 
 :: UserStylesheet[stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
@@ -33,10 +33,20 @@ Fairy Quest
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Press+Start+2P&display=swap');
 
+@font-face {
+    font-family: 'Marola';
+    src: url('fonts/Marola.woff2') format('woff2'),
+        url('fonts/Marola.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --olsen-theme: #024f46;
-    --flip-flop-theme: #b187ff;
-    --kaptcha-theme: #1170e2;
+    --flip-flop-theme: #a70fff;
+    /*--kaptcha-theme: #1170e2;*/
+    --kaptcha-theme: #000000;
     --kaptcha-secondary: #1a0300;
     --sybor-theme: #6300ba;
     --work-theme: #024f46;
@@ -143,6 +153,7 @@ canvas {
     --character-theme: var(--olsen-theme);
     color: var(--olsen-theme);
     display: block;
+    font-weight: bolder;
 }
 
 .flip-flop {
@@ -183,9 +194,9 @@ canvas {
     background-color: var(--work-theme);
     margin: 16px;
     padding: 16px;
-    border: 1px solid var(--olsen-theme);
+    border: 1px solid black;
     border-radius: 0px 0px 8px 8px;
-    border-top: 16px solid var(--olsen-theme);
+    border-top: 16px solid black;
 }
 
 .work-dialog .work {
@@ -235,12 +246,25 @@ canvas {
     background-repeat: no-repeat;
 }
 
+#slime-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: 0;
+    background-image: url('images/slime.gif');
+}
+
 .kaptcha {
     --character-theme: var(--kaptcha-theme);
     color: var(--kaptcha-theme);
-    background-color: var(--kaptcha-secondary);
-    font-family: serif;
+    background-color: white;
+    border: 1px solid black;
+    font-family: 'Marola', sans-serif;
     font-size: 1.5em;
+    padding: 4px;
 }
 .sybor {
     --character-theme: var(--sybor-theme);

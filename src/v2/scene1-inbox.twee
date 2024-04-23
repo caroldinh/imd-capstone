@@ -99,6 +99,9 @@
         all: unset;
         background-color: transparent;
     }
+    .passage:before {
+        all:unset;
+    }
     a {
         all: unset;
     }
