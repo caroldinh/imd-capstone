@@ -1,0 +1,35 @@
+
+:: Magic Web 1
+[Placeholder: magic web feed assets - news articles, videos, etc.]
+<iframe class="unity-embed" src="/fq-webgl/index.html" onload="window.handleIFrame(this)"></iframe>
+<!--
+<<timed 2s>>
+    <<next>>@@.flip-flop.align-right;Ok, Ok. [[Look what I found!|Magic Web 2]]@@
+<</timed>>
+-->
+<div id="scroll-bg"></div>\
+
+:: Magic Web 2
+<<timed 2s>>\
+    <<next>>[Placeholder of Asha video]
+    <<next>>@@.olsen.align-left;Who is this exactly?@@
+    <<next>>@@.flip-flop.align-right;Her name’s Asha Blake. She’s a famous werwolf live-streamer and look!@@
+    <<next>>@@.olsen.align-left;She’s got a fairy's wand?@@
+    <<next>>@@.flip-flop.align-right;Not just any wand! That’s my Great Aunt Nellie’s wand!!! I’d recognize it anywhere.@@
+    <<next>>@@.olsen.align-left;Kinda just looks like every other fairy wand we’ve seen.@@
+    <<next>>@@.flip-flop.align-right;Are you kidding me??? The points of the star, the length of the handle, the glow!!!! Totally and wholly unique.@@
+    <<next>>@@.olsen.align-left;Whatever you say. So you think she’s behind your family’s disappearance? For your wands?@@
+    <<next>>@@.flip-flop.align-right;Maybe! She could be trying to learn our fairy secrets so she can use our magic to blow up the moon!!!@@
+    <<next>>@@.olsen.align-left;Don’t werewolves like the moon? I mean without it they’re just kind of…guys.@@
+    <<next>>@@.flip-flop.align-right;Hmmm. Well I dont know what her evil plan is but she’s doing a private Q and A for her fans today! We can go there and totally question her. If it’s not her maybe she knows something.@@
+    <<next>>@@.olsen.align-left;I guess she must know something if she’s got your family’s wand. At least she can at least tell us where she got it. Ok. Let’s do it.@@
+    <<next>>@@.flip-flop.align-right;Yes!!!!!!! Ok, we gotta be careful, we don’t want to scare her off. You be Good Cop, I’ll be Bad Cop.@@
+    <<next>>@@.olsen.align-left;That sounds like a terrible idea. Why would we even WANT a Bad Cop? How could that help us?@@
+    <<next>>@@.flip-flop.align-right;Ugh fine. How about you be the guard that tells only lies, and I’LL be the guard who tells only truths.@@
+    <<next>>@@.olsen.align-left;Just send me the link@@
+    <<next>>@@.flip-flop.align-left;[[Portal|Unity 1]]@@
+<</timed>>
+<div id="scroll-bg"></div>\
+
+:: Unity 1
+[[Placeholder for Unity section with Asha|Kaptcha 1]]

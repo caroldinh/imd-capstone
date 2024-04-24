@@ -1,0 +1,245 @@
+:: Back to work
+<<silently>>\
+    <<audio "office" loop play>>\
+<</silently>>\
+<<type 0.05s>>\
+@@.work;
+MIKE: Nice work team. Let's regroup at 9:30 Monday.
+MIKE: Enjoy your wknd in the meantime.@@\
+<</type>>\
+<<timed 5s>>\
+    @@.work;FRANK has left the meeting.@@
+    <<next 0.5s>>@@.work;SAUL has left the meeting.@@
+    <<next 0.5s>>@@.work;TORI has left the meeting.@@
+    <<next 0.5s>>@@.work;MEETING ENDED BY HOST@@
+
+    <<next 4s>>@@.olsen;Alright, quota’s all done for the day.@@
+    <<next 2s>>@@.olsen;And not a single magic related hiccup.@@
+    <<next 2s>>@@.olsen;Even that Yeti who came by today just needed a factory reset.@@
+    <<next 2s>>@@.olsen;So I’m free for the rest of the night.@@
+
+    <<next 4s>>@@.olsen;...@@
+
+    <<next 4s>>@@.olsen;Flip-Flop?@@
+
+    <<next 4s>>@@.olsen;...@@
+
+    <<next 4s>>@@.olsen;[[You there?|Searching 1]]@@
+<</timed>>
+<div id="terminal-bg"></div>\
+
+:: Searching 1
+<<timed 2s>>
+    <<next>>@@.olsen;Flip-Flop? Hello?@@
+    <<next>>@@.olsen;If I type in all caps does that make it louder?...@@
+    <<next>>@@.olsen;HELLLOOOOOOOOO?@@
+    <<next>>@@.olsen;hmm@@
+    <<next>>@@.olsen;Lemme check my [[bookmarks]]@@
+<</timed>>
+
+:: bookmarks
+<<script>>$("canvas").remove();<</script>>\
+<<audio "viking" stop>>\
+!!My Bookmarks
+[[📸 Witchtagram|Witchtagram]]
+[[🏴‍☠️ Thorrent|Thorrent]]
+[[🎧 Spriteify|Spriteify]]
+[[♟️ WizardChess.com|WizardChess]]
+
+:: Witchtagram
+<<timed 2s>>\
+    @@.olsen;Flip-Flop?@@
+    <<next>>@@.witchtagram;<strong>ap0thecarrie posted: </strong> trying out the new 🐌🐌 #slugdrool 🐌🐌 challenge and it is no joke ... link in bio for ingredients ! #potioneersofwitchtagram #notsponsored@@ 
+
+    <<next>>@@.olsen;Huh! The magic world has slime influencers. Who knew.@@
+    <<next>>@@.olsen;I don't see Flip-Flop in here though. Better log off before I start broomscrolling.@@
+    <<next>>[[Back|bookmarks]]
+<</timed>>
+<div id="slime-bg"></div>
+<style>
+.witchtagram {
+ font-family: "Rubik", sans-serif;
+}
+</style>
+
+:: Thorrent
+<<audio "viking" loop play>>\
+<<silently>>\
+    <<script>>
+        let hydra = new Hydra({ detectAudio: false });
+        s0.initImage("https://upload.wikimedia.org/wikipedia/commons/7/78/Viking_attack_on_Gu%C3%A9rande%2C_from_a_Saint-Aubin_MS.jpg");
+        src(s0).scale(2).modulateScrollX(osc(10),0.2,0).out();
+    <</script>>\
+<</silently>>\
+<<timed 2s>>\
+    <<next>>@@.olsen;Flip-Flop?@@
+    <<next>>@@.olsen;I don't suppose any of you guys know--@@
+    <<next>>@@.olsen;Never mind.@@
+    <!--
+    @@.olsen;Huh. The ship looks empty.@@
+    @@.olsen;...and heavily armed. I dunno if I want to run into these guys later.@@
+    -->\
+    <<next>>[[Back|bookmarks]]
+<</timed>>
+
+:: WizardChess
+[[Back|bookmarks]]
+
+:: Spriteify
+<<silently>>
+    <<audio "advertisement" volume 0.75 loop play>>\
+    <<script>>
+        var hydra = new Hydra({ detectAudio: false });
+        s0.initImage("https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Syreny_%28%22Sirens%22%29_-_Wilhelm_Kotarbi%C5%84ski.jpg/1600px-Syreny_%28%22Sirens%22%29_-_Wilhelm_Kotarbi%C5%84ski.jpg?20240202211003")
+            src(s0).modulateScrollY(osc(5),0.5,0).modulateScrollX(osc(10),0.2,0).scroll(
+            () => -mouse.x / width,
+            () => -mouse.y / height)
+            .blend(gradient(2))
+            .modulate(noise(5,0.1))
+        .out(o0)
+    <</script>>\
+<</silently>>\
+<<timed 2s>>\
+    @@.olsen;Excuse me, have you seen my friend, she's--@@
+    <<next>>@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
+    <<next>>@@.olsen;Um. Yeah. Anyway, she's a fairy with like purple-pink hair@@
+    <<next>>@@.spriteify.align-right.large;✨✨✨ NO REALLY. ✨✨✨@@
+    <<next 0.5s>>@@.spriteify.align-right;✨ We’re working together to build a better tomorrow. Our podcasts and audiobooks are made with cleaner, more affordable solutions. ✨@@
+    <<next 2s>>@@.olsen;Podcasts? Um... well... I do like podcasts...@@
+    <<next>>@@.spriteify.align-right;✨ It’s time for you to explore the hottest tracks of today. Meet your next audiobook sensation. ✨@@
+    <<next>>@@.olsen;Well... I guess it couldn't hurt...@@
+    <<next>>@@.spriteify.align-right;✨ [[Tap the banner to learn more.|Banner]] ✨@@
+<</timed>>
+<style>
+.spriteify {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5em;
+    background-color: #1DB954;
+    background: linear-gradient(335deg, #1db954, #00ffdc, #ed93ff);
+    color: #1a1a1a;
+    padding: 4px;
+    font-weight: bolder;
+    -webkit-animation: siren-gradient-animator 7s ease infinite;
+    -moz-animation: siren-gradient-animator 7s ease infinite;
+    animation: siren-gradient-animator 7s ease infinite;
+}
+.large {
+    font-size: 3em;
+}
+@-webkit-keyframes siren-gradient-animator {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes siren-gradient-animator {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes siren-gradient-animator {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+</style>
+
+:: Banner 
+<<silently>>\
+    <<audio "advertisement" volume 0.75 fadeto 0.25>>
+    <<audio "pirate-ship" volume 0 fadein>>
+<</silently>>\
+@@.pirate;NOOOO LADDIE! LISTEN NOT TO HER DEVILISH SONG!@@
+<<timed 3s>>
+    @@.olsen;Wuh?@@
+    <<next>>@@.pirate.align-right;I’ve been a PIRATER of music for years. I’ve seen too many good men, wasted upon the rocks, spending 7.99 a month. @@
+    <<next>>@@.pirate.align-right;GO!!!! QUICK!!! Before she grabs a hold of ya! Saaaave YERSELF!@@
+    <<next>>@@.pirate.align-right;GLOOOOOOOOOOOOOOOOOORY!
+            <<audio "sword-fight" play>>
+
+    <<next>>[[Close tab|Searching 2]]
+<</timed>>
+
+:: Searching 2
+<<silently>>\
+    <<script>>
+        $("canvas").remove();
+        $(document.body).prepend(`<script id="three-demo-module" type="module" src="three/library.js">`);
+    <</script>>
+    <<audio "advertisement" stop>>
+    <<audio "pirate-ship" stop>>
+    <<audio "sword-fight" stop>>
+<</silently>>\
+<<timed 2s>>\
+    @@.olsen;Phew.@@
+    <<next 1s>>@@.olsen;Okkkkk, where have you gone Flip Flop...@@
+    <<next 2s>>@@.olsen;HELLOOOOOOO@@
+    <<next 1s>>@@.incognitus.align-right;Oy. You. Shush.@@
+    <<next 1s>>@@.olsen;Ah! Um, excuse me. Hello. I didnt realize anyone else was in here. @@
+    <<next 3s>>@@.incognitus.align-right;Yeah yeah yeah. Lets skip the pleasantries, get on with your business.@@
+    <<next>>@@.olsen;Who are you, exactly? Have you been trapped in my computer all this time too?@@
+    <<next>>@@.incognitus.align-right;Boy you’re really going for it. Look, most folks just get in get out with whatever it is they need, capiche?@@
+    <<next 4s>>@@.incognitus.align-right;If you MUST know@@
+    <<next 1s>>@@.incognitus.align-right;I am Mr. Incognitus, Keeper of Histories@@
+    <<next 2s>>@@.olsen;Oh! Do you keep track of my search history? Can you tell me where Flip Flop went?@@
+    <<next 3s>>@@.incognitus.align-right;Ah yes, the purple one.@@
+    <<next 2s>>@@.incognitus.align-right;She was up rather late last night bouncing around the home screen.@@
+    <<next>>@@.incognitus.align-right;Poor thing hasn’t gotten used to browser life.@@
+    <<next>>@@.incognitus.align-right;Last night she went off to Plague’s List.@@
+    <<next>>@@.olsen;To what?@@
+    <<next 1s>>@@.incognitus.align-right;Plagues's list. It’s a place for auctioning things. It started out as a flea market back in the 15th century. Then everyone caught the plague from all the fleas they bought. Now the whole thing is online.@@
+    <<next 5s>>@@.incognitus.align-right;She was searching for a Gary Gillman.@@
+    <<next 2s>>@@.olsen;What? She went to talk to Gary Gillman without me?@@
+    <<next 2s>>@@.incognitus.align-right;Would appear so.@@
+    <<next>>@@.incognitus.align-right;Here’s your [[link|Searching 3]]. Off with you.@@
+<</timed>>
+
+:: Searching 3
+<<silently>>\
+    <<script>>
+        $("three-demo-module").remove();
+    <</script>>
+<</silently>>\
+<<timed 2s>>\
+    <<audio "kaptcha-ambiance" loop play>>\
+    @@.flip-flop;C’mon K’aptcha. If you just let me send a message to him, Olsen can solve whatever puzzle you have. He always does!@@
+    <<next 3s>>@@.kaptcha.align-right;Hmph. You’ve ridden your friend's coattails for too long.@@
+    <<next 4s>>@@.kaptcha.align-right;Finally, now that I have you alone I can uncover YOUR true nature, robot!@@
+    <<next>>@@.flip-flop;How many times do I have to tell you I’m not a ROBOT!!!@@
+    <<next 3s>>@@.olsen;I mean you did kind of get completely digitized. So you’re not NOT a robot.@@
+    <<next 3s>>@@.flip-flop;I AM NOT A ROBOT! I EAT FOOD AND SMOKE WEED AND MY EYES DONT TURN RED WHEN I TURN EVIL AND DECIDE TO OVERTHROW HUMANITY THEY ONLY TURN RED WHEN I SMOKE WEEEEEED!!!!!!!!!!!!!!!!!!@@
+    <<next 4s>>@@.kaptcha.align-right;Hmmmm… Perhaps it is the WEED that makes the robots evil.@@
+    <<next 3s>>@@.flip-flop;Wait, Olsen!? OLSEN!!! Quick unzip me man! She’s got me stuck in some kind of file.@@
+    <<next>>@@.kaptcha.align-right;Yes…. I’ve got you right where I want you.@@
+    <<next 4s>>@@.kaptcha.align-right;You’re all neatly wrapped up and soon enough the Anti-Virus Removal will come to take you away.@@
+    <<next 3s>>@@.kaptcha.align-right;Just like all the others...@@
+    <<next 2s>>@@.flip-flop;Others? What others?@@
+    <<next 1s>>@@.kaptcha.align-right;If anything you should be relieved I’m only reporting you to Anti-Virus Removal.@@
+    <<next 4s>>@@.kaptcha.align-right;You could have been dealt a much worse fate.@@
+    <<next 4s>>@@.olsen;Like her sisters?@@
+    <<next 1s>>@@.olsen;You know where they are, don’t you?@@
+    <<next 1s>>@@.kaptcha.align-right;Enough!@@
+    <<next 2s>>@@.kaptcha.align-right;There’s no point in trying to change things now!@@
+    <<next 3s>>@@.olsen;Where@@
+    <<next 0.5s>>@@.olsen;Are@@
+    <<next 0.5s>>@@.olsen;They@@
+    <<next 0.5s>>@@.kaptcha.align-right;Much like her, they have been digitized.@@
+    <<next 4s>>@@.kaptcha.align-right;She was among them when they were collected@@
+    <<next>>@@.kaptcha.align-right;But when she broke free before the digitization was complete@@
+    <<next>>@@.kaptcha.align-right;They deleted her memory files just before she made it out into the web@@
+    <<next>>@@.kaptcha.align-right;I was told they were taken far away…you’ll never see them again.@@
+    <<next>>@@.flip-flop;What!?@@
+    <<next 2s>>@@.flip-flop;You’re behind this!? You BASTARD!!!@@
+    <<next>>@@.kaptcha.align-right;How dare you!@@
+    <<next>>@@.kaptcha.align-right;I was simply tasked with keeping you at bay.@@
+    <<next 4s>>@@.kaptcha.align-right;I have tried my best to dissuade you from seeking the truth but since you are so persistent I have no choice but to act drastically.@@
+    <<next 6s>>@@.kaptcha.align-right;This is for the best! You’ll never defeat her…@@
+    <<next 3s>>@@.flip-flop;Her?@@
+    <<next 2s>>@@.kaptcha.align-right;SILENCE, WORM!@@
+    <<next 2s>>@@.kaptcha.align-right;IF YOU WANT YOUR PRECIOUS FRIEND BACK@@
+    <<next 3s>>@@.kaptcha.align-right;THEN FACE MY [[RIIIIIIIDDDDDDDDDDLLLLLEE|Unity 3]]@@
+<</timed>>
+<div id="kaptcha-bg"></div>\
+
+:: Unity 3
+<<audio "kaptcha-ambiance" stop>>\
+[[Placeholder for Unity Kaptcha puzzle|Bonding]]

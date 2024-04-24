@@ -1,0 +1,31 @@
+:: UserScript[script]
+if (!window.renderUnderwater) {
+    window.renderUnderwater = () => {
+
+    }
+}
+
+document.getElementById("story").addEventListener( 'DOMNodeInserted', function ( event ) {
+   $(this)[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
+}, false );
+
+window.handleIFrame = (e) => {
+    console.log("Iframe loaded");
+    console.log(e);
+    console.log(Object.keys(e));
+    console.log(e.contentDocument);
+    if (e.contentDocument && e.contentDocument.location) {
+        console.log(e.contentDocument.location.href)
+    } else {
+        console.log(Object.keys(e));
+        console.log(Object.keys(e.contentDocument));
+    }
+    /*
+    if (e.contentWindow && e.contentWindow.document && e.contentWindow.document.indexOf("webgl") < 0) {
+        window.location.href = "https://google.com";
+    }     /*
+    var content = e.contentDocument || e.contentWindow.document;
+    console.log(content);
+    console.log("iframe loaded")
+    */
+}

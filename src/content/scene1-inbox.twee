@@ -1,0 +1,151 @@
+:: Inbox 1 [inbox]
+<<silently>>\
+    <<audio "office" loop play>>\
+<</silently>>\
+<div class="work-dialog">\
+<<type 0.05s>>\
+    @@.work;COMPOSE EMAIL
+    FROM: olsen@kraken-it.net
+    TO: frank@kraken-it.net, tori@kraken-it.net, saul@kraken-it.net  
+    CC: tech-support@kraken-it.net  
+    SUBJECT: [ACS-49] Bug report on internal firewall tool@@\
+<</type>>\
+</div>
+<<timed 12s>>\
+    <<audio "notif" play>>\
+    @@.flip-flop;Hiiiiiii :3@@
+    <img class="contact-card" src="/images/contact-cards/Flip-Flop.png">\
+    <<next 1s>>\
+    <div class="work-dialog">\
+    <<type 0.05s>>\
+        @@.work;Client has reported unprecedented activity on their firewall. It's stronger than it needs to be. Cause: dragonflies? Could any of you take a look for this sprint? 3 pts.@@
+    <</type>>\
+    </div>
+    <<timed 12s>>\
+        <<audio "notif" play>>\
+        @@.flip-flop;Oh come on, you’re seriously doing work right now?
+        [[Reply|Inbox 2]]
+        [[Dismiss|Inbox 3]]
+    <</timed>>\
+<</timed>>
+<div id="terminal-bg"></div>\
+
+:: Inbox 2 [inbox]
+@@.olsen;Oh. Hey Flip Flop.@@
+<<timed 2s>>
+    @@.olsen.align-left;Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?@@
+    <<next 5s>>@@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
+    <<next 4s>>@@.flip-flop.align-right;I’ve been up all night searching for leads and what have you been doing? Sleeping? For 8 whole hours? Ridiculous.@@
+    <<next 4s>>@@.flip-flop.align-right;Even back when I HAD a physical body, I only ever slept for 3 MAX.@@
+    <<next 3s>>@@.olsen.align-left;I’ve got work to do. Shush.@@
+    <<next 2s>>@@.flip-flop.align-right;It’s always  “Flip Flop, I have a job”, “Flip Flop, don’t delete my work documents”, “Flip Flop, I can’t bring my laptop to the Centaurs on Assateague Island so they can enchant on my hard drive blah blah blah”. You’re no fun >:/@@
+    <<next 6s>>@@.olsen.align-left;I was never fun. Also those centaurs were totally scamming you.@@
+    <<next 3s>>@@.olsen.align-left;[[I'm going back to work.|Inbox 3]]@@
+<</timed>>
+<div id="terminal-bg"></div>\
+<<script>>
+    $(document).unbind(':typingstop');
+<</script>>
+
+:: Inbox 3 [inbox]
+<<timed 2s>>\
+    <div class="work-dialog">\
+        @@.work;NEW MESSAGE IN INBOX: <strong>[URGENT] Action Required: Please Respond</strong>@@
+    </div>
+    <<next 4s>>\
+    <<audio "notif" play>>\
+    @@.flip-flop.align-right;[[I bet I can speed up all this dumb work stuff.|Inbox 4]]@@
+<</timed>>
+<div id="terminal-bg"></div>\
+
+:: Inbox 4 [inbox]
+<<audio "office" loop play>>
+<<timed 2s>>\
+    <div class="work-dialog">\
+        <<type 0.05s>>\
+        @@.work.purple;COMPOSE EMAIL
+        FROM: olsen@faken-it.net
+        TO: frank@kraken-it.net, tori@kraken-it.net, saul@kraken-it.net  
+        CC: tech-support@kraken-it.net  
+        SUBJECT: ⚠️⚠️⚠️⚠️ IMPORTANT SECURITY UPDATE: DOWNLOAD NOW!!! ⚠️⚠️⚠️⚠️
+        ---
+        📎 1 Attachment: 🦠🦠🦠.EXE
+        😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈@@
+        <</type>>\
+    </div>
+    <<next 30s>>@@.flip-flop.align-right;There we go! That should keep em busy for a few hours.@@
+    <<next 3s>>@@.olsen.align-left;Oh my god. You’re not gonna leave me alone unless I do what you want, are you?@@
+    <<next 3s>>@@.flip-flop.align-right;Nope!@@
+    <<next 2s>>@@.olsen.align-left;[[Ughhh, fine.|Desktop 1]]@@
+<</timed>>
+<div id="terminal-bg"></div>\
+<style>
+.purple {
+    color: #b187ff;
+}
+</style>
+
+:: Desktop 1
+<<audio "office" volume 1 fadeout>>
+<<cycle "$iconClicked">>
+    <<option "<img src='images/Tax Forms.png'>" 1>>
+    <<option "<img src='images/Do Not Open.png'>" 2>>
+    <<option "<img src='images/TOPSECRET.png'>" 3>>
+    <<option "<img src='images/FINE.png'>" 4>>
+    <<option "<div id='cycling-image' onClick='window.goToMagicWeb()'></div>" 5>>
+<</cycle>>
+<style>
+    .passage {
+        all: unset;
+        background-color: transparent;
+    }
+    .passage:before {
+        all:unset;
+    }
+    a {
+        all: unset;
+    }
+    a:before {
+        all: unset;
+    }
+    a:hover {
+        cursor: pointer;
+    }
+    body {
+        background-color: var(--os-background);
+        background-image: url('images/desktop.png');
+        background-size: 100vw auto;
+        object-fit: cover;
+        background-repeat: no-repeat;
+    }
+    img {
+        position: fixed;
+        top: 30%;
+        left: 20%;
+        width: 80px;
+        height: auto;
+    }
+    #cycling-image {
+        position: fixed;
+        top: 30%;
+        left: 20%;
+        width: 80px;
+        height: 100px;
+        background-image: url('images/Magic Web1.png');
+        background-repeat: no-repeat;
+        object-fit: cover;
+        background-size: contain;
+        animation: change-bg 1s infinite;
+    }
+
+    @keyframes change-bg {
+        0%, 100%   {background-image: url('images/Magic Web1.png');}
+        33%   {background-image: url('images/Magic Web2.png');}
+        66%   {background-image: url('images/Magic Web3.png');}
+    }
+</style>
+
+:: MagicWebTransition [script]
+window.goToMagicWeb = () => {
+    Engine.play("Magic Web 1");
+};
