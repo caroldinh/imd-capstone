@@ -90,13 +90,6 @@ a:hover {
     cursor: pointer;
     color: var(--link-color);
     text-decoration: none;
-    /*
-    background: linear-gradient(90deg, var(--olsen-theme), rgba(0, 0, 0, 0))
-    -webkit-animation: linkhover 0.3s ease;
-    -moz-animation: linkhover 0.3s ease;
-    animation: linkhover 0.3s ease;
-    background: var(--character-theme);
-    */
 }
 
 a::before {
@@ -142,6 +135,7 @@ canvas {
     left: 0;
     z-index: -1;
 }
+
 
 .sprite {
     height: 200px;
