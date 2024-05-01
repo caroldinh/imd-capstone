@@ -1,5 +1,7 @@
 :: Inbox 1 [inbox]
 <<silently>>\
+    <<audio "intro-play-once" volume 1 fadeout>>\
+    <<audio "intro-loop" volume 1 fadeout>>\
     <<audio "office" loop play>>\
 <</silently>>\
 <div class="work-dialog">\

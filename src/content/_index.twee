@@ -23,6 +23,12 @@ Fairy Quest
 <<cacheaudio "pirate-ship" "media/audio/pirate-ship-louder.wav">>
 <<cacheaudio "sword-fight" "media/audio/swordfight.wav">>
 <<cacheaudio "viking" "media/audio/viking.wav">>
+<<cacheaudio "intro-play-once" "media/audio/intro_play_once.wav">>
+<<cacheaudio "intro-loop" "media/audio/intro_loop.wav">>
+<<createplaylist "intro-playlist">>
+    <<track "intro-play-once">>
+    <<track "intro-loop">>
+<</createplaylist>>
 
 :: UserStylesheet[stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
@@ -221,6 +227,19 @@ canvas {
     background-size: auto 100vh;
     background-position: center top;
     background-repeat: no-repeat;
+}
+
+#bg-windows {
+    background-color: #221c10;
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: 0;
+    background-image: url('images/windows-desktop.jpg');
+    background-size: 100vw 100vh;
 }
 
 #kaptcha-bg {

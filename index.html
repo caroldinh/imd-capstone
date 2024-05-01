@@ -496,7 +496,15 @@ window.goToMagicWeb = () => {
 &lt;&lt;cacheaudio &quot;kaptcha-ambiance&quot; &quot;media/audio/kaptcha-ambiance.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;pirate-ship&quot; &quot;media/audio/pirate-ship-louder.wav&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;sword-fight&quot; &quot;media/audio/swordfight.wav&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;viking&quot; &quot;media/audio/viking.wav&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Inbox 1" tags="inbox" position="225,100" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;&lt;cacheaudio &quot;viking&quot; &quot;media/audio/viking.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;intro-play-once&quot; &quot;media/audio/intro_play_once.wav&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;intro-loop&quot; &quot;media/audio/intro_loop.wav&quot;&gt;&gt;
+&lt;&lt;createplaylist &quot;intro-playlist&quot;&gt;&gt;
+    &lt;&lt;track &quot;intro-play-once&quot;&gt;&gt;
+    &lt;&lt;track &quot;intro-loop&quot;&gt;&gt;
+&lt;&lt;/createplaylist&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Inbox 1" tags="inbox" position="225,100" size="100,100">&lt;&lt;silently&gt;&gt;\
+    &lt;&lt;audio &quot;intro-play-once&quot; volume 1 fadeout&gt;&gt;\
+    &lt;&lt;audio &quot;intro-loop&quot; volume 1 fadeout&gt;&gt;\
     &lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
 &lt;&lt;/silently&gt;&gt;\
 &lt;div class=&quot;work-dialog&quot;&gt;\
@@ -1159,7 +1167,13 @@ MIKE: Enjoy your wknd in the meantime.@@\
     &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;[Insert 10 more important emails here]&lt;&lt;/type&gt;&gt;
     &lt;&lt;next 8s&gt;&gt;@@.olsen;Shit.@@
     &lt;&lt;next 5s&gt;&gt;[[Transition to Act 3|Unity 4]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Unity 4" tags="" position="475,475" size="100,100">[[Placeholder for Gary Unity scene|Underwater]]</tw-passagedata><tw-passagedata pid="35" name="Start" tags="" position="600,475" size="100,100">&lt;&lt;timed 0.5s&gt;&gt;\
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Unity 4" tags="" position="475,475" size="100,100">[[Placeholder for Gary Unity scene|Underwater]]</tw-passagedata><tw-passagedata pid="35" name="Start" tags="" position="600,475" size="100,100">&lt;&lt;silently&gt;&gt;\
+    &lt;&lt;timed 0s&gt;&gt;
+        &lt;&lt;audio &quot;intro-play-once&quot; play&gt;&gt;\
+        &lt;&lt;next 11.3s&gt;&gt;&lt;&lt;audio &quot;intro-loop&quot; loop play&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;
+&lt;&lt;/silently&gt;&gt;\
+&lt;&lt;timed 0.5s&gt;&gt;\
     &lt;&lt;next&gt;&gt;@@#welcome;//Logged in as OLSEN&lt;br&gt;to KRAKEN IT NETWORK//@@
     &lt;&lt;next&gt;&gt;@@#title;FAIRY QUEST@@
     &lt;&lt;next&gt;&gt;@@#game-start;[[Start|Inbox 1]]@@

@@ -1,4 +1,10 @@
 :: Start
+<<silently>>\
+    <<timed 0s>>
+        <<audio "intro-play-once" play>>\
+        <<next 11.3s>><<audio "intro-loop" loop play>>
+    <</timed>>
+<</silently>>\
 <<timed 0.5s>>\
     <<next>>@@#welcome;//Logged in as OLSEN<br>to KRAKEN IT NETWORK//@@
     <<next>>@@#title;FAIRY QUEST@@
