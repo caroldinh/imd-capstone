@@ -2,40 +2,43 @@
 <<silently>>\
     <<audio "office" loop play>>\
 <</silently>>\
-<<type 0.05s>>\
-@@.work;
-MIKE: Nice work team. Let's regroup at 9:30 Monday.
-MIKE: Enjoy your wknd in the meantime.@@\
-<</type>>\
-<<timed 5s>>\
-    @@.work;FRANK has left the meeting.@@
-    <<next 0.5s>>@@.work;SAUL has left the meeting.@@
-    <<next 0.5s>>@@.work;TORI has left the meeting.@@
-    <<next 0.5s>>@@.work;MEETING ENDED BY HOST@@
+<<timed 0s>>\
+    <div class="work-dialog"><<type 0.05s>>@@.work;MIKE: Nice work team. Let's regroup at 9:30 Monday.
+    MIKE: Enjoy your wknd in the meantime.@@\
+    <</type>>\
+    <<timed 5s>>\
+        @@.work;FRANK has left the meeting.@@
+        <<next 0.5s>>@@.work;SAUL has left the meeting.@@
+        <<next 0.5s>>@@.work;TORI has left the meeting.@@
+        <<next 0.5s>>@@.work;MEETING ENDED BY HOST@@
+    <</timed>>\
+    </div>
+    <<next 6s>><<timed 2s>>\
+        <<type 0.05s>>@@.olsen;Alright, quota’s all done for the day.@@<</type>>
+        <<next 4s>><<type 0.05s>>@@.olsen;And not a single magic related hiccup.@@<</type>>
+        <<next 5s>><<type 0.05s>>@@.olsen;Even that Yeti who came by today just needed a factory reset.@@<</type>>
+        <<next 5s>><<type 0.05s>>@@.olsen;So I’m free for the rest of the night.@@<</type>>
 
-    <<next 4s>>@@.olsen;Alright, quota’s all done for the day.@@
-    <<next 2s>>@@.olsen;And not a single magic related hiccup.@@
-    <<next 2s>>@@.olsen;Even that Yeti who came by today just needed a factory reset.@@
-    <<next 2s>>@@.olsen;So I’m free for the rest of the night.@@
+        <<next 4s>><<type 0.5s>>@@.olsen;...@@<</type>>
 
-    <<next 4s>>@@.olsen;...@@
+        <<next 4s>><<type 0.05s>>@@.olsen;Flip-Flop?@@<</type>>
 
-    <<next 4s>>@@.olsen;Flip-Flop?@@
+        <<next 4s>><<type 0.5s>>@@.olsen;...@@<</type>>
 
-    <<next 4s>>@@.olsen;...@@
-
-    <<next 4s>>@@.olsen;[[You there?|Searching 1]]@@
-<</timed>>
+        <<next 4s>><<type 0.05s>>@@.olsen;[[You there?|Searching 1]]@@<</type>>
+    <</timed>>\
+<</timed>>\
 <div id="terminal-bg"></div>\
 
 :: Searching 1
-<<timed 2s>>
-    <<next>>@@.olsen;Flip-Flop? Hello?@@
-    <<next>>@@.olsen;If I type in all caps does that make it louder?...@@
-    <<next>>@@.olsen;HELLLOOOOOOOOO?@@
-    <<next>>@@.olsen;hmm@@
-    <<next>>@@.olsen;Lemme check my [[bookmarks]]@@
-<</timed>>
+<<timed 4s>>\
+    <<type 0.05s>>@@.olsen;Flip-Flop? Hello?@@<</type>>
+    <<next>><<type 0.05s>>@@.olsen;If I type in all caps does that make it louder?...@@<</type>>
+    <<next>><<type 0.05s>>@@.olsen;HELLLOOOOOOOOO?@@<</type>>
+    <<next>><<type 0.05s>>@@.olsen;hmm@@<</type>>
+    <<next>><<type 0.05s>>@@.olsen;Lemme check my [[bookmarks]]@@<</type>>
+<</timed>>\
+<div id="terminal-bg"></div>\
 
 :: bookmarks
 <<script>>$("canvas").remove();<</script>>\
@@ -44,17 +47,18 @@ MIKE: Enjoy your wknd in the meantime.@@\
 [[📸 Witchtagram|Witchtagram]]
 [[🏴‍☠️ Thorrent|Thorrent]]
 [[🎧 Spriteify|Spriteify]]
-[[♟️ WizardChess.com|WizardChess]]
+<!--[[♟️ WizardChess.com|WizardChess]]-->
+<div id="terminal-bg"></div>\
 
 :: Witchtagram
 <<timed 2s>>\
-    @@.olsen;Flip-Flop?@@
+    <<type 0.05s>>@@.olsen;Flip-Flop?@@<</type>>
     <<next>>@@.witchtagram;<strong>ap0thecarrie posted: </strong> trying out the new 🐌🐌 #slugdrool 🐌🐌 challenge and it is no joke ... link in bio for ingredients ! #potioneersofwitchtagram #notsponsored@@ 
 
-    <<next>>@@.olsen;Huh! The magic world has slime influencers. Who knew.@@
-    <<next>>@@.olsen;I don't see Flip-Flop in here though. Better log off before I start broomscrolling.@@
-    <<next>>[[Back|bookmarks]]
-<</timed>>
+    <<next>><<type 0.05s>>@@.olsen;Huh! The magic world has slime influencers. Who knew.@@<</type>>
+    <<next 4s>><<type 0.05s>>@@.olsen;I don't see Flip-Flop in here though. Better log off before I start broomscrolling.@@<</type>>
+    <<next 6s>>[[Back|bookmarks]]
+<</timed>>\
 <div id="slime-bg"></div>
 <style>
 .witchtagram {
@@ -71,10 +75,10 @@ MIKE: Enjoy your wknd in the meantime.@@\
         src(s0).scale(2).modulateScrollX(osc(10),0.2,0).out();
     <</script>>\
 <</silently>>\
-<<timed 2s>>\
-    <<next>>@@.olsen;Flip-Flop?@@
-    <<next>>@@.olsen;I don't suppose any of you guys know--@@
-    <<next>>@@.olsen;Never mind.@@
+<<timed 4s>>\
+    <<type 0.05s>>@@.olsen;Flip-Flop?@@<</type>>
+    <<next>><<type 0.05s>>@@.olsen;I don't suppose any of you guys know--@@<</type>>
+    <<next>><<type 0.05s>>@@.olsen;Never mind.@@<</type>>
     <!--
     @@.olsen;Huh. The ship looks empty.@@
     @@.olsen;...and heavily armed. I dunno if I want to run into these guys later.@@
@@ -99,16 +103,16 @@ MIKE: Enjoy your wknd in the meantime.@@\
         .out(o0)
     <</script>>\
 <</silently>>\
-<<timed 2s>>\
-    @@.olsen;Excuse me, have you seen my friend, she's--@@
-    <<next>>@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
-    <<next>>@@.olsen;Um. Yeah. Anyway, she's a fairy with like purple-pink hair@@
-    <<next>>@@.spriteify.align-right.large;✨✨✨ NO REALLY. ✨✨✨@@
+<<timed 4s>>\
+    <<type 0.05s>>@@.olsen;Excuse me, have you seen my friend, she's--@@<</type>>
+    <<next 3s>>@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
+    <<next 2s>><<type 0.05s>>@@.olsen;Um. Yeah. Anyway, she's a fairy with like purple-pink hair@@<</type>>
+    <<next 4s>>@@.spriteify.align-right.large;✨✨✨ NO REALLY. ✨✨✨@@
     <<next 0.5s>>@@.spriteify.align-right;✨ We’re working together to build a better tomorrow. Our podcasts and audiobooks are made with cleaner, more affordable solutions. ✨@@
-    <<next 2s>>@@.olsen;Podcasts? Um... well... I do like podcasts...@@
-    <<next>>@@.spriteify.align-right;✨ It’s time for you to explore the hottest tracks of today. Meet your next audiobook sensation. ✨@@
-    <<next>>@@.olsen;Well... I guess it couldn't hurt...@@
-    <<next>>@@.spriteify.align-right;✨ [[Tap the banner to learn more.|Banner]] ✨@@
+    <<next 4s>><<type 0.05s>>@@.olsen;Podcasts? Um... well... I do like podcasts...@@<</type>>
+    <<next 4s>>@@.spriteify.align-right;✨ It’s time for you to explore the hottest tracks of today. Meet your next audiobook sensation. ✨@@
+    <<next 2s>><<type 0.05s>>@@.olsen;Well... I guess it couldn't hurt...@@<</type>>
+    <<next 3s>>@@.spriteify.align-right;✨ [[Tap the banner to learn more.|Banner]] ✨@@
 <</timed>>
 <style>
 .spriteify {
@@ -149,14 +153,13 @@ MIKE: Enjoy your wknd in the meantime.@@\
     <<audio "pirate-ship" volume 0 fadein>>
 <</silently>>\
 @@.pirate;NOOOO LADDIE! LISTEN NOT TO HER DEVILISH SONG!@@
-<<timed 3s>>
-    @@.olsen;Wuh?@@
-    <<next>>@@.pirate.align-right;I’ve been a PIRATER of music for years. I’ve seen too many good men, wasted upon the rocks, spending 7.99 a month. @@
-    <<next>>@@.pirate.align-right;GO!!!! QUICK!!! Before she grabs a hold of ya! Saaaave YERSELF!@@
-    <<next>>@@.pirate.align-right;GLOOOOOOOOOOOOOOOOOORY!
-            <<audio "sword-fight" play>>
-
-    <<next>>[[Close tab|Searching 2]]
+<<timed 1s>>
+    <<next 1s>><<type 0.05s>>@@.olsen;Wuh?@@<</type>>
+    <<next 2s>>@@.pirate.align-right;I’ve been a PIRATER of music for years. I’ve seen too many good men, wasted upon the rocks, spending 7.99 a month. @@
+    <<next 5s>>@@.pirate.align-right;GO!!!! QUICK!!! Before she grabs a hold of ya! Saaaave YERSELF!@@
+    <<next>>@@.pirate.align-right;GLOOOOOOOOOOOOOOOOOORY!@@
+    <<audio "sword-fight" play>>
+    <<next 2s>>[[Close tab|Searching 2]]
 <</timed>>
 
 :: Searching 2
@@ -170,27 +173,27 @@ MIKE: Enjoy your wknd in the meantime.@@\
     <<audio "sword-fight" stop>>
 <</silently>>\
 <<timed 2s>>\
-    @@.olsen;Phew.@@
-    <<next 1s>>@@.olsen;Okkkkk, where have you gone Flip Flop...@@
-    <<next 2s>>@@.olsen;HELLOOOOOOO@@
-    <<next 1s>>@@.incognitus.align-right;Oy. You. Shush.@@
-    <<next 1s>>@@.olsen;Ah! Um, excuse me. Hello. I didnt realize anyone else was in here. @@
-    <<next 3s>>@@.incognitus.align-right;Yeah yeah yeah. Lets skip the pleasantries, get on with your business.@@
-    <<next>>@@.olsen;Who are you, exactly? Have you been trapped in my computer all this time too?@@
-    <<next>>@@.incognitus.align-right;Boy you’re really going for it. Look, most folks just get in get out with whatever it is they need, capiche?@@
+    <<type 0.05s>>@@.olsen;Phew.@@<</type>>
+    <<next 2s>><<type 0.05s>>@@.olsen;Okkkkk, where have you gone Flip Flop...@@<</type>>
+    <<next 4s>><<type 0.05s>>@@.olsen;HELLOOOOOOO@@<</type>>
+    <<next 2s>>@@.incognitus.align-right;Oy. You. Shush.@@
+    <<next 1s>><<type 0.05s>>@@.olsen;Ah! Um, excuse me. Hello. I didnt realize anyone else was in here. @@<</type>>
+    <<next 5s>>@@.incognitus.align-right;Yeah yeah yeah. Lets skip the pleasantries, get on with your business.@@
+    <<next 3s>><<type 0.05s>>@@.olsen;Who are you, exactly? Have you been trapped in my computer all this time too?@@<</type>>
+    <<next 5s>>@@.incognitus.align-right;Boy you’re really going for it. Look, most folks just get in get out with whatever it is they need, capiche?@@
     <<next 4s>>@@.incognitus.align-right;If you MUST know@@
     <<next 1s>>@@.incognitus.align-right;I am Mr. Incognitus, Keeper of Histories@@
-    <<next 2s>>@@.olsen;Oh! Do you keep track of my search history? Can you tell me where Flip Flop went?@@
-    <<next 3s>>@@.incognitus.align-right;Ah yes, the purple one.@@
+    <<next 2s>><<type 0.05s>>@@.olsen;Oh! Do you keep track of my search history? Can you tell me where Flip Flop went?@@<</type>>
+    <<next 6s>>@@.incognitus.align-right;Ah yes, the purple one.@@
     <<next 2s>>@@.incognitus.align-right;She was up rather late last night bouncing around the home screen.@@
     <<next>>@@.incognitus.align-right;Poor thing hasn’t gotten used to browser life.@@
     <<next>>@@.incognitus.align-right;Last night she went off to Plague’s List.@@
-    <<next>>@@.olsen;To what?@@
-    <<next 1s>>@@.incognitus.align-right;Plagues's list. It’s a place for auctioning things. It started out as a flea market back in the 15th century. Then everyone caught the plague from all the fleas they bought. Now the whole thing is online.@@
+    <<next>><<type 0.05s>>@@.olsen;To what?@@<</type>>
+    <<next 2s>>@@.incognitus.align-right;Plagues's list. It’s a place for auctioning things. It started out as a flea market back in the 15th century. Then everyone caught the plague from all the fleas they bought. Now the whole thing is online.@@
     <<next 5s>>@@.incognitus.align-right;She was searching for a Gary Gillman.@@
-    <<next 2s>>@@.olsen;What? She went to talk to Gary Gillman without me?@@
-    <<next 2s>>@@.incognitus.align-right;Would appear so.@@
-    <<next>>@@.incognitus.align-right;Here’s your [[link|Searching 3]]. Off with you.@@
+    <<next 2s>><<type 0.05s>>@@.olsen;What? She went to talk to Gary Gillman without me?@@<</type>>
+    <<next 4s>>@@.incognitus.align-right;Would appear so.@@
+    <<next 2s>>@@.incognitus.align-right;Here’s your [[link|Searching 3]]. Off with you.@@
 <</timed>>
 
 :: Searching 3

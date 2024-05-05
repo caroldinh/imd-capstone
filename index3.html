@@ -123,6 +123,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 
 @font-face {
     font-family: 'Marola';
@@ -382,6 +383,21 @@ canvas {
     width: 100vw;
     height: 100vh;
     border: 0;
+}
+
+.pirate {
+    font-family: "Pirata One", serif;
+    background-color: black;
+    color: white;
+    font-size: 1.5em;
+    padding: 4px;
+}
+
+.incognitus {
+    font-family: 'Times New Roman', serif;
+    font-size: 0.75em;
+    max-width: 60%;
+    text-align: right justify;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* twine-user-script #1: "ScriptUtils" */
 window.finishScriptEvent = new Event("script-finished");
 
@@ -931,50 +947,54 @@ window.goToMagicWeb = () => {
 &lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="22" name="Back to work" tags="" position="225,350" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
 &lt;&lt;/silently&gt;&gt;\
-&lt;&lt;type 0.05s&gt;&gt;\
-@@.work;
-MIKE: Nice work team. Let&#39;s regroup at 9:30 Monday.
-MIKE: Enjoy your wknd in the meantime.@@\
-&lt;&lt;/type&gt;&gt;\
-&lt;&lt;timed 5s&gt;&gt;\
-    @@.work;FRANK has left the meeting.@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;SAUL has left the meeting.@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;TORI has left the meeting.@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;MEETING ENDED BY HOST@@
+&lt;&lt;timed 0s&gt;&gt;\
+    &lt;div class=&quot;work-dialog&quot;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.work;MIKE: Nice work team. Let&#39;s regroup at 9:30 Monday.
+    MIKE: Enjoy your wknd in the meantime.@@\
+    &lt;&lt;/type&gt;&gt;\
+    &lt;&lt;timed 5s&gt;&gt;\
+        @@.work;FRANK has left the meeting.@@
+        &lt;&lt;next 0.5s&gt;&gt;@@.work;SAUL has left the meeting.@@
+        &lt;&lt;next 0.5s&gt;&gt;@@.work;TORI has left the meeting.@@
+        &lt;&lt;next 0.5s&gt;&gt;@@.work;MEETING ENDED BY HOST@@
+    &lt;&lt;/timed&gt;&gt;\
+    &lt;/div&gt;
+    &lt;&lt;next 6s&gt;&gt;&lt;&lt;timed 2s&gt;&gt;\
+        &lt;&lt;type 0.05s&gt;&gt;@@.olsen;Alright, quota’s all done for the day.@@&lt;&lt;/type&gt;&gt;
+        &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;And not a single magic related hiccup.@@&lt;&lt;/type&gt;&gt;
+        &lt;&lt;next 5s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Even that Yeti who came by today just needed a factory reset.@@&lt;&lt;/type&gt;&gt;
+        &lt;&lt;next 5s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;So I’m free for the rest of the night.@@&lt;&lt;/type&gt;&gt;
 
-    &lt;&lt;next 4s&gt;&gt;@@.olsen;Alright, quota’s all done for the day.@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;And not a single magic related hiccup.@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;Even that Yeti who came by today just needed a factory reset.@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;So I’m free for the rest of the night.@@
+        &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.5s&gt;&gt;@@.olsen;...@@&lt;&lt;/type&gt;&gt;
 
-    &lt;&lt;next 4s&gt;&gt;@@.olsen;...@@
+        &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Flip-Flop?@@&lt;&lt;/type&gt;&gt;
 
-    &lt;&lt;next 4s&gt;&gt;@@.olsen;Flip-Flop?@@
+        &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.5s&gt;&gt;@@.olsen;...@@&lt;&lt;/type&gt;&gt;
 
-    &lt;&lt;next 4s&gt;&gt;@@.olsen;...@@
-
-    &lt;&lt;next 4s&gt;&gt;@@.olsen;[[You there?|Searching 1]]@@
-&lt;&lt;/timed&gt;&gt;
-&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="23" name="Searching 1" tags="" position="350,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;
-    &lt;&lt;next&gt;&gt;@@.olsen;Flip-Flop? Hello?@@
-    &lt;&lt;next&gt;&gt;@@.olsen;If I type in all caps does that make it louder?...@@
-    &lt;&lt;next&gt;&gt;@@.olsen;HELLLOOOOOOOOO?@@
-    &lt;&lt;next&gt;&gt;@@.olsen;hmm@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Lemme check my [[bookmarks]]@@
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="bookmarks" tags="" position="475,350" size="100,100">&lt;&lt;script&gt;&gt;$(&quot;canvas&quot;).remove();&lt;&lt;/script&gt;&gt;\
+        &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;[[You there?|Searching 1]]@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;/timed&gt;&gt;\
+&lt;&lt;/timed&gt;&gt;\
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="23" name="Searching 1" tags="" position="350,350" size="100,100">&lt;&lt;timed 4s&gt;&gt;\
+    &lt;&lt;type 0.05s&gt;&gt;@@.olsen;Flip-Flop? Hello?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;If I type in all caps does that make it louder?...@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;HELLLOOOOOOOOO?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;hmm@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Lemme check my [[bookmarks]]@@&lt;&lt;/type&gt;&gt;
+&lt;&lt;/timed&gt;&gt;\
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="24" name="bookmarks" tags="" position="475,350" size="100,100">&lt;&lt;script&gt;&gt;$(&quot;canvas&quot;).remove();&lt;&lt;/script&gt;&gt;\
 &lt;&lt;audio &quot;viking&quot; stop&gt;&gt;\
 !!My Bookmarks
 [[📸 Witchtagram|Witchtagram]]
 [[🏴‍☠️ Thorrent|Thorrent]]
 [[🎧 Spriteify|Spriteify]]
-[[♟️ WizardChess.com|WizardChess]]</tw-passagedata><tw-passagedata pid="25" name="Witchtagram" tags="" position="600,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
-    @@.olsen;Flip-Flop?@@
+&lt;!--[[♟️ WizardChess.com|WizardChess]]--&gt;
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="25" name="Witchtagram" tags="" position="600,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
+    &lt;&lt;type 0.05s&gt;&gt;@@.olsen;Flip-Flop?@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;@@.witchtagram;&lt;strong&gt;ap0thecarrie posted: &lt;/strong&gt; trying out the new 🐌🐌 #slugdrool 🐌🐌 challenge and it is no joke ... link in bio for ingredients ! #potioneersofwitchtagram #notsponsored@@ 
 
-    &lt;&lt;next&gt;&gt;@@.olsen;Huh! The magic world has slime influencers. Who knew.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;I don&#39;t see Flip-Flop in here though. Better log off before I start broomscrolling.@@
-    &lt;&lt;next&gt;&gt;[[Back|bookmarks]]
-&lt;&lt;/timed&gt;&gt;
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Huh! The magic world has slime influencers. Who knew.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;I don&#39;t see Flip-Flop in here though. Better log off before I start broomscrolling.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 6s&gt;&gt;[[Back|bookmarks]]
+&lt;&lt;/timed&gt;&gt;\
 &lt;div id=&quot;slime-bg&quot;&gt;&lt;/div&gt;
 &lt;style&gt;
 .witchtagram {
@@ -988,10 +1008,10 @@ MIKE: Enjoy your wknd in the meantime.@@\
         src(s0).scale(2).modulateScrollX(osc(10),0.2,0).out();
     &lt;&lt;/script&gt;&gt;\
 &lt;&lt;/silently&gt;&gt;\
-&lt;&lt;timed 2s&gt;&gt;\
-    &lt;&lt;next&gt;&gt;@@.olsen;Flip-Flop?@@
-    &lt;&lt;next&gt;&gt;@@.olsen;I don&#39;t suppose any of you guys know--@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Never mind.@@
+&lt;&lt;timed 4s&gt;&gt;\
+    &lt;&lt;type 0.05s&gt;&gt;@@.olsen;Flip-Flop?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;I don&#39;t suppose any of you guys know--@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Never mind.@@&lt;&lt;/type&gt;&gt;
     &lt;!--
     @@.olsen;Huh. The ship looks empty.@@
     @@.olsen;...and heavily armed. I dunno if I want to run into these guys later.@@
@@ -1010,16 +1030,16 @@ MIKE: Enjoy your wknd in the meantime.@@\
         .out(o0)
     &lt;&lt;/script&gt;&gt;\
 &lt;&lt;/silently&gt;&gt;\
-&lt;&lt;timed 2s&gt;&gt;\
-    @@.olsen;Excuse me, have you seen my friend, she&#39;s--@@
-    &lt;&lt;next&gt;&gt;@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Um. Yeah. Anyway, she&#39;s a fairy with like purple-pink hair@@
-    &lt;&lt;next&gt;&gt;@@.spriteify.align-right.large;✨✨✨ NO REALLY. ✨✨✨@@
+&lt;&lt;timed 4s&gt;&gt;\
+    &lt;&lt;type 0.05s&gt;&gt;@@.olsen;Excuse me, have you seen my friend, she&#39;s--@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 3s&gt;&gt;@@.spriteify.align-right;✨ Thanks for listening to Spriteify. ✨@@
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Um. Yeah. Anyway, she&#39;s a fairy with like purple-pink hair@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 4s&gt;&gt;@@.spriteify.align-right.large;✨✨✨ NO REALLY. ✨✨✨@@
     &lt;&lt;next 0.5s&gt;&gt;@@.spriteify.align-right;✨ We’re working together to build a better tomorrow. Our podcasts and audiobooks are made with cleaner, more affordable solutions. ✨@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;Podcasts? Um... well... I do like podcasts...@@
-    &lt;&lt;next&gt;&gt;@@.spriteify.align-right;✨ It’s time for you to explore the hottest tracks of today. Meet your next audiobook sensation. ✨@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Well... I guess it couldn&#39;t hurt...@@
-    &lt;&lt;next&gt;&gt;@@.spriteify.align-right;✨ [[Tap the banner to learn more.|Banner]] ✨@@
+    &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Podcasts? Um... well... I do like podcasts...@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 4s&gt;&gt;@@.spriteify.align-right;✨ It’s time for you to explore the hottest tracks of today. Meet your next audiobook sensation. ✨@@
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Well... I guess it couldn&#39;t hurt...@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 3s&gt;&gt;@@.spriteify.align-right;✨ [[Tap the banner to learn more.|Banner]] ✨@@
 &lt;&lt;/timed&gt;&gt;
 &lt;style&gt;
 .spriteify {
@@ -1057,14 +1077,13 @@ MIKE: Enjoy your wknd in the meantime.@@\
     &lt;&lt;audio &quot;pirate-ship&quot; volume 0 fadein&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 @@.pirate;NOOOO LADDIE! LISTEN NOT TO HER DEVILISH SONG!@@
-&lt;&lt;timed 3s&gt;&gt;
-    @@.olsen;Wuh?@@
-    &lt;&lt;next&gt;&gt;@@.pirate.align-right;I’ve been a PIRATER of music for years. I’ve seen too many good men, wasted upon the rocks, spending 7.99 a month. @@
-    &lt;&lt;next&gt;&gt;@@.pirate.align-right;GO!!!! QUICK!!! Before she grabs a hold of ya! Saaaave YERSELF!@@
-    &lt;&lt;next&gt;&gt;@@.pirate.align-right;GLOOOOOOOOOOOOOOOOOORY!
-            &lt;&lt;audio &quot;sword-fight&quot; play&gt;&gt;
-
-    &lt;&lt;next&gt;&gt;[[Close tab|Searching 2]]
+&lt;&lt;timed 1s&gt;&gt;
+    &lt;&lt;next 1s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Wuh?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 2s&gt;&gt;@@.pirate.align-right;I’ve been a PIRATER of music for years. I’ve seen too many good men, wasted upon the rocks, spending 7.99 a month. @@
+    &lt;&lt;next 5s&gt;&gt;@@.pirate.align-right;GO!!!! QUICK!!! Before she grabs a hold of ya! Saaaave YERSELF!@@
+    &lt;&lt;next&gt;&gt;@@.pirate.align-right;GLOOOOOOOOOOOOOOOOOORY!@@
+    &lt;&lt;audio &quot;sword-fight&quot; play&gt;&gt;
+    &lt;&lt;next 2s&gt;&gt;[[Close tab|Searching 2]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="Searching 2" tags="" position="1225,350" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;script&gt;&gt;
         $(&quot;canvas&quot;).remove();
@@ -1075,27 +1094,27 @@ MIKE: Enjoy your wknd in the meantime.@@\
     &lt;&lt;audio &quot;sword-fight&quot; stop&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
 &lt;&lt;timed 2s&gt;&gt;\
-    @@.olsen;Phew.@@
-    &lt;&lt;next 1s&gt;&gt;@@.olsen;Okkkkk, where have you gone Flip Flop...@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;HELLOOOOOOO@@
-    &lt;&lt;next 1s&gt;&gt;@@.incognitus.align-right;Oy. You. Shush.@@
-    &lt;&lt;next 1s&gt;&gt;@@.olsen;Ah! Um, excuse me. Hello. I didnt realize anyone else was in here. @@
-    &lt;&lt;next 3s&gt;&gt;@@.incognitus.align-right;Yeah yeah yeah. Lets skip the pleasantries, get on with your business.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Who are you, exactly? Have you been trapped in my computer all this time too?@@
-    &lt;&lt;next&gt;&gt;@@.incognitus.align-right;Boy you’re really going for it. Look, most folks just get in get out with whatever it is they need, capiche?@@
+    &lt;&lt;type 0.05s&gt;&gt;@@.olsen;Phew.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Okkkkk, where have you gone Flip Flop...@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;HELLOOOOOOO@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 2s&gt;&gt;@@.incognitus.align-right;Oy. You. Shush.@@
+    &lt;&lt;next 1s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Ah! Um, excuse me. Hello. I didnt realize anyone else was in here. @@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 5s&gt;&gt;@@.incognitus.align-right;Yeah yeah yeah. Lets skip the pleasantries, get on with your business.@@
+    &lt;&lt;next 3s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Who are you, exactly? Have you been trapped in my computer all this time too?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 5s&gt;&gt;@@.incognitus.align-right;Boy you’re really going for it. Look, most folks just get in get out with whatever it is they need, capiche?@@
     &lt;&lt;next 4s&gt;&gt;@@.incognitus.align-right;If you MUST know@@
     &lt;&lt;next 1s&gt;&gt;@@.incognitus.align-right;I am Mr. Incognitus, Keeper of Histories@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;Oh! Do you keep track of my search history? Can you tell me where Flip Flop went?@@
-    &lt;&lt;next 3s&gt;&gt;@@.incognitus.align-right;Ah yes, the purple one.@@
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Oh! Do you keep track of my search history? Can you tell me where Flip Flop went?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 6s&gt;&gt;@@.incognitus.align-right;Ah yes, the purple one.@@
     &lt;&lt;next 2s&gt;&gt;@@.incognitus.align-right;She was up rather late last night bouncing around the home screen.@@
     &lt;&lt;next&gt;&gt;@@.incognitus.align-right;Poor thing hasn’t gotten used to browser life.@@
     &lt;&lt;next&gt;&gt;@@.incognitus.align-right;Last night she went off to Plague’s List.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;To what?@@
-    &lt;&lt;next 1s&gt;&gt;@@.incognitus.align-right;Plagues&#39;s list. It’s a place for auctioning things. It started out as a flea market back in the 15th century. Then everyone caught the plague from all the fleas they bought. Now the whole thing is online.@@
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;To what?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 2s&gt;&gt;@@.incognitus.align-right;Plagues&#39;s list. It’s a place for auctioning things. It started out as a flea market back in the 15th century. Then everyone caught the plague from all the fleas they bought. Now the whole thing is online.@@
     &lt;&lt;next 5s&gt;&gt;@@.incognitus.align-right;She was searching for a Gary Gillman.@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;What? She went to talk to Gary Gillman without me?@@
-    &lt;&lt;next 2s&gt;&gt;@@.incognitus.align-right;Would appear so.@@
-    &lt;&lt;next&gt;&gt;@@.incognitus.align-right;Here’s your [[link|Searching 3]]. Off with you.@@
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;What? She went to talk to Gary Gillman without me?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 4s&gt;&gt;@@.incognitus.align-right;Would appear so.@@
+    &lt;&lt;next 2s&gt;&gt;@@.incognitus.align-right;Here’s your [[link|Searching 3]]. Off with you.@@
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="Searching 3" tags="" position="100,475" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;script&gt;&gt;
         $(&quot;three-demo-module&quot;).remove();
