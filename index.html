@@ -317,6 +317,19 @@ canvas {
     background-repeat: no-repeat;
 }
 
+#bg-windows {
+    background-color: #221c10;
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: 0;
+    background-image: url('images/windows-desktop.jpg');
+    background-size: 100vw 100vh;
+}
+
 #kaptcha-bg {
     position: fixed;
     width: 100vw;
@@ -519,7 +532,7 @@ window.goToMagicWeb = () => {
 &lt;&lt;timed 12s&gt;&gt;\
     &lt;&lt;audio &quot;notif&quot; play&gt;&gt;\
     @@.flip-flop;Hiiiiiii :3@@
-    &lt;img class=&quot;contact-card&quot; src=&quot;/images/contact-cards/Flip-Flop.png&quot;&gt;\
+    &lt;img class=&quot;contact-card&quot; src=&quot;images/contact-cards/Flip-Flop.png&quot;&gt;\
     &lt;&lt;next 1s&gt;&gt;\
     &lt;div class=&quot;work-dialog&quot;&gt;\
     &lt;&lt;type 0.05s&gt;&gt;\
@@ -533,21 +546,19 @@ window.goToMagicWeb = () => {
         [[Dismiss|Inbox 3]]
     &lt;&lt;/timed&gt;&gt;\
 &lt;&lt;/timed&gt;&gt;
-&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="3" name="Inbox 2" tags="inbox" position="350,100" size="100,100">@@.olsen;Oh. Hey Flip Flop.@@
-&lt;&lt;timed 2s&gt;&gt;
-    @@.olsen.align-left;Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?@@
-    &lt;&lt;next 5s&gt;&gt;@@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="3" name="Inbox 2" tags="inbox" position="350,100" size="100,100">&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Oh. Hey Flip Flop.@@&lt;&lt;/type&gt;&gt;\
+&lt;&lt;timed 2s&gt;&gt;\
+    &lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 10s&gt;&gt;@@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
     &lt;&lt;next 4s&gt;&gt;@@.flip-flop.align-right;I’ve been up all night searching for leads and what have you been doing? Sleeping? For 8 whole hours? Ridiculous.@@
     &lt;&lt;next 4s&gt;&gt;@@.flip-flop.align-right;Even back when I HAD a physical body, I only ever slept for 3 MAX.@@
-    &lt;&lt;next 3s&gt;&gt;@@.olsen.align-left;I’ve got work to do. Shush.@@
-    &lt;&lt;next 2s&gt;&gt;@@.flip-flop.align-right;It’s always  “Flip Flop, I have a job”, “Flip Flop, don’t delete my work documents”, “Flip Flop, I can’t bring my laptop to the Centaurs on Assateague Island so they can enchant on my hard drive blah blah blah”. You’re no fun &gt;:/@@
-    &lt;&lt;next 6s&gt;&gt;@@.olsen.align-left;I was never fun. Also those centaurs were totally scamming you.@@
-    &lt;&lt;next 3s&gt;&gt;@@.olsen.align-left;[[I&#39;m going back to work.|Inbox 3]]@@
-&lt;&lt;/timed&gt;&gt;
+    &lt;&lt;next 3s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;I’ve got work to do. Shush.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 3s&gt;&gt;@@.flip-flop.align-right;It’s always  “Flip Flop, I have a job”, “Flip Flop, don’t delete my work documents”, “Flip Flop, I can’t bring my laptop to the Centaurs on Assateague Island so they can enchant on my hard drive blah blah blah”. You’re no fun &gt;:/@@
+    &lt;&lt;next 6s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;I was never fun. Also those centaurs were totally scamming you.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 3s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;[[I&#39;m going back to work.|Inbox 3]]@@&lt;&lt;/type&gt;&gt;
+&lt;&lt;/timed&gt;&gt;\
 &lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\
-&lt;&lt;script&gt;&gt;
-    $(document).unbind(&#39;:typingstop&#39;);
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Inbox 3" tags="inbox" position="475,100" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
+&lt;&lt;script&gt;&gt;$(document).unbind(&#39;:typingstop&#39;);&lt;&lt;/script&gt;&gt;\</tw-passagedata><tw-passagedata pid="4" name="Inbox 3" tags="inbox" position="475,100" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
     &lt;div class=&quot;work-dialog&quot;&gt;\
         @@.work;NEW MESSAGE IN INBOX: &lt;strong&gt;[URGENT] Action Required: Please Respond&lt;/strong&gt;@@
     &lt;/div&gt;
@@ -555,7 +566,7 @@ window.goToMagicWeb = () => {
     &lt;&lt;audio &quot;notif&quot; play&gt;&gt;\
     @@.flip-flop.align-right;[[I bet I can speed up all this dumb work stuff.|Inbox 4]]@@
 &lt;&lt;/timed&gt;&gt;
-&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="5" name="Inbox 4" tags="inbox" position="600,100" size="100,100">&lt;&lt;audio &quot;office&quot; loop play&gt;&gt;
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="5" name="Inbox 4" tags="inbox" position="600,100" size="100,100">&lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
 &lt;&lt;timed 2s&gt;&gt;\
     &lt;div class=&quot;work-dialog&quot;&gt;\
         &lt;&lt;type 0.05s&gt;&gt;\
@@ -569,10 +580,10 @@ window.goToMagicWeb = () => {
         😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈😈@@
         &lt;&lt;/type&gt;&gt;\
     &lt;/div&gt;
-    &lt;&lt;next 30s&gt;&gt;@@.flip-flop.align-right;There we go! That should keep em busy for a few hours.@@
-    &lt;&lt;next 3s&gt;&gt;@@.olsen.align-left;Oh my god. You’re not gonna leave me alone unless I do what you want, are you?@@
-    &lt;&lt;next 3s&gt;&gt;@@.flip-flop.align-right;Nope!@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen.align-left;[[Ughhh, fine.|Desktop 1]]@@
+    &lt;&lt;next 28s&gt;&gt;@@.flip-flop.align-right;There we go! That should keep em busy for a few hours.@@
+    &lt;&lt;next 3s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;Oh my god. You’re not gonna leave me alone unless I do what you want, are you?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 6s&gt;&gt;@@.flip-flop.align-right;Nope!@@
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;[[Ughhh, fine.|Desktop 1]]@@&lt;&lt;/type&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\
 &lt;style&gt;
@@ -1130,44 +1141,63 @@ MIKE: Enjoy your wknd in the meantime.@@\
     &lt;&lt;next 3s&gt;&gt;@@.kaptcha.align-right;THEN FACE MY [[RIIIIIIIDDDDDDDDDDLLLLLEE|Unity 3]]@@
 &lt;&lt;/timed&gt;&gt;
 &lt;div id=&quot;kaptcha-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="32" name="Unity 3" tags="" position="225,475" size="100,100">&lt;&lt;audio &quot;kaptcha-ambiance&quot; stop&gt;&gt;\
-[[Placeholder for Unity Kaptcha puzzle|Bonding]]</tw-passagedata><tw-passagedata pid="33" name="Bonding" tags="" position="350,475" size="100,100">&lt;&lt;timed 2s&gt;&gt;
+[[Placeholder for Unity Kaptcha puzzle|Bonding]]</tw-passagedata><tw-passagedata pid="33" name="Bonding" tags="" position="350,475" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
     @@.flip-flop.align-right;Phew!@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;That was a close one.@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Those Anti-Virus guys almost got me.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;I know.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;You shouldn&#39;t have gone off alone.@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Are you mad at me?@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Flip Flop, you should know how dangerous it is going around the web on your own.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;You almost just got deleted. And now K’aptcha’s gonna have the Anti-Malware patrol looking for us so they can chop you up into little bytes of code.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;What were you thinking???@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Ugh, forget it.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;No, why didn&#39;t you tell me you were going to talk to Gary?@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Am I not a good partner?@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;God damn it. No...@@
+    &lt;&lt;next 1s&gt;&gt;@@.flip-flop.align-right;That was a close one.@@
+    &lt;&lt;next 1s&gt;&gt;@@.flip-flop.align-right;Those Anti-Virus guys almost got me.@@
+    &lt;&lt;next 3s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;I know.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 0.5s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;You shouldn&#39;t have gone off alone.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 5s&gt;&gt;@@.flip-flop.align-right;Are you mad at me?@@
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Flip Flop, you should know how dangerous it is going around the web on your own.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 5s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;You almost just got deleted. And now K’aptcha’s gonna have the Anti-Malware patrol looking for us so they can chop you up into little bytes of code.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 8s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;What were you thinking???@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 4s&gt;&gt;@@.flip-flop.align-right;Ugh, forget it.@@
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;No, why didn&#39;t you tell me you were going to talk to Gary?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 5s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Am I not a good partner?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 3s&gt;&gt;@@.flip-flop.align-right;God damn it. No...@@
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Look. I@@
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;I just didn&#39;t want you to get in trouble again.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Huh?@@
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Huh?@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Last night, I was rifling through your emails and I found this:
-    &lt;&lt;next&gt;&gt;@@.work;[Email from boss]@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;I felt... bad@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;That I always interrupt your work day@@
+    &lt;&lt;next 4s&gt;&gt;
+    &lt;div class=&quot;work-dialog&quot;&gt;\
+    &lt;&lt;type 0.05s&gt;&gt;\
+        @@.work;FROM: edward@kraken-it.net
+        TO: olsen@kraken-it.net
+        CC: hr@kraken-it.net
+        SUBJECT: Q3 PERFORMANCE REVIEW - OPEN IMMEDIATELY@@
+    &lt;&lt;/type&gt;&gt;\
+    &lt;/div&gt;
+    &lt;&lt;next 10s&gt;&gt;@@.flip-flop.align-right;I felt... bad@@
+    &lt;&lt;next 2s&gt;&gt;@@.flip-flop.align-right;That I always interrupt your work day@@
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;I didn’t want you to lose your job just cause you were helping me out so I thought I’d just do this one on my own, ok?@@
-    &lt;&lt;next 5s&gt;&gt;@@.olsen;...@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;Look, Flip Flop,@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;It’s not that I don&#39;t want to help you@@
-    &lt;&lt;next&gt;&gt;@@.olsen;It’s just that I can’t help you all the time.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Maybe I haven’t necessarily been giving my all to helping find your family@@
-    &lt;&lt;next&gt;&gt;@@.olsen;But I’m not a paranormal detective. I’ve got other stuff to do.@@
-    &lt;&lt;next&gt;&gt;@@.olsen;I promise, tomorrow, I’ll take the day off and we can go all in on the search, alright?@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Okay@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Yeah, let&#39;s do it@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Also please don&#39;t hijack any more emails of mine and keep them hidden@@
-    &lt;&lt;next&gt;&gt;@@.olsen;I really do need to see stuff like that.@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Okay!@@
-    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;[Insert 10 more important emails here]&lt;&lt;/type&gt;&gt;
-    &lt;&lt;next 8s&gt;&gt;@@.olsen;Shit.@@
-    &lt;&lt;next 5s&gt;&gt;[[Transition to Act 3|Unity 4]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="Unity 4" tags="" position="475,475" size="100,100">[[Placeholder for Gary Unity scene|Underwater]]</tw-passagedata><tw-passagedata pid="35" name="Start" tags="" position="600,475" size="100,100">&lt;&lt;silently&gt;&gt;\
+    &lt;&lt;next 5s&gt;&gt;&lt;&lt;type 0.5s&gt;&gt;@@.olsen;...@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 3s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Look, Flip Flop,@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 3s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;It’s not that I don&#39;t want to help you@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 5s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;It’s just that I can’t help you all the time.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 6s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Maybe I haven’t necessarily been giving my all to helping find your family@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 6s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;But I’m not a paranormal detective. I’ve got other stuff to do.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;I promise, tomorrow, I’ll take the day off and we can go all in on the search, alright?@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 7s&gt;&gt;@@.flip-flop.align-right;Okay@@
+    &lt;&lt;next 2s&gt;&gt;@@.flip-flop.align-right;Yeah, let&#39;s do it@@
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Also please don&#39;t hijack any more emails of mine and keep them hidden@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 6s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;I really do need to see stuff like that.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 4s&gt;&gt;@@.flip-flop.align-right;Okay!@@
+    &lt;&lt;next 1s&gt;&gt;\
+    &lt;div class=&quot;work-dialog&quot;&gt;\
+    &lt;&lt;timed 0.3s&gt;&gt;\
+        [WTF-351] URGENT security bug in epsilon release
+        &lt;&lt;next&gt;&gt;MEETING INVITATION: Emergency all-hands for WTF-351
+        &lt;&lt;next&gt;&gt;ACTION REQUIRED: Need hands on WTF-351 by YESTERDAY O&#39;CLOCK
+        &lt;&lt;next&gt;&gt;MISSED MEETING - Emergency all-hands for WTF-351
+        &lt;&lt;next&gt;&gt;FW: MEETING MINUTES - Emergency all-hands for WTF-351
+        &lt;&lt;next&gt;&gt;FW: FW: MEETING MINUTES - Emergency all-hands for WTF-351
+        &lt;&lt;next&gt;&gt;MEETING INVITATION: Olsen 1-1 with HR
+    &lt;&lt;/timed&gt;&gt;\
+    &lt;/div&gt;
+    &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;[[Shit.|Unity 4]]@@&lt;&lt;/type&gt;&gt;
+&lt;&lt;/timed&gt;&gt;
+&lt;div id=&quot;bg-windows&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="Unity 4" tags="" position="475,475" size="100,100">[[Placeholder for Gary Unity scene|Underwater]]</tw-passagedata><tw-passagedata pid="35" name="Start" tags="" position="600,475" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;timed 0s&gt;&gt;
         &lt;&lt;audio &quot;intro-play-once&quot; play&gt;&gt;\
         &lt;&lt;next 11.3s&gt;&gt;&lt;&lt;audio &quot;intro-loop&quot; loop play&gt;&gt;
