@@ -119,16 +119,26 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://AE26E0DF-A919-4DB3-8481-F5CE3A9F2443// --><tw-storydata name="Fairy Quest" startnode="35" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="AE26E0DF-A919-4DB3-8481-F5CE3A9F2443" zoom="1" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+	<!-- UUID://AE26E0DF-A919-4DB3-8481-F5CE3A9F2443// --><tw-storydata name="Fairy Quest" startnode="36" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="AE26E0DF-A919-4DB3-8481-F5CE3A9F2443" zoom="1" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
 
 @font-face {
     font-family: 'Marola';
     src: url('fonts/Marola.woff2') format('woff2'),
         url('fonts/Marola.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Got Heroin';
+    src: url('fonts/Got_Heroin.woff2') format('woff2'),
+        url('fonts/Got_Heroin.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -145,6 +155,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
     --work-light: #246c55;
     --link-color: #0032e6;
     --link-visited: #35216e;
+    --asha-theme: #112603;
 }
 
 body {
@@ -300,7 +311,7 @@ canvas {
     background-image: url('images/emails.gif');
     background-repeat: no-repeat;
     background-size: auto calc(100vh + 80px);
-    background-position: left -40px;
+    background-position: center -40px;
 }
 
 #scroll-bg {
@@ -398,6 +409,20 @@ canvas {
     font-size: 0.75em;
     max-width: 60%;
     text-align: right justify;
+}
+
+.asha {
+    font-family: 'Amatic SC', serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    max-width: 70%;
+    line-height: 100%;
+    color: var(--asha-theme);
+}
+
+.gary {
+    font-family: 'Got Heroin', sans-serif;
+    font-size: 1.5em;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">/* twine-user-script #1: "ScriptUtils" */
 window.finishScriptEvent = new Event("script-finished");
 
@@ -531,7 +556,7 @@ window.goToMagicWeb = () => {
 &lt;&lt;createplaylist &quot;intro-playlist&quot;&gt;&gt;
     &lt;&lt;track &quot;intro-play-once&quot;&gt;&gt;
     &lt;&lt;track &quot;intro-loop&quot;&gt;&gt;
-&lt;&lt;/createplaylist&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Inbox 1" tags="inbox" position="225,100" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;&lt;/createplaylist&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="Scene Selection" tags="" position="225,100" size="100,100">TESTING TESTING 123</tw-passagedata><tw-passagedata pid="3" name="Inbox 1" tags="inbox" position="350,100" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;audio &quot;intro-play-once&quot; volume 1 fadeout&gt;&gt;\
     &lt;&lt;audio &quot;intro-loop&quot; volume 1 fadeout&gt;&gt;\
     &lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
@@ -562,7 +587,7 @@ window.goToMagicWeb = () => {
         [[Dismiss|Inbox 3]]
     &lt;&lt;/timed&gt;&gt;\
 &lt;&lt;/timed&gt;&gt;
-&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="3" name="Inbox 2" tags="inbox" position="350,100" size="100,100">&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Oh. Hey Flip Flop.@@&lt;&lt;/type&gt;&gt;\
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="4" name="Inbox 2" tags="inbox" position="475,100" size="100,100">&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Oh. Hey Flip Flop.@@&lt;&lt;/type&gt;&gt;\
 &lt;&lt;timed 2s&gt;&gt;\
     &lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;Look, I know you want to look for your family but I can’t just put everything on hold at the drop of a hat. Some of us have jobs. We can look later, okay?@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next 10s&gt;&gt;@@.flip-flop.align-right;C’mooooooon. Don’t be such a grump. Seriously, I thought we were supposed to be partners!@@
@@ -574,7 +599,7 @@ window.goToMagicWeb = () => {
     &lt;&lt;next 3s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;[[I&#39;m going back to work.|Inbox 3]]@@&lt;&lt;/type&gt;&gt;
 &lt;&lt;/timed&gt;&gt;\
 &lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\
-&lt;&lt;script&gt;&gt;$(document).unbind(&#39;:typingstop&#39;);&lt;&lt;/script&gt;&gt;\</tw-passagedata><tw-passagedata pid="4" name="Inbox 3" tags="inbox" position="475,100" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
+&lt;&lt;script&gt;&gt;$(document).unbind(&#39;:typingstop&#39;);&lt;&lt;/script&gt;&gt;\</tw-passagedata><tw-passagedata pid="5" name="Inbox 3" tags="inbox" position="600,100" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
     &lt;div class=&quot;work-dialog&quot;&gt;\
         @@.work;NEW MESSAGE IN INBOX: &lt;strong&gt;[URGENT] Action Required: Please Respond&lt;/strong&gt;@@
     &lt;/div&gt;
@@ -582,7 +607,7 @@ window.goToMagicWeb = () => {
     &lt;&lt;audio &quot;notif&quot; play&gt;&gt;\
     @@.flip-flop.align-right;[[I bet I can speed up all this dumb work stuff.|Inbox 4]]@@
 &lt;&lt;/timed&gt;&gt;
-&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="5" name="Inbox 4" tags="inbox" position="600,100" size="100,100">&lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="6" name="Inbox 4" tags="inbox" position="725,100" size="100,100">&lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
 &lt;&lt;timed 2s&gt;&gt;\
     &lt;div class=&quot;work-dialog&quot;&gt;\
         &lt;&lt;type 0.05s&gt;&gt;\
@@ -606,7 +631,7 @@ window.goToMagicWeb = () => {
 .purple {
     color: #b187ff;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="6" name="Desktop 1" tags="" position="725,100" size="100,100">&lt;&lt;audio &quot;office&quot; volume 1 fadeout&gt;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="7" name="Desktop 1" tags="" position="850,100" size="100,100">&lt;&lt;audio &quot;office&quot; volume 1 fadeout&gt;&gt;
 &lt;&lt;cycle &quot;$iconClicked&quot;&gt;&gt;
     &lt;&lt;option &quot;&lt;img src=&#39;images/Tax Forms.png&#39;&gt;&quot; 1&gt;&gt;
     &lt;&lt;option &quot;&lt;img src=&#39;images/Do Not Open.png&#39;&gt;&quot; 2&gt;&gt;
@@ -663,7 +688,7 @@ window.goToMagicWeb = () => {
         33%   {background-image: url(&#39;images/Magic Web2.png&#39;);}
         66%   {background-image: url(&#39;images/Magic Web3.png&#39;);}
     }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="7" name="Loading" tags="" position="850,100" size="100,100">@@#loading;Loading...</tw-passagedata><tw-passagedata pid="8" name="Underwater" tags="" position="975,100" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="8" name="Loading" tags="" position="975,100" size="100,100">@@#loading;Loading...</tw-passagedata><tw-passagedata pid="9" name="Underwater" tags="" position="1100,100" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;&lt;audio &quot;bloop&quot; play&gt;&gt;
     &lt;&lt;repeat &quot;1s&quot;&gt;&gt;
         &lt;&lt;set $rand to random(0,10)&gt;&gt;
@@ -685,16 +710,16 @@ window.goToMagicWeb = () => {
     &lt;&lt;/script&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
 @@.gary.align-right;Found it.@@
-@@.olsen;Alright, guess it’s game time.
-&lt;&lt;timed &quot;2s&quot;&gt;&gt;@@.olsen;I’m gonna send Flip Flop to your phone.
+&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Alright, guess it’s game time.&lt;&lt;/type&gt;&gt;
+&lt;&lt;timed &quot;2s&quot;&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;I’m gonna send Flip Flop to your phone.&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;&lt;&lt;linkappend &quot;📁 FlipFlop.zip —&gt;&quot;&gt;&gt;
         @@.flip-flop.align-right;Oh shit.
         &lt;&lt;timed &quot;2s&quot;&gt;&gt;@@.flip-flop.align-right;I&#39;m over here now!
-            &lt;img class=&quot;sprite align-right&quot; src=&quot;images/sprites/Flip Flop/Shock mouth open.png&quot;&gt;
-            &lt;&lt;next&gt;&gt;@@.olsen.align-left;Alright.@@
-            &lt;&lt;next&gt;&gt;@@.olsen.align-left;There&#39;s gotta be some way to access this thing from the outside.@@
-            &lt;&lt;next&gt;&gt;@@.olsen.align-left;Use your magic, try to find some way into it.@@
-            &lt;&lt;next&gt;&gt;@@.olsen.align-left;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]@@
+            &lt;!--&lt;img class=&quot;sprite align-right&quot; src=&quot;images/sprites/Flip Flop/Shock mouth open.png&quot;&gt;--&gt;
+            &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;Alright.@@&lt;&lt;/type&gt;&gt;
+            &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;There&#39;s gotta be some way to access this thing from the outside.@@&lt;&lt;/type&gt;&gt;
+            &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;Use your magic, try to find some way into it.@@&lt;&lt;/type&gt;&gt;
+            &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-left;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]@@&lt;&lt;/type&gt;&gt;
         &lt;&lt;/timed&gt;&gt;\
     &lt;&lt;/linkappend&gt;&gt;\
 &lt;&lt;/timed&gt;&gt;\
@@ -705,7 +730,7 @@ window.goToMagicWeb = () => {
         $(document.body).prepend(`&lt;script id=&quot;three-demo-module&quot; type=&quot;module&quot; src=&quot;three/demo.js&quot;&gt;`);
     &lt;&lt;/script&gt;&gt;
 &lt;&lt;/silently&gt;&gt;
---&gt;</tw-passagedata><tw-passagedata pid="9" name="Bluetooth" tags="" position="1100,100" size="100,100">&lt;&lt;silently&gt;&gt;
+--&gt;</tw-passagedata><tw-passagedata pid="10" name="Bluetooth" tags="" position="1225,100" size="100,100">&lt;&lt;silently&gt;&gt;
 &lt;&lt;repeat &quot;1s&quot;&gt;&gt;
     &lt;&lt;set $rand to random(0,10)&gt;&gt;
     &lt;&lt;if $rand == 0&gt;&gt;
@@ -716,7 +741,7 @@ window.goToMagicWeb = () => {
 &lt;img class=&quot;sprite&quot; src=&quot;images/sprites/Flip Flop/Thinking idle.png&quot;&gt;
 &lt;&lt;timed 2s&gt;&gt;
     @@.olsen;[[Damn. Looks like we&#39;re out of range for Bluetooth?|Return]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="Return" tags="" position="1225,100" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Return" tags="" position="100,225" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;!--
     &lt;&lt;script&gt;&gt;
         $(document.body).prepend(`&lt;script id=&quot;three-demo-module&quot; type=&quot;module&quot; src=&quot;three/demo.js&quot;&gt;`);
@@ -732,7 +757,7 @@ window.goToMagicWeb = () => {
 @@.olsen;Alright.  @@
 @@.olsen;There&#39;s gotta be some way to access this thing from the outside.  @@
 @@.olsen;Use your magic, try to find some way into it.  @@
-@@.olsen;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]</tw-passagedata><tw-passagedata pid="11" name="Portal" tags="" position="100,225" size="100,100">&lt;&lt;silently&gt;&gt;
+@@.olsen;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]</tw-passagedata><tw-passagedata pid="12" name="Portal" tags="" position="225,225" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;&lt;repeat &quot;1s&quot;&gt;&gt;
         &lt;&lt;set $rand to random(0,10)&gt;&gt;
         &lt;&lt;if $rand == 0&gt;&gt;
@@ -760,7 +785,7 @@ window.goToMagicWeb = () => {
         .out(o0)
     &lt;&lt;/script&gt;&gt;\
     &lt;&lt;next 1s&gt;&gt;@@.olsen;[[I see it.|Terminal]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="Terminal" tags="" position="225,225" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="Terminal" tags="" position="350,225" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;&lt;script&gt;&gt;
         $(&quot;canvas&quot;).remove();
         $(&quot;#three-demo-module&quot;).remove();
@@ -787,7 +812,7 @@ window.goToMagicWeb = () => {
     pointer-events: 0;
     background-image: url(&#39;images/hackertyper.gif&#39;);
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="13" name="Light Mode" tags="" position="350,225" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="14" name="Light Mode" tags="" position="475,225" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;&lt;script&gt;&gt;
         var hydra = new Hydra({ detectAudio: false });
         noise(10, 0.1).modulateRotate(osc(4,0.5,() =&gt; mouse.y / 50),1).modulatePixelate(noise(25,0.5),100).color(0, 0.5, 0.2, 0.8).invert().out();
@@ -801,7 +826,7 @@ window.goToMagicWeb = () => {
     &lt;&lt;next&gt;&gt;@@.flip-flop;Hi Uncle Joey!!!
     &lt;&lt;next&gt;&gt;@@.flip-flop;Hi Aunt Bertha!!!
     &lt;&lt;next&gt;&gt;@@.flip-flop;hi cousin sue.
-    &lt;&lt;next&gt;&gt;@@.olsen.align-right;What did Cousin Sue do?
+    &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen.align-right;What did Cousin Sue do?&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;@@.flip-flop;You don&#39;t want to know.
     &lt;&lt;next&gt;&gt;
     &lt;&lt;next&gt;&gt;@@.flip-flop;We gotta figure out how to round everyone up and get them out of here.
@@ -809,7 +834,8 @@ window.goToMagicWeb = () => {
     &lt;&lt;next&gt;&gt;@@.zalgo;[[D̵̗͊O̵̥̒Ń̸̜&#39;̸̹̈́T̴̯̚ ̴̭̃W̸̟͑Ǒ̸̪R̵̙̄R̶̦̐Y̵̭̓.̴̢͘ ̶̈́͜Y̸͍͌O̶̤̓U̷̘̿ ̵̭̾W̶̹̋Ǫ̴̍Ņ̴́&#39;̸͉͑T̷̟̆ ̸̧̛G̴̘͝Ė̶͜T̷̝̎ ̵̭͝T̷͖́H̶̝̽Ȧ̸ͅT̵̙͝ ̵̙̉F̶͇́A̸̖͌R̴̖͘.̵̫̄|Sphinx]]
     &lt;&lt;audio &quot;ethereal&quot; volume 1 fadeout&gt;&gt;
     &lt;&lt;audio &quot;horror&quot; play&gt;&gt;
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="Sphinx" tags="" position="475,225" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Sphinx" tags="" position="600,225" size="100,100">&lt;&lt;silently&gt;&gt;
+    &lt;!--
     &lt;&lt;script&gt;&gt;
     var hydra = new Hydra({ detectAudio: false });
     let frame = 0;
@@ -817,6 +843,7 @@ window.goToMagicWeb = () => {
         .modulateRotate(osc(4,-0.5,0).kaleid(50).scale(0.5),15,0).color(1, 0, 0)
         .out()
     &lt;&lt;/script&gt;&gt;
+    --&gt;
 &lt;&lt;/silently&gt;&gt;
 &lt;&lt;timed 2s&gt;&gt;@@.flip-flop;Oh my gosh.
     &lt;&lt;next&gt;&gt;@@.olsen;Oh no.
@@ -844,14 +871,15 @@ window.goToMagicWeb = () => {
     Soon all have brought every fairy across AMERICA to the Bermuda Triangle&lt;&lt;/linkreplace&gt;&gt;@@
     &lt;&lt;next&gt;&gt;@@.sybor.align-right;&lt;&lt;linkreplace &quot;A̸͕͔͓̗̱̫̠̅̇͒̎̽͊n̵̡̤̖̩̣̙̝̬̖̲̗̠͕͛̔͆͑̂̈́́͊̋̒͛̃͊͘͠d̴̛̗̺̺̜̲̪͆̈́̋͋͊͗̃̈́̽̈́́̚͠ ̴͇̞̠̫̗̻̖͍̙͈̜̣̦̱̫̝͑̑̀̓̊̎̂͂̿͒̈́̽̕͝Į̴̛̤̰̳͔̰̫̪̪́͑͋̕͜’̶̨͍̣̘̳̳̠̜̮̙̄̈̀̓̃̄͆̂̾͂̈͊̔̄͝͝ͅm̸͙̙̱͍͆̊ ̷̧̤̞͉̤͖͍͓͇̳̱̩̮͇͇̱́̒́̒̏ͅģ̷͙͚͂̓̉́͗̄̍͋͒͠͝͠ͅͅo̷̮̹̙̻̳͈̗̊̈́̐̏́͊̎̑̄̋̉̿̕͜ͅi̶̮̻̞͓͕̤̝̗̤͓̍̾̿̀̽n̴̨̛͇͍̟̳͕̤͌͗̿̃̓̀̔͒͛́͛̎̀̊͘͝g̶̮̝̰̫̤̯̟͝͝ ̶̻͔͎̰͔̮̲̬̻̝̋̅̃͒̀̾̓͋̉̄͒͝t̵͈̙̱̬̠̟̠̖̲̹̺̤̬̻͎͙͂̊̽̓̈́̽̔́̄͝͝ơ̶̧͎͚̼̥̱̗̹̟̯̬̱͕̭̯ ̸̢̡̲̗̺̖̦̗͍͓̤͕́͗̌̓̀͂̃̓u̵̝̞̼̺̰̠̩͔̾̈́̐̚s̵̬̙͉͒̽̀̈͝e̸̜̝̱͍͍̱̤̎͆̒̀͑̂̓͂̇͂̄͘͠͝ ̷̧̨̧͕͇̫͈̘̖̙̮̈́̓͑̓̐̂̂͛̀́͜t̷̢̛̳̮͕̬̥̦̀̆͐̈̓͛̇̃͛͘͜͠ͅh̵̨͍͔̼̼̗̟̥̭̦͔̮̹̿̀͛̋͑̆̆̽̍̉̔̑̾̚̕͜͝ȩ̴̥̰̫̰̯̥̤̘̦̻͍͓͎͙̻̂ͅ ̸̦̻̿̏̓̒̒̈́̌͋̈́͒͂̈́͛͛̔̕͝m̷̨͓̝̯̹̺̥̻̘͙͔̘̜̽͜a̷̢̨̧̛͓̝͈̟̟̗̘̣̯͍̦͈͑̑̋̓̽́̊̍̀͂̀̚͝͝͝ģ̶̝̘̮̙͓̱͈̻̫̘̩̏̉͠ͅi̶̦̬̫̭̩̤̇̈́̌̽̇̏͊̍́̄̑͊̃͘͠ć̶̨͍̪͖̫̝̙̿̈́̎͊͑́̂ ̸͙̟̝̀̇͝ō̸̡̢͉̝̲̦͚̣̟̮̘̞͎̮̪͒͐̐͑̓̏̍f̸͖̤̈́͛͌̒́̈̆͗̎̕ ̸̨̛̛̩̳͉̤̬̲͚̅̆̉̏̆͐̄́̃t̴̢͇̦̝̞̭͚̺̪̊͐̃͗̑̇̋͝h̸̤̩̖̙̯͓̪̙̪̥̦͕̮̐ị̷̛̲̰̆͐̽̄̀̈́̀͌s̷̱̠̩͈̥̗͎̙͓̺̗̞̠̘͋̈̽͗͠ ̸̛͇̦̺͋͗̀̑̽̈̈́́̇́̒͒̉̎͗p̴̨̡̛̜̥͉̝̗͚̬̯̻͉̳̞͕̬̞͋͋̍̋̆̊͒̕ĺ̴̞͓͇̳̺̙̠̠͔̪͔͆̓̆̏͋͛͌̈́̚̕͜͝ȁ̵̧̛̜̮͚̦̳̜̅̓̿̉͌͆͂̆͊̄̿̕͜c̸̭̻̍̐̽̈́͋͒̿̊̽͐͂ê̵̡͕̼͉̪͙͚͚͖͕̞̻ͅ ̸̭͎̖͈̳̙̳̳͕̼͈̺̋̋͠t̵̨̛͎̬͍̬̙̼̳̥̣̗͚̓̀͛͒̄͜ơ̵̰͎̬̟̟̩̣̘͈̞̝̥͙̠ ̵̧̹̺̟̹̮̣̬̪̗͈̭̤̱͍̰̖̆̌̽̽͌́̈́̈́̇̓̎͝m̵̢̃̾̓ä̸̧̨̨̢̻̻̻̗̗̪̝̬̪͇͐̈́́̔̓͋̋̿̽͑̑k̵̠̺̯͔̭͓̳̭͚̗͎̠͗͜͜ͅę̸̙̬͙͂̔́̏͛̈́͆̉̿̽̐́̀̓̚͠ ̸̡̻̦̠̺̪͕̪̮̠̖͙̲̱̲͛́̓̑͒̇̄̍̚͜͝ͅs̴̠͍͉͉̜̣̑̍͛́̉́̃̍̍̾͋͂͘͠u̴̧̡͔̪̰̱͚̗̯̱͈̳̦̍͋̇̌͜͝r̸̛͇͌͂̈́͗͌̿͠ẻ̵̛͉̠̼̜̗͉̣͓͇͐͌͂́̒̾͛͆̈̅͝ ̵̨̛̞̥̬̪̪͓̟͍̼̗̳͈̖̈́͆̾͆́̓̇͛͋̂͛͒͠t̴̩͙̤̘̖̟̻̤̟̝̟̞͕̩̓́̂͝ḩ̴̳̠͔̖̟̲̙̤͇̳̤̦̖́̀͋̋͐͐̅̈́̆̾͆̎̅̀ȩ̵̖͍̯̹̝̜̻̭̣̦̠̪͂̒̾̎̈́̎͛̑̄͆̓̓̔̚ỳ̵͎͚͓̖͚͖̞̦͍̂̔͛͑̊͝ ̶̰̭͉͚̯̦̉̽̋͑͋͋̋̄c̴̢̖̭̬̩̦̥̰̪͓̰̩̋̈́̈́͝ͅͅͅa̷̮̠̮̰̟̱̮̣̬͍͙̔̓̎̈́͂͒͊͐͗̓̀͠ǹ̷̻͍̞̓’̴̡̛̰̱͚͓͕͔̂̑͐t̸͉̩̻̦͕͖̳̺̪͇̮͈̜̾͋̐̊͐̆̉͛̐̍͋̄͂ ̷̡̛̤̳͈͈̰̫̘̩͕̮̤̞͈̀͋͌̆́͑͂̓̊̽̓͠b̴̨̢̘̹̟̪̝̜͔̪͈̣͂́̽̂̂͒̇͗͊̽͌̿̿̋͝ͅo̷̱̺͂̅͊̔͒̔͒̀̎̇̇̂̚̕ţ̷̛̯̳͉̘͔̮̠̣̰̯͓̠͑́͑̋͗͋͐͋͒̀̚̚h̷̡̢̨̨̗̜̜̺̻͈̫͉̩̫̿̔̅͆́̎̄̕ẽ̸̜̺̹̣̹̳̾̇̃̀́̍̄̾͊́r̸̜̼̞̝̼̟̔͊̿̇̓ ̷̨̢͔͉̤̝̰̼̹̭̆͑͛̐̈́̌̍̔͆̈̍͝͝͝͠m̸̡̧͕̻͖̤̬̃̅͌̉͆͘͜ě̸̢̯ ̸̢̧̟͇̻͎͉̮̱̰͖͖͔͋͆̽̾̃̓́̅̒̓͘͜͝͠a̸̢̨̲̯͎͙̪̰͇̘͖̝͒̊̔̈͂̃̽͒̏͆̊͜͝ṋ̶̡̨͙̱̇͂͋̆̊̈́̽̎͛̂͆͆͝͠ÿ̸̧̛̛̩͓̻̪͒͋̋̏̌̓̈́͌͒̆m̶̧̺̦̘̼̯̜̙̲̤̐͗͘ő̸̧̢̨̨̲̮̳̦͓̰̼͛̊̓r̸̢͈̂̊̀͐́̓̃͗̃͐͑̄̌̕̕ĕ̵̥̂̽͒̈́̈͑͆̓̈͗̆͒̎.̵̢̼̟̰̮̪͆̅̀͌̕͠ ̷̳͕̲͕̺̰̎́̆̉&quot;&gt;&gt;\
     And I’m going to use the magic of this place to make sure they [[can’t bother me anymore.|Unity 5]]&lt;&lt;/linkreplace&gt;&gt;@@
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="Unity 5" tags="" position="600,225" size="100,100">PLACEHOLDER FOR FINAL UNITY SCENE &amp; EPILOGUE</tw-passagedata><tw-passagedata pid="16" name="Magic Web 1" tags="" position="725,225" size="100,100">[Placeholder: magic web feed assets - news articles, videos, etc.]
+&lt;&lt;/timed&gt;&gt;
+&lt;div id=&quot;kaptcha-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="16" name="Unity 5" tags="" position="725,225" size="100,100">PLACEHOLDER FOR FINAL UNITY SCENE &amp; EPILOGUE</tw-passagedata><tw-passagedata pid="17" name="Magic Web 1" tags="" position="850,225" size="100,100">[Placeholder: magic web feed assets - news articles, videos, etc.]
 &lt;iframe class=&quot;unity-embed&quot; src=&quot;/fq-webgl/index.html&quot; onload=&quot;window.handleIFrame(this)&quot;&gt;&lt;/iframe&gt;
 &lt;!--
 &lt;&lt;timed 2s&gt;&gt;
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Ok, Ok. [[Look what I found!|Magic Web 2]]@@
 &lt;&lt;/timed&gt;&gt;
 --&gt;
-&lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="17" name="Magic Web 2" tags="" position="850,225" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
+&lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="18" name="Magic Web 2" tags="" position="975,225" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
     &lt;&lt;next&gt;&gt;[Placeholder of Asha video]
     &lt;&lt;next&gt;&gt;@@.olsen.align-left;Who is this exactly?@@
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-right;Her name’s Asha Blake. She’s a famous werwolf live-streamer and look!@@
@@ -870,7 +898,7 @@ window.goToMagicWeb = () => {
     &lt;&lt;next&gt;&gt;@@.olsen.align-left;Just send me the link@@
     &lt;&lt;next&gt;&gt;@@.flip-flop.align-left;[[Portal|Unity 1]]@@
 &lt;&lt;/timed&gt;&gt;
-&lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="18" name="Unity 1" tags="" position="975,225" size="100,100">[[Placeholder for Unity section with Asha|Kaptcha 1]]</tw-passagedata><tw-passagedata pid="19" name="Kaptcha 1" tags="" position="1100,225" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="19" name="Unity 1" tags="" position="1100,225" size="100,100">[[Placeholder for Unity section with Asha|Kaptcha 1]]</tw-passagedata><tw-passagedata pid="20" name="Kaptcha 1" tags="" position="1225,225" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;!--
     &lt;&lt;script&gt;&gt;
         var hydra = new Hydra({ detectAudio: false });
@@ -909,42 +937,44 @@ window.goToMagicWeb = () => {
     &lt;&lt;next&gt;&gt;@@.kaptcha.align-right;Psh. As if. You may have solved my challenge last time, but now I’ve got something that’ll make even the cleverest robots COWER!!!!@@
     &lt;&lt;next 5s&gt;&gt;@@.kaptcha.align-right;[[BEHOLD!!!!!!!!!!!!!!!!!!!!!|Unity 2]]@@
 &lt;&lt;/timed&gt;&gt;
-&lt;div id=&quot;kaptcha-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="20" name="Unity 2" tags="" position="1225,225" size="100,100">[[Placeholder for Unity Kaptcha puzzle|Finish Kaptcha]]</tw-passagedata><tw-passagedata pid="21" name="Finish Kaptcha" tags="" position="100,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
-    @@.olsen;Finished.@@
+&lt;div id=&quot;kaptcha-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="21" name="Unity 2" tags="" position="100,350" size="100,100">[[Placeholder for Unity Kaptcha puzzle|Finish Kaptcha]]</tw-passagedata><tw-passagedata pid="22" name="Finish Kaptcha" tags="" position="225,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
+    &lt;&lt;type 0.05s&gt;&gt;@@.olsen;Finished.@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;@@.asha.align-right;Let me see.@@
     &lt;&lt;next&gt;&gt;@@.asha.align-right;Holy crap. No joke. Thanks mate, you’re a total lifesaver.@@
-    &lt;&lt;next&gt;&gt;@@.asha.align-right;I was worried I was gonna have to switch to being a casual, daily family vlogger full time.@@
-    &lt;&lt;next&gt;&gt;@@.asha.align-right;I was getting all stressed out about it too cause, where the hell was I gonna get a family on such short notice?@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop;So what about the wand?@@
-    &lt;&lt;next&gt;&gt;@@.asha.align-right;Oh, right.@@
-    &lt;&lt;next&gt;&gt;@@.asha.align-right;I got the wand from this guy Gary Gillman.@@
-    &lt;&lt;next&gt;&gt;@@.asha.align-right;He resells lost (maybe stolen?) goods online.@@
-    &lt;&lt;next&gt;&gt;@@.asha.align-right;Here’s his contact.@@
-    &lt;&lt;next&gt;&gt;@@.asha.align-right;[Contact Card]@@
+    &lt;&lt;next 3s&gt;&gt;@@.asha.align-right;I was worried I was gonna have to switch to being a casual, daily family vlogger full time.@@
+    &lt;&lt;next 4s&gt;&gt;@@.asha.align-right;I was getting all stressed out about it too cause, where the hell was I gonna get a family on such short notice?@@
+    &lt;&lt;next 4s&gt;&gt;@@.flip-flop;So what about the wand?@@
+    &lt;&lt;next 2s&gt;&gt;@@.asha.align-right;Oh, right.@@
+    &lt;&lt;next 2s&gt;&gt;@@.asha.align-right;I got the wand from this guy Gary Gillman.@@
+    &lt;&lt;next 3s&gt;&gt;@@.asha.align-right;He resells lost (maybe stolen?) goods online.@@
+    &lt;&lt;next 3s&gt;&gt;@@.asha.align-right;Here’s his contact.@@
+    &lt;&lt;next&gt;&gt;&lt;img class=&quot;contact-card&quot; src=&quot;images/contact-cards/Gary Gillman.png&quot;&gt;
     &lt;&lt;next&gt;&gt;@@.flip-flop;Yesssss@@
-    &lt;&lt;next&gt;&gt;@@.olsen;Thanks.@@
-    &lt;&lt;next&gt;&gt;@@.asha.align-right;If you could, try not to mention me directly.@@
-    &lt;&lt;next&gt;&gt;@@.asha.align-right;I need to get him to ship me new rock climbing gear.@@
-    &lt;&lt;next&gt;&gt;@@.asha.align-right;100 bucks less than Bass Pro Shop and 50 less than those Yetis in Colorado.@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop;Can do!@@
-    &lt;&lt;next&gt;&gt;@@.flip-flop;Byyyyyyyyeeeeeeee.@@
-    &lt;&lt;next 4s&gt;&gt;@@.work;NOTIFICATION1@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;NOTIFICATION2@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;NOTIFICATION3@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;NOTIFICATION@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;NOTIFICATION@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;NOTIFICATION@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;NOTIFICATION@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;NOTIFICATION@@
-    &lt;&lt;next 0.5s&gt;&gt;@@.work;NOTIFICATION@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;Oh shit. I&#39;ve gotta get back to work.@@
+    &lt;&lt;next 1s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Thanks.@@&lt;&lt;/type&gt;&gt;
+    &lt;&lt;next 1s&gt;&gt;@@.asha.align-right;If you could, try not to mention me directly.@@
+    &lt;&lt;next 2s&gt;&gt;@@.asha.align-right;I need to get him to ship me new rock climbing gear.@@
+    &lt;&lt;next 2s&gt;&gt;@@.asha.align-right;100 bucks less than Bass Pro Shop and 50 less than those Yetis in Colorado.@@
+    &lt;&lt;next 3s&gt;&gt;@@.flip-flop;Can do!@@
+    &lt;&lt;next 2s&gt;&gt;@@.flip-flop;Byyyyyyyyeeeeeeee.@@
+    &lt;&lt;next 4s&gt;&gt;@@.work;MISSED CALL@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.work;MISSED CALL (2)@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.work;MISSED CALL (3)@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.work;MISSED CALL (4)@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.work;MISSED CALL (5)@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.work;MISSED CALL (6)@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.work;MISSED CALL (7)@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.work;MISSED CALL (8)@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.work;MISSED CALL (9)@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.work;MISSED CALL (10)@@
+    &lt;&lt;next 0.5s&gt;&gt;@@.work;MISSED CALL (11)@@
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Oh shit. I&#39;ve gotta get back to work.@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;@@.flip-flop;Awwww seriously??? :(@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;Yes.@@
-    &lt;&lt;next 2s&gt;&gt;@@.olsen;We’ll follow this up tomorrow, ok?@@
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Yes.@@&lt;&lt;/type 0.05s&gt;&gt;
+    &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;We’ll follow this up tomorrow, ok?@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;@@.flip-flop;Fiiiiiiiiiiiiiiiiiiiiine :/@@
     &lt;&lt;next 3s&gt;&gt;[[Back to work]]
 &lt;&lt;/timed&gt;&gt;\
-&lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="22" name="Back to work" tags="" position="225,350" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;div id=&quot;scroll-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="23" name="Back to work" tags="" position="350,350" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;audio &quot;office&quot; loop play&gt;&gt;\
 &lt;&lt;/silently&gt;&gt;\
 &lt;&lt;timed 0s&gt;&gt;\
@@ -973,21 +1003,21 @@ window.goToMagicWeb = () => {
         &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;[[You there?|Searching 1]]@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;/timed&gt;&gt;\
 &lt;&lt;/timed&gt;&gt;\
-&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="23" name="Searching 1" tags="" position="350,350" size="100,100">&lt;&lt;timed 4s&gt;&gt;\
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="24" name="Searching 1" tags="" position="475,350" size="100,100">&lt;&lt;timed 4s&gt;&gt;\
     &lt;&lt;type 0.05s&gt;&gt;@@.olsen;Flip-Flop? Hello?@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;If I type in all caps does that make it louder?...@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;HELLLOOOOOOOOO?@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;hmm@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;Lemme check my [[bookmarks]]@@&lt;&lt;/type&gt;&gt;
 &lt;&lt;/timed&gt;&gt;\
-&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="24" name="bookmarks" tags="" position="475,350" size="100,100">&lt;&lt;script&gt;&gt;$(&quot;canvas&quot;).remove();&lt;&lt;/script&gt;&gt;\
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="25" name="bookmarks" tags="" position="600,350" size="100,100">&lt;&lt;script&gt;&gt;$(&quot;canvas&quot;).remove();&lt;&lt;/script&gt;&gt;\
 &lt;&lt;audio &quot;viking&quot; stop&gt;&gt;\
 !!My Bookmarks
 [[📸 Witchtagram|Witchtagram]]
 [[🏴‍☠️ Thorrent|Thorrent]]
 [[🎧 Spriteify|Spriteify]]
 &lt;!--[[♟️ WizardChess.com|WizardChess]]--&gt;
-&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="25" name="Witchtagram" tags="" position="600,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
+&lt;div id=&quot;terminal-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="26" name="Witchtagram" tags="" position="725,350" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
     &lt;&lt;type 0.05s&gt;&gt;@@.olsen;Flip-Flop?@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next&gt;&gt;@@.witchtagram;&lt;strong&gt;ap0thecarrie posted: &lt;/strong&gt; trying out the new 🐌🐌 #slugdrool 🐌🐌 challenge and it is no joke ... link in bio for ingredients ! #potioneersofwitchtagram #notsponsored@@ 
 
@@ -1000,7 +1030,7 @@ window.goToMagicWeb = () => {
 .witchtagram {
  font-family: &quot;Rubik&quot;, sans-serif;
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="26" name="Thorrent" tags="" position="725,350" size="100,100">&lt;&lt;audio &quot;viking&quot; loop play&gt;&gt;\
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="27" name="Thorrent" tags="" position="850,350" size="100,100">&lt;&lt;audio &quot;viking&quot; loop play&gt;&gt;\
 &lt;&lt;silently&gt;&gt;\
     &lt;&lt;script&gt;&gt;
         let hydra = new Hydra({ detectAudio: false });
@@ -1017,7 +1047,7 @@ window.goToMagicWeb = () => {
     @@.olsen;...and heavily armed. I dunno if I want to run into these guys later.@@
     --&gt;\
     &lt;&lt;next&gt;&gt;[[Back|bookmarks]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="WizardChess" tags="" position="850,350" size="100,100">[[Back|bookmarks]]</tw-passagedata><tw-passagedata pid="28" name="Spriteify" tags="" position="975,350" size="100,100">&lt;&lt;silently&gt;&gt;
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="WizardChess" tags="" position="975,350" size="100,100">[[Back|bookmarks]]</tw-passagedata><tw-passagedata pid="29" name="Spriteify" tags="" position="1100,350" size="100,100">&lt;&lt;silently&gt;&gt;
     &lt;&lt;audio &quot;advertisement&quot; volume 0.75 loop play&gt;&gt;\
     &lt;&lt;script&gt;&gt;
         var hydra = new Hydra({ detectAudio: false });
@@ -1072,7 +1102,7 @@ window.goToMagicWeb = () => {
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
-&lt;/style&gt;</tw-passagedata><tw-passagedata pid="29" name="Banner" tags="" position="1100,350" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;/style&gt;</tw-passagedata><tw-passagedata pid="30" name="Banner" tags="" position="1225,350" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;audio &quot;advertisement&quot; volume 0.75 fadeto 0.25&gt;&gt;
     &lt;&lt;audio &quot;pirate-ship&quot; volume 0 fadein&gt;&gt;
 &lt;&lt;/silently&gt;&gt;\
@@ -1084,7 +1114,7 @@ window.goToMagicWeb = () => {
     &lt;&lt;next&gt;&gt;@@.pirate.align-right;GLOOOOOOOOOOOOOOOOOORY!@@
     &lt;&lt;audio &quot;sword-fight&quot; play&gt;&gt;
     &lt;&lt;next 2s&gt;&gt;[[Close tab|Searching 2]]
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="Searching 2" tags="" position="1225,350" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="Searching 2" tags="" position="100,475" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;script&gt;&gt;
         $(&quot;canvas&quot;).remove();
         $(document.body).prepend(`&lt;script id=&quot;three-demo-module&quot; type=&quot;module&quot; src=&quot;three/library.js&quot;&gt;`);
@@ -1115,7 +1145,7 @@ window.goToMagicWeb = () => {
     &lt;&lt;next 2s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;What? She went to talk to Gary Gillman without me?@@&lt;&lt;/type&gt;&gt;
     &lt;&lt;next 4s&gt;&gt;@@.incognitus.align-right;Would appear so.@@
     &lt;&lt;next 2s&gt;&gt;@@.incognitus.align-right;Here’s your [[link|Searching 3]]. Off with you.@@
-&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="Searching 3" tags="" position="100,475" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="Searching 3" tags="" position="225,475" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;script&gt;&gt;
         $(&quot;three-demo-module&quot;).remove();
     &lt;&lt;/script&gt;&gt;
@@ -1159,8 +1189,8 @@ window.goToMagicWeb = () => {
     &lt;&lt;next 2s&gt;&gt;@@.kaptcha.align-right;IF YOU WANT YOUR PRECIOUS FRIEND BACK@@
     &lt;&lt;next 3s&gt;&gt;@@.kaptcha.align-right;THEN FACE MY [[RIIIIIIIDDDDDDDDDDLLLLLEE|Unity 3]]@@
 &lt;&lt;/timed&gt;&gt;
-&lt;div id=&quot;kaptcha-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="32" name="Unity 3" tags="" position="225,475" size="100,100">&lt;&lt;audio &quot;kaptcha-ambiance&quot; stop&gt;&gt;\
-[[Placeholder for Unity Kaptcha puzzle|Bonding]]</tw-passagedata><tw-passagedata pid="33" name="Bonding" tags="" position="350,475" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
+&lt;div id=&quot;kaptcha-bg&quot;&gt;&lt;/div&gt;\</tw-passagedata><tw-passagedata pid="33" name="Unity 3" tags="" position="350,475" size="100,100">&lt;&lt;audio &quot;kaptcha-ambiance&quot; stop&gt;&gt;\
+[[Placeholder for Unity Kaptcha puzzle|Bonding]]</tw-passagedata><tw-passagedata pid="34" name="Bonding" tags="" position="475,475" size="100,100">&lt;&lt;timed 2s&gt;&gt;\
     @@.flip-flop.align-right;Phew!@@
     &lt;&lt;next 1s&gt;&gt;@@.flip-flop.align-right;That was a close one.@@
     &lt;&lt;next 1s&gt;&gt;@@.flip-flop.align-right;Those Anti-Virus guys almost got me.@@
@@ -1216,7 +1246,7 @@ window.goToMagicWeb = () => {
     &lt;/div&gt;
     &lt;&lt;next 4s&gt;&gt;&lt;&lt;type 0.05s&gt;&gt;@@.olsen;[[Shit.|Unity 4]]@@&lt;&lt;/type&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
-&lt;div id=&quot;bg-windows&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="34" name="Unity 4" tags="" position="475,475" size="100,100">[[Placeholder for Gary Unity scene|Underwater]]</tw-passagedata><tw-passagedata pid="35" name="Start" tags="" position="600,475" size="100,100">&lt;&lt;silently&gt;&gt;\
+&lt;div id=&quot;bg-windows&quot;&gt;&lt;/div&gt;</tw-passagedata><tw-passagedata pid="35" name="Unity 4" tags="" position="600,475" size="100,100">[[Placeholder for Gary Unity scene|Underwater]]</tw-passagedata><tw-passagedata pid="36" name="Start" tags="" position="725,475" size="100,100">&lt;&lt;silently&gt;&gt;\
     &lt;&lt;timed 0s&gt;&gt;
         &lt;&lt;audio &quot;intro-play-once&quot; play&gt;&gt;\
         &lt;&lt;next 11.3s&gt;&gt;&lt;&lt;audio &quot;intro-loop&quot; loop play&gt;&gt;
@@ -1224,8 +1254,9 @@ window.goToMagicWeb = () => {
 &lt;&lt;/silently&gt;&gt;\
 &lt;&lt;timed 0.5s&gt;&gt;\
     &lt;&lt;next&gt;&gt;@@#welcome;//Logged in as OLSEN&lt;br&gt;to KRAKEN IT NETWORK//@@
-    &lt;&lt;next&gt;&gt;@@#title;FAIRY QUEST@@
+    &lt;&lt;next&gt;&gt;@@#title;FAIRY&lt;br&gt;QUEST@@
     &lt;&lt;next&gt;&gt;@@#game-start;[[Start|Inbox 1]]@@
+    &lt;&lt;next&gt;&gt;@@#game-start;[[Scene Selection]]@@
 &lt;&lt;/timed&gt;&gt;\
    &lt;&lt;silently&gt;&gt;\
    &lt;&lt;repeat 2s&gt;&gt;\

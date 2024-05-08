@@ -24,16 +24,16 @@
     <</script>>
 <</silently>>
 @@.gary.align-right;Found it.@@
-@@.olsen;Alright, guess it’s game time.
-<<timed "2s">>@@.olsen;I’m gonna send Flip Flop to your phone.
+<<type 0.05s>>@@.olsen;Alright, guess it’s game time.<</type>>
+<<timed "2s">><<type 0.05s>>@@.olsen;I’m gonna send Flip Flop to your phone.<</type>>
     <<next>><<linkappend "📁 FlipFlop.zip —>">>
         @@.flip-flop.align-right;Oh shit.
         <<timed "2s">>@@.flip-flop.align-right;I'm over here now!
-            <img class="sprite align-right" src="images/sprites/Flip Flop/Shock mouth open.png">
-            <<next>>@@.olsen.align-left;Alright.@@
-            <<next>>@@.olsen.align-left;There's gotta be some way to access this thing from the outside.@@
-            <<next>>@@.olsen.align-left;Use your magic, try to find some way into it.@@
-            <<next>>@@.olsen.align-left;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]@@
+            <!--<img class="sprite align-right" src="images/sprites/Flip Flop/Shock mouth open.png">-->
+            <<next>><<type 0.05s>>@@.olsen.align-left;Alright.@@<</type>>
+            <<next>><<type 0.05s>>@@.olsen.align-left;There's gotta be some way to access this thing from the outside.@@<</type>>
+            <<next>><<type 0.05s>>@@.olsen.align-left;Use your magic, try to find some way into it.@@<</type>>
+            <<next>><<type 0.05s>>@@.olsen.align-left;Some kind of [[magic Bluetooth|Bluetooth]] or [[wi-fi connection.|Portal]]@@<</type>>
         <</timed>>\
     <</linkappend>>\
 <</timed>>\
@@ -155,7 +155,7 @@
     <<next>>@@.flip-flop;Hi Uncle Joey!!!
     <<next>>@@.flip-flop;Hi Aunt Bertha!!!
     <<next>>@@.flip-flop;hi cousin sue.
-    <<next>>@@.olsen.align-right;What did Cousin Sue do?
+    <<next>><<type 0.05s>>@@.olsen.align-right;What did Cousin Sue do?<</type>>
     <<next>>@@.flip-flop;You don't want to know.
     <<next>>
     <<next>>@@.flip-flop;We gotta figure out how to round everyone up and get them out of here.

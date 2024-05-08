@@ -1,3 +1,11 @@
+:: StoryData
+{
+    "ifid": "AE26E0DF-A919-4DB3-8481-F5CE3A9F2443",
+    "format": "SugarCube",
+    "format-version": "2.36.1",
+    "zoom": 1
+}
+
 :: Start
 <<silently>>\
     <<timed 0s>>
@@ -7,8 +15,9 @@
 <</silently>>\
 <<timed 0.5s>>\
     <<next>>@@#welcome;//Logged in as OLSEN<br>to KRAKEN IT NETWORK//@@
-    <<next>>@@#title;FAIRY QUEST@@
+    <<next>>@@#title;FAIRY<br>QUEST@@
     <<next>>@@#game-start;[[Start|Inbox 1]]@@
+    <<next>>@@#game-start;[[Scene Selection]]@@
 <</timed>>\
    <<silently>>\
    <<repeat 2s>>\

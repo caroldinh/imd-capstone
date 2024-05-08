@@ -45,37 +45,39 @@
 
 :: Finish Kaptcha
 <<timed 2s>>\
-    @@.olsen;Finished.@@
+    <<type 0.05s>>@@.olsen;Finished.@@<</type>>
     <<next>>@@.asha.align-right;Let me see.@@
     <<next>>@@.asha.align-right;Holy crap. No joke. Thanks mate, you’re a total lifesaver.@@
-    <<next>>@@.asha.align-right;I was worried I was gonna have to switch to being a casual, daily family vlogger full time.@@
-    <<next>>@@.asha.align-right;I was getting all stressed out about it too cause, where the hell was I gonna get a family on such short notice?@@
-    <<next>>@@.flip-flop;So what about the wand?@@
-    <<next>>@@.asha.align-right;Oh, right.@@
-    <<next>>@@.asha.align-right;I got the wand from this guy Gary Gillman.@@
-    <<next>>@@.asha.align-right;He resells lost (maybe stolen?) goods online.@@
-    <<next>>@@.asha.align-right;Here’s his contact.@@
-    <<next>>@@.asha.align-right;[Contact Card]@@
+    <<next 3s>>@@.asha.align-right;I was worried I was gonna have to switch to being a casual, daily family vlogger full time.@@
+    <<next 4s>>@@.asha.align-right;I was getting all stressed out about it too cause, where the hell was I gonna get a family on such short notice?@@
+    <<next 4s>>@@.flip-flop;So what about the wand?@@
+    <<next 2s>>@@.asha.align-right;Oh, right.@@
+    <<next 2s>>@@.asha.align-right;I got the wand from this guy Gary Gillman.@@
+    <<next 3s>>@@.asha.align-right;He resells lost (maybe stolen?) goods online.@@
+    <<next 3s>>@@.asha.align-right;Here’s his contact.@@
+    <<next>><img class="contact-card" src="images/contact-cards/Gary Gillman.png">
     <<next>>@@.flip-flop;Yesssss@@
-    <<next>>@@.olsen;Thanks.@@
-    <<next>>@@.asha.align-right;If you could, try not to mention me directly.@@
-    <<next>>@@.asha.align-right;I need to get him to ship me new rock climbing gear.@@
-    <<next>>@@.asha.align-right;100 bucks less than Bass Pro Shop and 50 less than those Yetis in Colorado.@@
-    <<next>>@@.flip-flop;Can do!@@
-    <<next>>@@.flip-flop;Byyyyyyyyeeeeeeee.@@
-    <<next 4s>>@@.work;NOTIFICATION1@@
-    <<next 0.5s>>@@.work;NOTIFICATION2@@
-    <<next 0.5s>>@@.work;NOTIFICATION3@@
-    <<next 0.5s>>@@.work;NOTIFICATION@@
-    <<next 0.5s>>@@.work;NOTIFICATION@@
-    <<next 0.5s>>@@.work;NOTIFICATION@@
-    <<next 0.5s>>@@.work;NOTIFICATION@@
-    <<next 0.5s>>@@.work;NOTIFICATION@@
-    <<next 0.5s>>@@.work;NOTIFICATION@@
-    <<next 2s>>@@.olsen;Oh shit. I've gotta get back to work.@@
+    <<next 1s>><<type 0.05s>>@@.olsen;Thanks.@@<</type>>
+    <<next 1s>>@@.asha.align-right;If you could, try not to mention me directly.@@
+    <<next 2s>>@@.asha.align-right;I need to get him to ship me new rock climbing gear.@@
+    <<next 2s>>@@.asha.align-right;100 bucks less than Bass Pro Shop and 50 less than those Yetis in Colorado.@@
+    <<next 3s>>@@.flip-flop;Can do!@@
+    <<next 2s>>@@.flip-flop;Byyyyyyyyeeeeeeee.@@
+    <<next 4s>>@@.work;MISSED CALL@@
+    <<next 0.5s>>@@.work;MISSED CALL (2)@@
+    <<next 0.5s>>@@.work;MISSED CALL (3)@@
+    <<next 0.5s>>@@.work;MISSED CALL (4)@@
+    <<next 0.5s>>@@.work;MISSED CALL (5)@@
+    <<next 0.5s>>@@.work;MISSED CALL (6)@@
+    <<next 0.5s>>@@.work;MISSED CALL (7)@@
+    <<next 0.5s>>@@.work;MISSED CALL (8)@@
+    <<next 0.5s>>@@.work;MISSED CALL (9)@@
+    <<next 0.5s>>@@.work;MISSED CALL (10)@@
+    <<next 0.5s>>@@.work;MISSED CALL (11)@@
+    <<next 2s>><<type 0.05s>>@@.olsen;Oh shit. I've gotta get back to work.@@<</type>>
     <<next>>@@.flip-flop;Awwww seriously??? :(@@
-    <<next 2s>>@@.olsen;Yes.@@
-    <<next 2s>>@@.olsen;We’ll follow this up tomorrow, ok?@@
+    <<next 2s>><<type 0.05s>>@@.olsen;Yes.@@<</type 0.05s>>
+    <<next 2s>><<type 0.05s>>@@.olsen;We’ll follow this up tomorrow, ok?@@<</type>>
     <<next>>@@.flip-flop;Fiiiiiiiiiiiiiiiiiiiiine :/@@
     <<next 3s>>[[Back to work]]
 <</timed>>\
