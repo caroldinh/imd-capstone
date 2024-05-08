@@ -2,21 +2,21 @@
 Fairy Quest
 
 :: StoryInit
-<<cacheaudio "underwater" "/media/audio/underwater-ambience.flac">>
-<<cacheaudio "bloop" "/media/audio/underwater-bloop.flac">>
-<<cacheaudio "magic-wand" "/media/audio/magic-wand.wav">>
-<<cacheaudio "typing" "/media/audio/typing.wav">>
-<<cacheaudio "ethereal" "/media/audio/ethereal.wav">>
-<<cacheaudio "horror" "/media/audio/horror.wav">>
-<<cacheaudio "office" "/media/audio/office_ambiance.wav">>
-<<cacheaudio "notif" "/media/audio/notif.mp3">>
-<<cacheaudio "advertisement" "/media/audio/advertisement.mp3">>
-<<cacheaudio "kaptcha-ambiance" "/media/audio/kaptcha-ambiance.wav">>
-<<cacheaudio "pirate-ship" "/media/audio/pirate-ship-louder.wav">>
-<<cacheaudio "sword-fight" "/media/audio/swordfight.wav">>
-<<cacheaudio "viking" "/media/audio/viking.wav">>
-<<cacheaudio "intro-play-once" "/media/audio/intro_play_once.wav">>
-<<cacheaudio "intro-loop" "/media/audio/intro_loop.wav">>
+<<cacheaudio "underwater" "media/audio/underwater-ambience.flac">>
+<<cacheaudio "bloop" "media/audio/underwater-bloop.flac">>
+<<cacheaudio "magic-wand" "media/audio/magic-wand.wav">>
+<<cacheaudio "typing" "media/audio/typing.wav">>
+<<cacheaudio "ethereal" "media/audio/ethereal.wav">>
+<<cacheaudio "horror" "media/audio/horror.wav">>
+<<cacheaudio "office" "media/audio/office_ambiance.wav">>
+<<cacheaudio "notif" "media/audio/notif.mp3">>
+<<cacheaudio "advertisement" "media/audio/advertisement.mp3">>
+<<cacheaudio "kaptcha-ambiance" "media/audio/kaptcha-ambiance.wav">>
+<<cacheaudio "pirate-ship" "media/audio/pirate-ship-louder.wav">>
+<<cacheaudio "sword-fight" "media/audio/swordfight.wav">>
+<<cacheaudio "viking" "media/audio/viking.wav">>
+<<cacheaudio "intro-play-once" "media/audio/intro_play_once.wav">>
+<<cacheaudio "intro-loop" "media/audio/intro_loop.wav">>
 <<createplaylist "intro-playlist">>
     <<track "intro-play-once">>
     <<track "intro-loop">>
