@@ -1,0 +1,143 @@
+:: Start Screen
+<<silently>>\
+    <<timed 0s>>
+        <<audio "intro-play-once" play>>\
+        <<next 11.3s>><<audio "intro-loop" loop play>>
+    <</timed>>
+   <<repeat 2s>>\
+      <<script>>
+         let passage = $(".passage")[0];
+         console.log(passage);
+         let boundingBox = passage.getBoundingClientRect();
+         let x = Math.floor(Math.random() * (window.innerWidth - boundingBox.width));
+         let y = Math.floor(Math.random() * (window.innerHeight - boundingBox.height));
+         $(passage).css("left", x);
+         $(passage).css("top", y);
+      <</script>>
+   <</repeat>>
+<</silently>>\
+<<timed 0.5s>>\
+    <<next>>@@#welcome;//Logged in as OLSEN<br>to KRAKEN IT NETWORK//@@
+    <<next>>@@#title;FAIRY<br>QUEST@@
+    <<next>>@@#game-start;[[Start|Inbox 1]]@@
+    <<next>>@@#game-start;[[Scene Selection]]@@
+<</timed>>\
+<style>
+
+#title {
+    display: block;
+    width: 100%;
+    line-height: 115%;
+    font-family: "Press Start 2P", system-ui;
+    font-size: 2em;
+    text-align: center;
+}
+
+#game-start {
+    background-color: #d6cec1;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px 1px rgba(18, 29, 74, 0.3);
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    padding-left: 8px;
+    padding-right: 8px;
+    transition: 0.3s;
+}
+
+#game-start:hover {
+    background-color: #9c958a;
+    box-shadow: 2px 2px 2px 2px rgba(18, 29, 74, 0.3);
+}
+
+#game-start a{
+    all: unset;
+    font-weight: bolder;
+}
+
+#game-start a::before {
+    all: unset;
+}
+  #welcome {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 100%;
+  }
+  #passages {
+   all: unset;
+   width: 100vw;
+   height: 100vh;
+  }
+ .passage {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 100%;
+    position: fixed;
+    left: 100px;
+    top: 100px;
+ }
+ .macro-timed {
+    display: inherit;
+    flex-direction: inherit;
+ }
+ body {
+   background-color: var(--olsen-theme);
+   background-image: url("images/computer.png");
+    background-size: auto 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+ }
+</style>
+
+:: Scene Selection
+[[Start|Start Screen]]
+[[Enter the Magic Web|Magic Web 1]]
+[[Meet Asha|Magic Web 2]]
+[[Meet K'Aptcha|Unity 1]]
+[[Back to Work|Finish Kaptcha]]
+[[Search for Flip-Flop|Searching 1]]
+[[K'Aptcha Returns|Searching 3]]
+[[Meet Gary|Unity 4]]
+[[Portals|Underwater]]
+[[Meet Sybor|Sphinx]]
+[[Epilogue|Sphinx]]
+[[Credits]]
+<style>
+ body {
+   background-color: var(--olsen-theme);
+   background-image: url("images/computer.png");
+    background-size: auto 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+ }
+</style>
+
+:: Credits
+"FAIRY QUEST" was built by Sean Alperin, Isabelle Klimanov, and Caroline Dinh for the Immersive Media Design senior Capstone.
+
+<b>Using audio assets by...</b>
+grcekh, nnus, nebyoolae, egomassive, ecfike, mucky_pete7, CGEffex, Fenodyrie, 890troller, craigsmith, stib, Kyster, MrAuralization, Joao_Janz, klankbeeld, FolBoyMedia, Kolezan, BeezleFM, napalmco, and kyles via Freesound.org
+
+<b>And visuals by...</b>
+Abbey of Saint-Aubin, Public domain, via Wikimedia Commons
+Wilhelm Kotarbiński, Public domain, via Wikimedia Commons
+Judson McCranie, CC BY-SA 3.0, via Wikimedia Commons
+
+[[Back to Scene Selection|Scene Selection]]
+<style>
+ body {
+   background-color: var(--olsen-theme);
+   background-image: url("images/computer.png");
+    background-size: auto 100vh;
+    background-position: center top;
+    background-repeat: no-repeat;
+ }
+ .passage {
+    font-size: 14px;
+ }
+</style>
