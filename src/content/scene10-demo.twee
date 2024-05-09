@@ -26,9 +26,9 @@
 @@.gary.align-right;Found it.@@
 <<type 0.05s>>@@.olsen;Alright, guess it’s game time.<</type>>
 <<timed "2s">><<type 0.05s>>@@.olsen;I’m gonna send Flip Flop to your phone.<</type>>
-    <<next>><<linkappend "📁 FlipFlop.zip —>">>
-        @@.flip-flop.align-right;Oh shit.
-        <<timed "2s">>@@.flip-flop.align-right;I'm over here now!
+    <<next 4s>><<linkappend "📁 FlipFlop.zip —>">>
+        @@.flip-flop.align-right;Oh shit.@@
+        <<timed "2s">>@@.flip-flop.align-right;I'm over here now!@@
             <!--<img class="sprite align-right" src="images/sprites/Flip Flop/Shock mouth open.png">-->
             <<next>><<type 0.05s>>@@.olsen.align-left;Alright.@@<</type>>
             <<next>><<type 0.05s>>@@.olsen.align-left;There's gotta be some way to access this thing from the outside.@@<</type>>
