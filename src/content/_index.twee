@@ -55,12 +55,13 @@ Fairy Quest
     /*--kaptcha-theme: #1170e2;*/
     --kaptcha-theme: #000000;
     --kaptcha-secondary: #1a0300;
-    --sybor-theme: #6300ba;
+    --sybor-theme: #322aa6;
     --work-theme: #024f46;
     --work-light: #246c55;
     --link-color: #0032e6;
     --link-visited: #35216e;
-    --asha-theme: #112603;
+    --asha-theme: #db1e1e;
+    --gary-theme: #2425ca;
 }
 
 body {
@@ -166,6 +167,10 @@ canvas {
     font-size: 14px;
 }
 
+.purple {
+    color: #e699ff !important;
+}
+
 .align-right {
     margin-right: 0;
     margin-left: auto;
@@ -243,7 +248,7 @@ canvas {
     left: 0;
     z-index: -1;
     pointer-events: 0;
-    background-image: url('images/windows-desktop.jpg');
+    background-image: url('images/Wall.png');
     background-size: 100vw 100vh;
 }
 
@@ -317,8 +322,7 @@ canvas {
 }
 
 .asha {
-    font-family: 'Amatic SC', serif;
-    font-size: 1.5em;
+    font-family: 'Oswald', sans-serif;
     font-weight: 700;
     max-width: 70%;
     line-height: 100%;
@@ -326,6 +330,6 @@ canvas {
 }
 
 .gary {
-    font-family: 'Got Heroin', sans-serif;
-    font-size: 1.5em;
+    font-family: 'Anton', sans-serif;
+    color: var(--gary-theme);
 }
