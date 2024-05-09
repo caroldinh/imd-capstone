@@ -3,6 +3,9 @@
 <iframe class="unity-embed" src="/fq-webgl/kaptcha_test/index.html"></iframe>
 -->
 <iframe class="unity-embed" src="https://caroldinh.github.io/imd-capstone/fq-webgl/kaptcha_test/index.html"></iframe>
+<<script>>
+    Engine.play("Finish Kaptcha")
+<</script>>
 <!--
     <!--
     <<script>>

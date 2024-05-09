@@ -4,6 +4,9 @@
 <iframe class="unity-embed" src="/fq-webgl/asha_scene/index.html"></iframe>
 -->
 <iframe class="unity-embed" src="https://caroldinh.github.io/imd-capstone/fq-webgl/asha_scene/index.html"></iframe>
+<<script>>
+    Engine.play("Finish Kaptcha")
+<</script>>
 <!--
 <<timed 2s>>
     <<next>>@@.flip-flop.align-right;Ok, Ok. [[Look what I found!|Magic Web 2]]@@
