@@ -60,8 +60,10 @@
 <!--
 <iframe class="unity-embed" src="/fq-webgl/gillman_scene/index.html"></iframe>
 <iframe class="unity-embed" src="https://caroldinh.github.io/imd-capstone/fq-webgl/gillman_scene/index.html"></iframe>
--->
+<iframe class="unity-embed" onload="window.handleIFrame(this)" src="/fq-webgl/gillman_scene/index.html"></iframe>
 <<script>>
     window.open("https://caroldinh.github.io/imd-capstone/fq-webgl/gillman_scene/index.html");
     //window.open("/fq-webgl/gillman_scene/index.html");
 <</script>>
+-->
+<iframe class="unity-embed" onload="window.handleIFrame(this)" src="https://caroldinh.github.io/imd-capstone/fq-webgl/gillman_scene/index.html"></iframe>

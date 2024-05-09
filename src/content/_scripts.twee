@@ -1,6 +1,4 @@
 :: UserScript[script]
-Config.history.maxStates = 1;
-Config.navigation.override = () => false;
 if (!window.renderUnderwater) {
     window.renderUnderwater = () => {
 
@@ -11,11 +9,18 @@ document.getElementById("story").addEventListener( 'DOMNodeInserted', function (
    $(this)[0].scrollIntoView({ behavior: "smooth", block: "end", inline: "end" });
 }, false );
 
+$(window).on('load', () => {
+    console.log("Window loaded");
+    State.metadata.clear();
+    Config.history.maxStates = 1;
+    Config.navigation.override = () => false;
+});
+
 window.handleIFrame = (e) => {
     console.log("Iframe loaded");
-    console.log(e);
-    console.log(Object.keys(e));
-    console.log(e.contentDocument);
+    State.metadata.clear();
+    Config.history.maxStates = 1;
+    Config.navigation.override = () => false;
     /*
     if (e.contentDocument && e.contentDocument.location) {
         console.log(e.contentDocument.location.href)
@@ -33,6 +38,7 @@ window.handleIFrame = (e) => {
     */
 }
 
+/*
 function clearStorage() {
 
     let session = sessionStorage.getItem('register');
@@ -45,3 +51,4 @@ function clearStorage() {
     sessionStorage.setItem('register', 1);
 }
 window.addEventListener('load', clearStorage);
+*/
