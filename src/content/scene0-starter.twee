@@ -96,16 +96,16 @@
 
 :: Scene Selection
 [[Start|Start Screen]]
-[[Enter the Magic Web|Magic Web 1]]
-[[Meet Asha|Magic Web 2]]
-[[Meet K'Aptcha|Unity 1]]
-[[Back to Work|Finish Kaptcha]]
+[[Meet Asha|Magic Web 1]]
+[[Meet K'Aptcha|Kaptcha 1]]
+[[Defeat K'Aptcha|Finish Kaptcha]]
 [[Search for Flip-Flop|Searching 1]]
-[[K'Aptcha Returns|Searching 3]]
-[[Meet Gary|Unity 4]]
-[[Portals|Underwater]]
-[[Meet Sybor|Sphinx]]
-[[Epilogue|Sphinx]]
+[[K'Aptcha Returns|Unity 3]]
+[[Debrief|Bonding]]
+[[Meet Gillman|Unity 4]]
+[[Cables|Underwater]]
+[[Meet Sy'bor|Sphinx]]
+[[Final Challenge|Unity 5]]
 [[Credits]]
 <style>
  body {

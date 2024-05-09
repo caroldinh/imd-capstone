@@ -40,4 +40,8 @@
 <div id="kaptcha-bg"></div>\
 
 :: Unity 5
-PLACEHOLDER FOR FINAL UNITY SCENE & EPILOGUE
+<!--
+<iframe class="unity-embed" src="https://caroldinh.github.io/fq-webgl/sybor_scene/index.html"></iframe>
+<iframe class="unity-embed" src="/fq-webgl/sybor_scene/index.html"></iframe>
+-->
+<iframe class="unity-embed" src="https://caroldinh.github.io/fq-webgl/sybor_scene/index.html"></iframe>

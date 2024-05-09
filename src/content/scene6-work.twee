@@ -245,4 +245,7 @@
 
 :: Unity 3
 <<audio "kaptcha-ambiance" stop>>\
-[[Placeholder for Unity Kaptcha puzzle|Bonding]]
+<!--
+<iframe class="unity-embed" src="/fq-webgl/kaptcha2_scene/index.html"></iframe>
+-->
+<iframe class="unity-embed" src="https://caroldinh.github.io/fq-webgl/kaptcha2_scene/index.html"></iframe>
