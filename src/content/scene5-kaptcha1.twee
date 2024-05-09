@@ -80,7 +80,7 @@
     <<next 0.5s>>@@.work;MISSED CALL (11)@@
     <<next 2s>><<type 0.05s>>@@.olsen;Oh shit. I've gotta get back to work.@@<</type>>
     <<next>>@@.flip-flop;Awwww seriously??? :(@@
-    <<next 2s>><<type 0.05s>>@@.olsen;Yes.@@<</type 0.05s>>
+    <<next 2s>><<type 0.05s>>@@.olsen;Yes.@@<</type>>
     <<next 2s>><<type 0.05s>>@@.olsen;We’ll follow this up tomorrow, ok?@@<</type>>
     <<next>>@@.flip-flop;Fiiiiiiiiiiiiiiiiiiiiine :/@@
     <<next 3s>>[[Back to work]]
