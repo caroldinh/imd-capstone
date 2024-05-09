@@ -1,9 +1,9 @@
 
 :: Magic Web 1
 [Placeholder: magic web feed assets - news articles, videos, etc.]
-<iframe class="unity-embed" src="https://caroldinh.github.io/fq-webgl/asha_scene/index.html" onload="window.handleIFrame(this)"></iframe>
-<!--
 <iframe class="unity-embed" src="/fq-webgl/asha_scene/index.html" onload="window.handleIFrame(this)"></iframe>
+<!--
+<iframe class="unity-embed" src="https://caroldinh.github.io/fq-webgl/asha_scene/index.html" onload="window.handleIFrame(this)"></iframe>
 -->
 <!--
 <<timed 2s>>
