@@ -67,3 +67,6 @@
 <</script>>
 -->
 <iframe class="unity-embed" onload="window.handleIFrame(this)" src="https://caroldinh.github.io/imd-capstone/fq-webgl/gillman_scene/index.html"></iframe>
+<<script>>
+    Engine.play("Underwater")
+<</script>>
