@@ -1,4 +1,5 @@
 :: UserScript[script]
+Config.history.maxStates = 1;
 if (!window.renderUnderwater) {
     window.renderUnderwater = () => {
 
