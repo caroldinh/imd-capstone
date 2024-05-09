@@ -542,6 +542,19 @@ window.handleIFrame = (e) => {
     console.log("iframe loaded")
     */
 }
+
+function clearStorage() {
+
+    let session = sessionStorage.getItem('register');
+
+    if (session == null) {
+    
+        localStorage.removeItem('remove');
+
+    }
+    sessionStorage.setItem('register', 1);
+}
+window.addEventListener('load', clearStorage);
 /* twine-user-script #3: "MagicWebTransition" */
 window.goToMagicWeb = () => {
     Engine.play("Magic Web 1");
