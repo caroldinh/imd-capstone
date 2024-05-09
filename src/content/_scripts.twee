@@ -1,5 +1,6 @@
 :: UserScript[script]
 Config.history.maxStates = 1;
+Config.navigation.override = () => false;
 if (!window.renderUnderwater) {
     window.renderUnderwater = () => {
 
