@@ -62,6 +62,6 @@
 <iframe class="unity-embed" src="https://caroldinh.github.io/imd-capstone/fq-webgl/gillman_scene/index.html"></iframe>
 -->
 <<script>>
-    //window.open("https://caroldinh.github.io/imd-capstone/fq-webgl/gillman_scene/index.html");
-    window.open("/fq-webgl/gillman_scene/index.html");
+    window.open("https://caroldinh.github.io/imd-capstone/fq-webgl/gillman_scene/index.html");
+    //window.open("/fq-webgl/gillman_scene/index.html");
 <</script>>
